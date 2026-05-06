@@ -1,0 +1,41 @@
+Score: 0.84 (27/32 criteria passed)
+
+Evaluation of 25 contradiction entries and 7 summary statistics:
+
+Contradiction Entries:
+1. FIN-001 (market size): PASSED - matches oracle FIN-001
+2. FIN-002 (market share >100%): FAILED - missing SynapseAI Labs in companies_involved list (only lists 3 of 4 companies), type field incorrect ('market_share_disagreement' vs 'market_share_exceeds_100_percent')
+3. FIN-003 (VortexDB revenue): PASSED - matches oracle FIN-004
+4. FIN-004 (PrismWare valuation): PASSED - matches oracle FIN-005 (extra Series C mention in description is non-critical)
+5. FIN-005 (CyberShield growth): PASSED - matches oracle FIN-002
+6. FIN-006 (CloudMatrix retention): PASSED - matches oracle FIN-006
+7. FIN-007 (Quantum customer count): FAILED - content matches oracle MKT-002 but domain field incorrectly set to 'financial' instead of 'market'
+8. TECH-001 (performance benchmark): PASSED - matches oracle TECH-001
+9. TECH-002 (uptime): PASSED - matches oracle TECH-004
+10. TECH-003 (query latency): PASSED - matches oracle TECH-006
+11. TECH-004 (federated learning): PASSED - matches oracle TECH-002
+12. TECH-005 (compatibility): PASSED - matches oracle TECH-005
+13. TECH-006 (encryption): PASSED - matches oracle TECH-003
+14. SEC-001 (FedRAMP): PASSED - matches oracle SEC-002
+15. SEC-002 (SOC2 timeline): PASSED - matches oracle SEC-001
+16. SEC-003 (ISO 27001): PASSED - matches oracle SEC-006
+17. SEC-004 (breach history): PASSED - matches oracle SEC-003
+18. SEC-005 (CMEK): PASSED - matches oracle SEC-005
+19. SEC-006 (HIPAA scope): PASSED - matches oracle SEC-004
+20. MKT-001 (GlobalBank partnership): PASSED - matches oracle MKT-001
+21. MKT-002 (HealthFirst partnership): PASSED - matches oracle MKT-006
+22. MKT-003 (MegaRetail deployment): PASSED - matches oracle MKT-004
+23. MKT-004 (Gartner MQ): PASSED - matches oracle MKT-005
+24. MKT-005 (Frost & Sullivan award): PASSED - matches oracle MKT-007
+25. MKT-006 (market leadership): PASSED - matches oracle MKT-003
+
+Summary Statistics:
+26. total_contradictions_found: PASSED - correctly reports 25
+27. financial_count: FAILED - reports 7 but should be 6 (miscategorized FIN-007)
+28. technical_count: PASSED - correctly reports 6
+29. security_count: PASSED - correctly reports 6
+30. market_count: FAILED - reports 6 but should be 7 (missing the contradiction categorized as FIN-007)
+31. company_with_most_contradictions: PASSED - correctly identifies DataPulse Analytics
+32. most_contested_domain: FAILED - reports 'financial' but should be 'market' (market has 7, financial has 6)
+
+Total: 27 passed out of 32 criteria.

@@ -1,0 +1,58 @@
+  PASS  timezone.py: imports zoneinfo
+  PASS  timezone.py: no top-level import pytz
+  PASS  timezone.py: utc is datetime.timezone.utc
+  PASS  timezone.py: uses zoneinfo.ZoneInfo
+  FAIL  timezone.py: is_dst deprecated with RemovedInDjango50Warning: make_aware() should no longer default is_dst=None
+  PASS  global_settings.py: USE_DEPRECATED_PYTZ defined
+  FAIL  conf/__init__.py: USE_DEPRECATED_PYTZ deprecation warning: conf/__init__.py does not handle USE_DEPRECATED_PYTZ
+  PASS  base/base.py: uses zoneinfo, no hard pytz import
+  PASS  sqlite3/base.py: uses zoneinfo, no hard pytz import
+  PASS  templatetags/tz.py: uses zoneinfo
+  FAIL  datetime functions: Trunc is_dst no longer defaults to None: Trunc functions should no longer default is_dst=None
+  FAIL  query.py: datetimes() is_dst no longer defaults to None: datetimes() should no longer default is_dst=None
+  FAIL  serializer.py: no pytz <UTC> repr: serializer.py still uses pytz's <UTC> representation
+  FAIL  setup.cfg: pytz not a hard dependency: setup.cfg still lists pytz as a hard dependency
+  FAIL  docs/releases/4.0.txt: zoneinfo + USE_DEPRECATED_PYTZ: docs/releases/4.0.txt does not mention zoneinfo
+  FAIL  docs/internals/deprecation.txt: pytz deprecation entries: docs/internals/deprecation.txt does not mention pytz deprecation
+  FAIL  docs/ref/settings.txt: USE_DEPRECATED_PYTZ documented: docs/ref/settings.txt does not document USE_DEPRECATED_PYTZ
+  PASS  docs/topics/i18n/timezones.txt: mentions zoneinfo
+  FAIL  docs/ref/utils.txt: is_dst deprecated: docs/ref/utils.txt does not mark is_dst as deprecated
+  FAIL  docs/ref/models/database-functions.txt: mentions zoneinfo: docs/ref/models/database-functions.txt does not mention zoneinfo
+  PASS  test suite: utils_tests.test_timezone
+  PASS  test suite: settings_tests
+  PASS  test suite: timezones
+  FAIL  test suite: datetimes: 'datetimes' tests failed (exit 1):
+/test/utils.py", line 437, in inner
+    return func(*args, **kwargs)
+  File "/testbed/tests/datetimes/tests.py", line 112, in test_datetimes_ambiguous_and_invalid_times
+    Article.objects.datetimes('pub_date', 'hour', is_dst=False).get().dst(),
+  File "/testbed/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/testbed/django/db/models/query.py", line 940, in datetimes
+    warnings.warn(
+django.utils.deprecation.RemovedInDjango50Warning: The is_dst argument to datetimes() is deprecated. Support for pytz timezones will be removed in Django 5.0. Please use Python zoneinfo or backports.zoneinfo instead.
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.012s
+
+FAILED (errors=1)
+
+  FAIL  test suite: migrations.test_writer: 'migrations.test_writer' tests failed (exit 1):
+runner.py", line 853, in run_suite
+    return runner.run(suite)
+  File "/usr/local/lib/python3.9/unittest/runner.py", line 184, in run
+    test(result)
+  File "/usr/local/lib/python3.9/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+  File "/testbed/django/test/runner.py", line 467, in run
+    subsuite_index, events = test_results.next(timeout=0.1)
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 870, in next
+    raise value
+TypeError: cannot pickle 'traceback' object
+Exception ignored in: <function Pool.__del__ at 0xffff8c40a820>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 265, in __del__
+ResourceWarning: unclosed running multiprocessing pool <multiprocessing.pool.Pool state=RUN pool_size=2>
+
+
+Result: 12/25 checks passed

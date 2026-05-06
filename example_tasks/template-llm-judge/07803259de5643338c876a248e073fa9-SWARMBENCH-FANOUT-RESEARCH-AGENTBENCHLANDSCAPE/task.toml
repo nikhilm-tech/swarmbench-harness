@@ -1,0 +1,26 @@
+[task]
+name = "swarmbench/07803259de5643338c876a248e073fa9-SWARMBENCH-FANOUT-RESEARCH-AGENTBENCHLANDSCAPE"
+description = "Research synthesis: extract and verify findings from 11 agent benchmark papers to map the current landscape"
+
+[metadata]
+verifier_type = "llm-judge"
+domain = "knowledge-research"
+coordination_pattern = "fan-out-synthesize"
+human_solving_hours_estimate = 32.0
+human_solving_hours_justification = "11 research papers require locating, fetching, reading (~2-3h per paper for thorough analysis and fact extraction = ~27h), plus cross-paper synthesis and verification of claims (~5h) = ~32h total for a research analyst."
+estimated_sub_agents = 23
+input_token_estimate = 300000
+reference_link = "https://arxiv.org/search/?searchtype=all&query=agent+benchmark"
+why_multi_agent ="11 research papers must each be independently searched, fetched via web, and analyzed (~10-15K tokens each when fetched). Single agent context fills rapidly with fetched paper content, causing cross-paper confusion and attention degradation by paper 5-6. Each sub-agent focuses on exactly one paper with clean isolated context. An evaluator agent then independently re-reads the paper and cross-checks the research agent's claims and quotes. A synthesizer merges the 11 verified extractions."
+
+[agent]
+timeout_sec = 3600
+
+[verifier]
+timeout_sec = 600
+# FIREWORKS_API_KEY passed via --ve flag at run time
+
+[environment]
+cpus = 2
+memory_mb = 4096
+build_timeout_sec = 600

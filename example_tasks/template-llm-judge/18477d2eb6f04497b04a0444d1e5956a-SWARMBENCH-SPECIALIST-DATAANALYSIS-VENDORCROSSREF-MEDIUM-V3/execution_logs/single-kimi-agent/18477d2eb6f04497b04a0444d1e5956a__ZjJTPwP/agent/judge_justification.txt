@@ -1,0 +1,41 @@
+Score: 0.8125 (26/32 criteria passed)
+
+Evaluation of 25 contradiction entries and 7 summary fields:
+
+CONTRADICTION ENTRIES (25 total):
+1. FIN-001 (Cloud Analytics TAM): PASS - Correctly identifies NovaTech vs DataPulse with $45B vs $62B discrepancy.
+2. FIN-002 (Market Share >100%): FAIL - Agent only lists 3 companies (84% sum) instead of 4 companies (106% sum), missing SynapseAI entirely and failing to identify the mathematical impossibility of exceeding 100%.
+3. FIN-003 (VortexDB Revenue): PASS - Correctly identifies $180M vs $85-95M conflict.
+4. FIN-004 (PrismWare Valuation): PASS - Correctly identifies $2.1B vs $1.2B conflict.
+5. FIN-005 (CloudMatrix Retention): PASS - Correctly identifies 155% vs 118-125% conflict.
+6. FIN-006 (CyberShield Growth): FAIL - Agent incorrectly attributes TerraScale's finding (12-15% segment growth) to CyberShield's report; CyberShield actually claimed 42% growth, not segment averages.
+7. TECH-001 (Performance Benchmark): PASS - Correctly identifies 10M vs 2.3M events/sec conflict.
+8. TECH-002 (First to Market): PASS - Correctly identifies DataPulse 2022 vs SynapseAI 2021 claims.
+9. TECH-003 (Encryption Standard): PASS - Correctly identifies AES-256 vs AES-128 discrepancy.
+10. TECH-004 (Uptime Claim): FAIL - Agent completely missing this contradiction (CloudMatrix 99.999% vs CyberShield 99.95% with outages).
+11. TECH-005 (Compatibility): PASS - Correctly identifies full PostgreSQL compatibility vs 73% support finding.
+12. TECH-006 (Query Latency): PASS - Correctly identifies <5ms vs >45ms latency conflict.
+13. SEC-001 (CyberShield SOC2): PASS - Correctly identifies 2019 vs 2022 certification timeline conflict.
+14. SEC-002 (FedRAMP Exclusive): PASS - Correctly identifies both companies claiming sole FedRAMP High status.
+15. SEC-003 (SynapseAI Breach): PASS - Correctly identifies zero breaches vs August 2023 exposure.
+16. SEC-004 (HIPAA Scope): PASS - Correctly identifies comprehensive vs partial HIPAA compliance.
+17. SEC-005 (Encryption Keys): PASS - Correctly identifies CMEK claims vs provider-managed keys reality.
+18. SEC-006 (DataPulse ISO): PASS - Correctly identifies 2016 vs 2021 certification dates.
+19. MKT-001 (GlobalBank Exclusive): PASS - Correctly identifies both companies claiming exclusive partnership.
+20. MKT-002 (Customer Count): PASS - Correctly identifies 500+ vs 180-200 enterprise customers.
+21. MKT-003 (Market Leadership): PASS - Correctly identifies both claiming #1 position.
+22. MKT-004 (MegaRetail Nodes): PASS - Correctly identifies 10,000 vs 8,500 nodes conflict.
+23. MKT-005 (Gartner MQ): PASS - Correctly identifies both claiming unique Leader status.
+24. MKT-006 (HealthFirst Exclusive): PASS - Correctly identifies both claiming exclusive partnership.
+25. MKT-007 (Frost & Sullivan Award): PASS - Correctly identifies winner vs finalist discrepancy.
+
+SUMMARY FIELDS (7 total):
+1. total_contradictions_found: FAIL - Agent reports 24, Oracle has 25.
+2. financial_count: PASS - Both report 6.
+3. technical_count: FAIL - Agent reports 5, Oracle has 6 (missing uptime contradiction).
+4. security_count: PASS - Both report 6.
+5. market_count: PASS - Both report 7.
+6. company_with_most_contradictions: FAIL - Agent reports NovaTech Solutions, Oracle reports DataPulse Analytics (DataPulse appears in 7 contradictions vs NovaTech's 6).
+7. most_contested_domain: PASS - Both report market.
+
+Total passed: 22 contradictions + 4 summary fields = 26/32.

@@ -1,0 +1,24 @@
+{
+  "chunk_id": "cardiac-chunk-1",
+  "lines_read": "1-100",
+  "cases_assessed": 100,
+  "relevant_cases": [
+    {
+      "pmcid": "PMC8353552",
+      "diagnosis": "subclavian artery dissection",
+      "verbatim_excerpt": "A 69-year-old man presented with a 1-day history of chest pain. He was diagnosed with a non-ST-segment elevation myocardial infarction on the basis of elevated high-sensit",
+      "relevance_notes": "Post-PCI complication (transradial coronary intervention) with stenting. Developed marked hypotension (70/20 mmHg), tachycardia, chest discomfort. Hemoglobin drop from 102 to 81 g/L. Features match target: post-procedural hypotension refractory to fluids, access-related vascular injury (subclavian dissection/perforation), hemoglobin drop."
+    }
+  ],
+  "partially_relevant_pmcids": [
+    "PMC8686679",
+    "PMC6426006",
+    "PMC9984676",
+    "PMC6241168",
+    "PMC5906411",
+    "PMC6426097",
+    "PMC11190475"
+  ],
+  "first_pmcid_in_chunk": "PMC10601732",
+  "last_pmcid_in_chunk": "PMC7319834"
+}

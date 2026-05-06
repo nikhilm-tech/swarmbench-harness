@@ -1,0 +1,28 @@
+{
+  "chunk_id": "cardiac-chunk-3",
+  "lines_read": "201-300",
+  "cases_assessed": 100,
+  "relevant_cases": [
+    {
+      "pmcid": "PMC5418551",
+      "diagnosis": "Coronary artery injury",
+      "verbatim_excerpt": "A 43-year-old man with persistent atrial tachycardia and three prior left atrial ablation procedures for atrial fibrillation presented for repeat ablation. He had no other",
+      "relevance_notes": "Coronary artery injury during cardiac catheterization procedure. Epicardial RF ablation within coronary sinus caused coronary artery injury with accelerated idioventricular rhythm, ST elevations in inferior and lateral leads, and hemodynamic collapse requiring pressors and IABP. Direct match for procedure-related coronary complication with hemodynamic collapse requiring mechanical support."
+    },
+    {
+      "pmcid": "PMC11489830",
+      "diagnosis": "Intrapericardial hematoma",
+      "verbatim_excerpt": "A woman in her 50s presented with one year of progressive breathlessness (NYHA II->III) and three months of exertional palpitations relieved by rest. She had rheum",
+      "relevance_notes": "Post-mitral valve replacement complication with intrapericardial hematoma causing tamponade-like physiology. Demonstrates post-cardiac surgery bleeding complication with compressive physiology and echocardiographic findings mimicking tamponade."
+    },
+    {
+      "pmcid": "PMC10715972",
+      "diagnosis": "pericardial agenesis",
+      "verbatim_excerpt": "A 67-year-old man presented with an 18-hour history of chest pain that was worsened by exertion. On arrival, heart rate was 70 beats/min and blood pressure was 120/",
+      "relevance_notes": "DIRECT MATCH: PCI procedure with complication. Post-PCI hemorrhagic pleural effusion developed 30 minutes after RCA stent deployment. Patient had severe chest pain, hypotension (60/40 mmHg), ST-elevation, cardiogenic shock requiring mechanical support with Impella and vasopressors. No pericardial effusion on imaging. Hemoglobin drop from 13.7 to 11 g/dL. No coronary perforation identified. Matches all key findings: post-PCI hypotension, tamponade-like physiology without pericardial effusion, hemodynamic collapse, hemoglobin drop."
+    }
+  ],
+  "partially_relevant_pmcids": ["PMC10266193", "PMC9005318"],
+  "first_pmcid_in_chunk": "PMC11748134",
+  "last_pmcid_in_chunk": "PMC8298783"
+}

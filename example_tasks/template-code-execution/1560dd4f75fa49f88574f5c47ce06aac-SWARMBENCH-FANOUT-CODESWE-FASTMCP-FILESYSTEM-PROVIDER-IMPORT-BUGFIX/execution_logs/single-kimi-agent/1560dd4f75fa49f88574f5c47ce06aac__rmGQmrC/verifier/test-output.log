@@ -1,0 +1,25 @@
+/tests/verify.py:273: DeprecationWarning: There is no current event loop
+  results = asyncio.get_event_loop().run_until_complete(concurrent_reads())
+[04/16/26 16:10:03] WARNING  FileSystemProvider root does not  filesystem.py:109
+                             exist:                                             
+                             /tmp/tmpm0uk_xwc/nonexistent_prov                  
+                             ider_root_42                                       
+                    WARNING  FileSystemProvider root does not  filesystem.py:109
+                             exist:                                             
+                             /tmp/tmpm0uk_xwc/nonexistent_prov                  
+                             ider_root_42                                       
+  FAIL  sys.path cleanup after non-package import: sys.path grew from 7 to 8 entries after importing a non-package file. Entries should be cleaned up.
+  FAIL  sys.path cleanup after package-mode import: sys.path grew from 7 to 8 entries after importing a file inside a package. Both package-mode and non-package-mode imports must clean up sys.path.
+  FAIL  sys.path cleanup when import raises exception: sys.path grew from 7 to 8 entries after a failed import. sys.path must be restored even when the import raises an exception.
+  FAIL  stdlib json not shadowed by provider file: stdlib json module no longer has 'dumps' after importing a provider file named json.py. The provider file shadowed the stdlib module.
+  FAIL  _find_package_root stops at provider boundary: _find_package_root does not accept a stop_at or provider_root parameter
+  FAIL  import_module_from_file accepts provider_root: import_module_from_file must accept a 'provider_root' parameter to pass as boundary to _find_package_root.
+  FAIL  discover_and_import passes provider_root: discover_and_import must pass provider_root to import_module_from_file. Called with args=(PosixPath('/tmp/tmpm0uk_xwc/outer/inner/boundary_test_tool.py'),), kwargs={}
+  PASS  Reload lock covers both reload and read
+  FAIL  Reload lock under heavy concurrency: Concurrent _list_tools() call #5 of 8 returned empty. Under heavy concurrency the reload lock must still prevent any reader from observing an empty components dict.
+  PASS  Concurrent reloads are deduplicated
+  PASS  Non-existent root logs a warning
+  PASS  Regression: discover_and_import still works
+
+Result: 4/12 checks passed
+Reward: 0.3333

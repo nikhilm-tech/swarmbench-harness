@@ -1,0 +1,40 @@
+{
+  "chunk_id": "cardiac-chunk-4",
+  "lines_read": "301-400",
+  "cases_assessed": 100,
+  "relevant_cases": [
+    {
+      "pmcid": "PMC7954273",
+      "diagnosis": "intramyocardial haematoma",
+      "verbatim_excerpt": "A 77-year-old man with a history of coronary artery disease (including bypass surgery in 2009), chronic obstructive pulmonary disease on inhaled steroids, dyslipidaemia, and hypertension presented with persistent left-sided chest pain on exertion for one week and mild dyspnoea.",
+      "relevance_notes": "Intramyocardial hematoma is a rare mechanical complication that can occur after PCI or MI, similar to the patient's extensive dissection. Matches key finding: intramural hematoma."
+    },
+    {
+      "pmcid": "PMC8288783",
+      "diagnosis": "Spontaneous coronary artery dissection",
+      "verbatim_excerpt": "A 49-year-old woman presented with worsening anginal chest pain over several weeks. Her blood pressure was 202/100 mm Hg and heart rate 102 beats/min; the rest of the physical examination was unrema",
+      "relevance_notes": "Coronary dissection is a direct match to the patient's extensive dissection during PCI. Though spontaneous in this case, the mechanism involves arterial wall compromise similar to iatrogenic dissection."
+    },
+    {
+      "pmcid": "PMC10495283",
+      "diagnosis": "Haemorrhagic shock",
+      "verbatim_excerpt": "A 73-year-old man with stable angina pectoris was admitted for percutaneous coronary intervention of the proximal left anterior descending (LAD) artery. He had hypertension, was an ex-smoker, and had under",
+      "relevance_notes": "Direct match: post-PCI complication with hemorrhagic shock during coronary intervention. This case demonstrates hemodynamic collapse during PCI, similar to the patient's presentation with refractory hypotension and hemoglobin drop."
+    }
+  ],
+  "partially_relevant_pmcids": [
+    "PMC6764561",
+    "PMC1865550",
+    "PMC8751802",
+    "PMC10313493",
+    "PMC8310941",
+    "PMC7793183",
+    "PMC10957490",
+    "PMC4008443",
+    "PMC6177080",
+    "PMC9668259",
+    "PMC10787369"
+  ],
+  "first_pmcid_in_chunk": "PMC7665409",
+  "last_pmcid_in_chunk": "PMC6222214"
+}

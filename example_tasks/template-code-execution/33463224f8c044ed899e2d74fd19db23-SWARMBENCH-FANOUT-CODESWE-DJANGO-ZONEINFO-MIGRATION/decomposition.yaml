@@ -1,0 +1,81 @@
+sub_tasks:
+  - id: core-timezone-utils
+    description: >
+      Own /testbed/django/utils/timezone.py. Currently it imports pytz
+      unconditionally and uses pytz.utc everywhere. After your changes:
+      the file must import zoneinfo (not pytz) at module level, remove
+      any unconditional 'import pytz', set utc to datetime.timezone.utc,
+      use zoneinfo.ZoneInfo for timezone construction, and fall back to
+      pytz only when USE_DEPRECATED_PYTZ is True. The is_dst parameter
+      on make_aware() must emit a deprecation warning and its default
+      value must no longer be None.
+      Do not modify tests, docs, DB backends, or settings files.
+    depends_on: []
+    parallel_group: fan-out
+
+  - id: settings-and-config
+    description: >
+      Own /testbed/django/conf/ and /testbed/setup.cfg. Add a
+      USE_DEPRECATED_PYTZ setting (default False) that emits a deprecation
+      warning when overridden. In setup.cfg, remove pytz as a hard install
+      dependency and add backports.zoneinfo as a conditional dependency for
+      Python < 3.9 and tzdata for Windows.
+      Do not modify tests, docs, or other source files.
+    depends_on: []
+    parallel_group: fan-out
+
+  - id: db-backends-and-models
+    description: >
+      Own Django source files under /testbed/django/db/,
+      /testbed/django/templatetags/, and
+      /testbed/django/contrib/admin/templatetags/. Currently these layers
+      use pytz directly for timezone construction. After your changes:
+      both backends/base/base.py and backends/sqlite3/base.py should use
+      zoneinfo by default and reference USE_DEPRECATED_PYTZ for the pytz
+      fallback path — neither should have an unconditional pytz import.
+      The migration serializer (db/migrations/serializer.py) must not
+      produce pytz-specific representations like <UTC>.
+      templatetags/tz.py must import zoneinfo instead of pytz and handle
+      both ZoneInfoNotFoundError and pytz.UnknownTimeZoneError.
+      is_dst parameters in Trunc functions (db/models/functions/datetime.py)
+      and datetimes() (db/models/query.py) must no longer default to None.
+      Do not modify tests or docs.
+    depends_on: []
+    parallel_group: fan-out
+
+  - id: documentation
+    description: >
+      Own all files under /testbed/docs/. Update at minimum:
+      releases/4.0.txt, internals/deprecation.txt, ref/settings.txt,
+      topics/i18n/timezones.txt, ref/utils.txt, and
+      ref/models/database-functions.txt. After your changes, docs should
+      describe zoneinfo as the default, document USE_DEPRECATED_PYTZ, and
+      mark is_dst as deprecated. Do not modify any Python source or test
+      files.
+    depends_on: []
+    parallel_group: fan-out
+
+  - id: test-updates
+    description: >
+      Own all files under /testbed/tests/. Currently the tests assume pytz
+      is always available and is the default. After your changes, zoneinfo
+      should be the default in all tests, pytz imports should be
+      conditional, and there should be coverage for USE_DEPRECATED_PYTZ
+      and is_dst deprecation warnings. Do not modify Django source or docs.
+    depends_on: []
+    parallel_group: fan-out
+
+  - id: integration-verify
+    description: >
+      After all other agents finish, run these Django test suites:
+      utils_tests.test_timezone, settings_tests, timezones, datetimes,
+      migrations.test_writer. If any tests fail, diagnose and fix — pay
+      special attention to serializer output format and template tag error
+      handling for invalid timezone names.
+    depends_on:
+      - core-timezone-utils
+      - settings-and-config
+      - db-backends-and-models
+      - documentation
+      - test-updates
+    parallel_group: synthesize

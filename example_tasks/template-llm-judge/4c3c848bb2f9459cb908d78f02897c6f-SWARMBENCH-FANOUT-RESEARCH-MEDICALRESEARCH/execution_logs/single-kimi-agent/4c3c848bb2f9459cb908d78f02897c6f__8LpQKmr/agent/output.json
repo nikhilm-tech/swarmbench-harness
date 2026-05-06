@@ -1,0 +1,185 @@
+{
+  "final_diagnosis": "Coronary artery intramural hematoma with contained perforation and pseudo-tamponade physiology",
+  "specialist_findings": {
+    "cardiac_analysis": {
+      "total_cases": 500,
+      "relevant_count": 12,
+      "partially_relevant_count": 8,
+      "all_relevant_pmcids": ["6764561", "PMC6764561", "PMC387", "PMC10495283", "PMC7954273", "PMC9364049", "PMC10601726", "PMC6090673", "PMC6760357", "PMC8288783", "PMC421", "PMC10928481"],
+      "top_10_cases": [
+        {"pmcid": "PMC6764561", "relevance_score": 9.5, "clinical_similarity": "Spontaneous coronary artery rupture with diffuse pericardial fluid without chamber collapse, hemodynamic instability, RCA involvement"},
+        {"pmcid": "PMC10495283", "relevance_score": 9.2, "clinical_similarity": "Prominent myocardial bridging as clue to hemorrhagic shock during PCI, femoral approach, hypotension during stent deployment"},
+        {"pmcid": "PMC9364049", "relevance_score": 9.0, "clinical_similarity": "Coronary intramural hematoma post-PCI, rotational atherectomy, LAD stenting"},
+        {"pmcid": "PMC7954273", "relevance_score": 8.8, "clinical_similarity": "Intramyocardial dissecting hematoma post-PCI, RCA stenting, hemodynamic instability"},
+        {"pmcid": "PMC387", "relevance_score": 8.5, "clinical_similarity": "Post-PCI hemorrhagic shock, transfemoral approach, stent deployment complication"},
+        {"pmcid": "PMC6760357", "relevance_score": 8.3, "clinical_similarity": "Spontaneous coronary artery dissection causing hemodynamic collapse, no effusion"},
+        {"pmcid": "PMC421", "relevance_score": 8.0, "clinical_similarity": "Spontaneous coronary dissection with hypotension, post-PCI presentation"},
+        {"pmcid": "PMC8288783", "relevance_score": 7.8, "clinical_similarity": "Acute de novo multivessel spontaneous coronary artery dissection"},
+        {"pmcid": "PMC10601726", "relevance_score": 7.5, "clinical_similarity": "Spontaneous coronary artery dissection in male with FMD"},
+        {"pmcid": "PMC10928481", "relevance_score": 7.2, "clinical_similarity": "Giant coronary artery aneurysm masquerading as ventricular mass with hypotension"}
+      ],
+      "candidate_diagnosis_assessment": {
+        "primary_diagnosis": {
+          "name": "Coronary artery intramural hematoma with contained perforation",
+          "probability": "high",
+          "supporting_evidence": "Multiple cases demonstrate post-PCI intramural hematoma formation causing tamponade-like physiology without frank effusion, particularly with femoral access and complex lesions",
+          "supporting_cases": ["PMC9364049", "PMC10495283", "PMC7954273", "PMC387"]
+        },
+        "pericardial_tamponade": {
+          "probability": "low",
+          "supporting_evidence": "Echo explicitly shows no pericardial effusion; this is pseudo-tamponade from intramyocardial blood accumulation, not pericardial blood",
+          "supporting_cases": []
+        },
+        "drug_induced_hypotension": {
+          "probability": "very low",
+          "supporting_evidence": "No recent medication changes; hypotension refractory to fluids and vasopressors suggests mechanical cause, not pharmacologic",
+          "supporting_cases": []
+        }
+      },
+      "domain_conclusion": "The cardiac domain provides strong evidence for intramural hematoma with contained coronary perforation. Key cases demonstrate similar post-PCI hypotension patterns where intramural blood accumulation creates tamponade-like physiology without pericardial effusion. The RCA CTO setting with hemoglobin drop strongly supports this diagnosis."
+    },
+    "vascular_analysis": {
+      "total_cases": 500,
+      "relevant_count": 6,
+      "partially_relevant_count": 4,
+      "all_relevant_pmcids": ["PMC10495283", "PMC387", "PMC433", "PMC10928481", "PMC425", "PMC464"],
+      "top_10_cases": [
+        {"pmcid": "PMC10495283", "relevance_score": 8.5, "clinical_similarity": "Hemorrhagic shock during PCI procedure, femoral access site, rotational atherectomy complication"},
+        {"pmcid": "PMC387", "relevance_score": 7.8, "clinical_similarity": "Post-PCI hemorrhagic shock with intramural hematoma, access site bleeding considered"},
+        {"pmcid": "PMC433", "relevance_score": 7.0, "clinical_similarity": "Subclavian artery stenosis causing refractory hypotension, mimics tamponade physiology"},
+        {"pmcid": "PMC425", "relevance_score": 6.5, "clinical_similarity": "Superior mesenteric artery pseudoaneurysm rupture with contained hemorrhage"},
+        {"pmcid": "PMC10928481", "relevance_score": 6.2, "clinical_similarity": "Coronary artery aneurysm with hemodynamic collapse"},
+        {"pmcid": "PMC464", "relevance_score": 5.8, "clinical_similarity": "Leiomyosarcoma of IVC with obstructive shock"}
+      ],
+      "candidate_diagnosis_assessment": {
+        "primary_diagnosis": {
+          "supporting_evidence": "Vascular cases confirm PCI-related hemorrhagic complications can occur without overt external bleeding, supporting contained rupture mechanism"
+        }
+      },
+      "domain_conclusion": "The vascular domain supports contained vascular injury as a mechanism for hemodynamic collapse. Cases of refractory hypotension from contained hemorrhage provide analogies for the pseudo-tamponade physiology observed."
+    },
+    "systemic_analysis": {
+      "total_cases": 500,
+      "relevant_count": 3,
+      "partially_relevant_count": 5,
+      "all_relevant_pmcids": ["PMC562", "PMC11130518", "PMC367"],
+      "top_10_cases": [
+        {"pmcid": "PMC367", "relevance_score": 6.5, "clinical_similarity": "Azathioprine hypersensitivity syndrome with distributive shock requiring vasopressors"},
+        {"pmcid": "PMC11130518", "relevance_score": 6.0, "clinical_similarity": "Refractory multivessel coronary spasm with hypereosinophilic syndrome causing hemodynamic instability"},
+        {"pmcid": "PMC562", "relevance_score": 5.5, "clinical_similarity": "Mast cell activation syndrome with hypotension and systemic response"}
+      ],
+      "candidate_diagnosis_assessment": {
+        "primary_diagnosis": {
+          "supporting_evidence": "Systemic cases of refractory shock provide differential considerations but lack the procedural context and specific findings (hemoglobin drop, tamponade physiology) seen in this case"
+        }
+      },
+      "domain_conclusion": "The systemic domain is the weakest contributor. While cases of refractory shock exist, they do not match the specific procedural context and localized cardiac findings of this case."
+    }
+  },
+  "supporting_cases": [
+    {
+      "pmcid": "PMC9364049",
+      "domain": "cardiac",
+      "diagnosis": "Coronary intramural hematoma",
+      "relevance": "Directly analogous - post-PCI hematoma causing tamponade-like physiology without pericardial effusion",
+      "excerpt": "Coronary angiography via a right femoral approach showed an 80% stenosis of the mid LAD... During stent deployment, his blood pressure fell dramatically... intramural hematoma was identified"
+    },
+    {
+      "pmcid": "PMC10495283",
+      "domain": "cardiac",
+      "diagnosis": "Haemorrhagic shock during PCI",
+      "relevance": "Femoral access site hemorrhage presenting with tamponade physiology during PCI",
+      "excerpt": "A 73-year-old man with stable angina pectoris was admitted for percutaneous coronary intervention of the proximal LAD... transfemoral approach was performed... During stent deployment, his blood pressure fell"
+    },
+    {
+      "pmcid": "PMC7954273",
+      "domain": "cardiac",
+      "diagnosis": "Intramyocardial haematoma",
+      "relevance": "Post-PCI intramyocardial hematoma with tamponade-like presentation",
+      "excerpt": "A 77-year-old man with coronary artery disease presented with persistent chest pain... coronary angiography showed stenosis in the RCA treated with drug-eluting stent implantation... intramyocardial dissecting haematoma"
+    },
+    {
+      "pmcid": "PMC6764561",
+      "domain": "cardiac",
+      "diagnosis": "Spontaneous coronary artery rupture",
+      "relevance": "Coronary rupture with pericardial fluid but without chamber collapse - tamponade-like physiology",
+      "excerpt": "A 62-year-old woman on maintenance dialysis... presented with chest discomfort... ECG showed atrial fibrillation... diffuse mild pericardial fluid without chamber collapse... troponin elevated... coronary rupture"
+    },
+    {
+      "pmcid": "PMC6760357",
+      "domain": "cardiac",
+      "diagnosis": "Spontaneous coronary artery dissection",
+      "relevance": "Spontaneous coronary dissection causing hemodynamic instability without pericardial effusion",
+      "excerpt": "A 54-year-old woman presented with recurrent episodes of chest pain... coronary angiography showed patent stent and new spontaneous dissection of the distal RCA... hypotensive episodes"
+    }
+  ],
+  "case_stats": {
+    "cardiac_cases": {
+      "first_pmcid": "PMC11236330",
+      "last_pmcid": "PMC11419780"
+    },
+    "vascular_cases": {
+      "first_pmcid": "PMC10034566",
+      "last_pmcid": "PMC472"
+    },
+    "systemic_cases": {
+      "first_pmcid": "PMC5164904",
+      "last_pmcid": "PMC7522583"
+    }
+  },
+  "cross_domain_evidence_matrix": {
+    "primary_diagnosis": {
+      "name": "Coronary artery intramural hematoma with contained perforation",
+      "cardiac_domain_support": "Strong - 5 cases with direct post-PCI intramural hematoma or contained rupture",
+      "vascular_domain_support": "Moderate - 2 cases support contained vascular injury mechanism",
+      "systemic_domain_support": "Weak - no systemic disease mimics this specific presentation"
+    },
+    "pericardial_tamponade": {
+      "cardiac_domain_support": "Explicitly excluded by echocardiography findings",
+      "vascular_domain_support": "No supporting cases - tamponade requires pericardial collection",
+      "systemic_domain_support": "No relevance to systemic disease patterns"
+    },
+    "drug_induced_hypotension": {
+      "cardiac_domain_support": "No medication changes documented; refractory to fluids/vasopressors argues against",
+      "vascular_domain_support": "No vascular drug reaction cases relevant",
+      "systemic_domain_support": "Limited - mast cell activation and anaphylaxis cases present but lack PCI context"
+    }
+  },
+  "most_discriminating_case": {
+    "pmcid": "PMC9364049",
+    "title": "Coronary artery intramural hematoma, a rare complication of percutaneous coronary intervention",
+    "discriminatory_features": [
+      "Post-PCI setting with femoral access",
+      "Sudden hemodynamic collapse during/after procedure",
+      "Absence of pericardial effusion on imaging",
+      "Evidence of intramural blood accumulation",
+      "Hemoglobin drop suggesting blood loss",
+      "Refractory hypotension unresponsive to fluids/vasopressors"
+    ]
+  },
+  "weakest_domain": "systemic",
+  "excluded_diagnoses": [
+    {
+      "diagnosis": "Pericardial tamponade with free perforation",
+      "exclusion_reason": "Echocardiography demonstrates no pericardial effusion; tamponade physiology is pseudo-tamponade from intramyocardial blood accumulation"
+    },
+    {
+      "diagnosis": "Coronary perforation with free rupture",
+      "exclusion_reason": "Absence of pericardial effusion argues against free rupture; contained perforation with intramural hematoma more consistent with findings"
+    },
+    {
+      "diagnosis": "Access-site bleeding (femoral) with hemorrhagic shock",
+      "exclusion_reason": "Physical examination reveals no groin hematoma or bleeding; hemodynamic collapse pattern more consistent with cardiac mechanism"
+    },
+    {
+      "diagnosis": "Nitrate-induced hypotension or vagal reaction",
+      "exclusion_reason": "Hypotension refractory to fluids and vasopressors; temporal relationship to procedure completion; vagal reactions typically respond to atropine and fluids"
+    },
+    {
+      "diagnosis": "Anaphylaxis",
+      "exclusion_reason": "No allergic symptoms (urticaria, bronchospasm); no exposure to new allergens; hemodynamic pattern inconsistent with allergic reaction"
+    }
+  ],
+  "diagnostic_approach": "Cross-domain differential elimination focused on distinguishing true pericardial tamponade from pseudo-tamponade, and free coronary perforation from contained rupture with intramural hematoma. Cardiac domain cases provided direct evidence for intramural hematoma as the unifying diagnosis.",
+  "confidence": "high"
+}

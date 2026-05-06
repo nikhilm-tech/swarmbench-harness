@@ -1,0 +1,25 @@
+[task]
+name = "swarmbench/6dc8392b6526c924226de175ac891285-SWARMBENCH-FANOUT-CODE-SWE-NETBOX-DECABUG"
+description = "Fix sixteen independent bugs across the NetBox DCIM/IPAM/tenancy application: S3 duplicate filenames (#21801), double sync_classes on ScriptModule save (#21869), humanize_speed decimal formatting (#21795), cable powerfeed CSV import (#21783), interface speed overflow (#21542), missing plugin content panels on declarative views (#21913), erroneous script module registration (#21737), YAML export missing port mappings (#21704), CSV whitespace in connection column (#21845), custom fields changelog leak (#21529), port-mapping import with module placeholders (#21683), script last-run time (#21814), API_TOKEN_PEPPERS dict subclass rejection (#21875), script module edit button permission (#21841), ColorField misleading help text (#21835), and contact group count double-counting (#21538)."
+
+[metadata]
+verifier_type = "executable"
+domain = "code-swe"
+coordination_pattern = "fan-out-synthesize"
+human_solving_hours_estimate = 16.0
+human_solving_hours_justification = "Sixteen bugs across NetBox. Five are simple one-line fixes averaging ~15min each: sync_classes signal removal, ordering field swap, isinstance check, permission string rename, help_text removal (~1.25h total). Six are moderate requiring form/serializer changes averaging ~1h each: cable import, YAML export, CSV whitespace, custom fields validation, port mapping scoping, contact group annotation (~6h). Five are complex spanning multiple files averaging ~1.75h each: S3 storage refactor, humanize_speed rewrite, speed overflow across model+migration+forms+filters+GraphQL, plugin panels across multiple views, script validation on form+API paths (~8.75h). Total ~16h for a senior Django developer familiar with the codebase."
+estimated_sub_agents = 17
+input_token_estimate = 900000
+reference_link = "https://github.com/netbox-community/netbox/milestone/74"
+why_multi_agent = "NetBox is a large Django application with ~96K lines of Python across 600+ files. Sixteen bugs are spread across dcim models, forms, filters, GraphQL types, extras API serializers, utility functions, model signal handlers, IPAM views, core views, tenancy models/views/API, templates, security validation, and template tag filters. A single agent must sequentially explore and fix each bug, losing context between modules. Sixteen parallel sub-agents can each focus on one bug with clean isolated context, then a synthesizer verifies no regressions."
+
+[agent]
+timeout_sec = 10
+
+[verifier]
+timeout_sec = 300
+
+[environment]
+cpus = 2
+memory_mb = 4096
+build_timeout_sec = 600

@@ -1,0 +1,25 @@
+/tests/verify.py:273: DeprecationWarning: There is no current event loop
+  results = asyncio.get_event_loop().run_until_complete(concurrent_reads())
+[04/16/26 15:57:01] WARNING  FileSystemProvider root does not  filesystem.py:112
+                             exist:                                             
+                             /tmp/tmp1v_jo8q4/nonexistent_prov                  
+                             ider_root_42                                       
+                    WARNING  FileSystemProvider root does not  filesystem.py:112
+                             exist:                                             
+                             /tmp/tmp1v_jo8q4/nonexistent_prov                  
+                             ider_root_42                                       
+  PASS  sys.path cleanup after non-package import
+  PASS  sys.path cleanup after package-mode import
+  PASS  sys.path cleanup when import raises exception
+  PASS  stdlib json not shadowed by provider file
+  PASS  _find_package_root stops at provider boundary
+  PASS  import_module_from_file accepts provider_root
+  PASS  discover_and_import passes provider_root
+  PASS  Reload lock covers both reload and read
+  PASS  Reload lock under heavy concurrency
+  PASS  Concurrent reloads are deduplicated
+  PASS  Non-existent root logs a warning
+  PASS  Regression: discover_and_import still works
+
+Result: 12/12 checks passed
+Reward: 1.0000

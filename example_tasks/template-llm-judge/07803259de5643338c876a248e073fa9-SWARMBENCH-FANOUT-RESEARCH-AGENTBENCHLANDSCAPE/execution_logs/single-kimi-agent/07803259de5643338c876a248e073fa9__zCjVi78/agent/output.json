@@ -1,0 +1,242 @@
+{
+  "benchmarks": [
+    {
+      "benchmark_name": "API-Bank",
+      "num_domains": 1000,
+      "num_domains_statement_from_the_paper": [
+        "For the second question, we construct a comprehensive training set containing 1,888 tool-use dialogues from 2,138 APIs spanning 1,000 distinct domains."
+      ],
+      "num_tasks": "314",
+      "num_tasks_statement_from_the_paper": [
+        "For the first question, we develop a runnable evaluation system consisting of 73 API tools. We annotate 314 tool-use dialogues with 753 API calls to assess the existing LLMs' capabilities in planning, retrieving, and calling APIs."
+      ],
+      "has_human_task_curation": true,
+      "has_human_task_curation_statement_from_the_paper": [
+        "We annotate 314 tool-use dialogues with 753 API calls to assess the existing LLMs' capabilities"
+      ],
+      "has_refusal_ability": false,
+      "has_refusal_ability_statement_from_the_paper": [],
+      "has_human_plans": true,
+      "has_human_plans_statement_from_the_paper": [
+        "We annotate 314 tool-use dialogues with 753 API calls"
+      ]
+    },
+    {
+      "benchmark_name": "ACEBench",
+      "num_domains": 3,
+      "num_domains_statement_from_the_paper": [
+        "ACEBench categorizes data into three primary types based on evaluation methodology: Normal, Special, and Agent."
+      ],
+      "num_tasks": "not provided",
+      "num_tasks_statement_from_the_paper": [],
+      "has_human_task_curation": true,
+      "has_human_task_curation_statement_from_the_paper": [
+        "Normal evaluates tool usage in basic scenarios; Special evaluates tool usage in situations with ambiguous or incomplete instructions; Agent evaluates tool usage through multi-agent interactions to simulate real-world, multi-turn dialogues."
+      ],
+      "has_refusal_ability": true,
+      "has_refusal_ability_statement_from_the_paper": [
+        "Special evaluates tool usage in situations with ambiguous or incomplete instructions"
+      ],
+      "has_human_plans": false,
+      "has_human_plans_statement_from_the_paper": [
+        "reliance on LLMs or real API executions for evaluation"
+      ]
+    },
+    {
+      "benchmark_name": "τ-bench",
+      "num_domains": 2,
+      "num_domains_statement_from_the_paper": [
+        "We propose τ-bench, a benchmark emulating dynamic conversations between a user (simulated by language models) and a language agent provided with domain-specific API tools and policy guidelines. We also propose a new metric (pass^k) to evaluate the reliability of agent behavior over multiple trials. Our experiments show that even state-of-the-art function calling agents (like gpt-4o) succeed on <50% of the tasks, and are quite inconsistent (pass^8 <25% in retail).",
+        "Existing benchmarks do not test language agents on their interaction with human users or ability to follow domain-specific rules, both of which are vital for deploying them in real world applications."
+      ],
+      "num_tasks": "not provided",
+      "num_tasks_statement_from_the_paper": [],
+      "has_human_task_curation": true,
+      "has_human_task_curation_statement_from_the_paper": [
+        "We employ an efficient and faithful evaluation process that compares the database state at the end of a conversation with the annotated goal state."
+      ],
+      "has_refusal_ability": true,
+      "has_refusal_ability_statement_from_the_paper": [
+        "ability to follow domain-specific rules",
+        "Agents must accurately adhere to complex policies and rules specific to a task or domain"
+      ],
+      "has_human_plans": true,
+      "has_human_plans_statement_from_the_paper": [
+        "compares the database state at the end of a conversation with the annotated goal state"
+      ]
+    },
+    {
+      "benchmark_name": "τ²-bench",
+      "num_domains": 1,
+      "num_domains_statement_from_the_paper": [
+        "we introduce τ²-bench, with four key contributions: 1) A novel Telecom dual-control domain modeled as a Dec-POMDP, where both agent and user make use of tools to act in a shared, dynamic environment"
+      ],
+      "num_tasks": "not provided",
+      "num_tasks_statement_from_the_paper": [],
+      "has_human_task_curation": false,
+      "has_human_task_curation_statement_from_the_paper": [
+        "A compositional task generator that programmatically creates diverse, verifiable tasks from atomic components"
+      ],
+      "has_refusal_ability": false,
+      "has_refusal_ability_statement_from_the_paper": [],
+      "has_human_plans": false,
+      "has_human_plans_statement_from_the_paper": [
+        "A compositional task generator that programmatically creates diverse, verifiable tasks from atomic components"
+      ]
+    },
+    {
+      "benchmark_name": "WorkArena",
+      "num_domains": 5,
+      "num_domains_statement_from_the_paper": [
+        "Unlike prior work, we focus on measuring the agents' ability to perform tasks that span the typical daily work of knowledge workers utilizing enterprise software systems."
+      ],
+      "num_tasks": "33",
+      "num_tasks_statement_from_the_paper": [
+        "we propose WorkArena, a remote-hosted benchmark of 33 tasks based on the widely-used ServiceNow platform."
+      ],
+      "has_human_task_curation": true,
+      "has_human_task_curation_statement_from_the_paper": [
+        "benchmark of 33 tasks based on the widely-used ServiceNow platform"
+      ],
+      "has_refusal_ability": false,
+      "has_refusal_ability_statement_from_the_paper": [],
+      "has_human_plans": true,
+      "has_human_plans_statement_from_the_paper": [
+        "We also introduce BrowserGym, an environment for the design and evaluation of such agents, offering a rich set of actions as well as multimodal observations."
+      ]
+    },
+    {
+      "benchmark_name": "WorkArena++",
+      "num_domains": 5,
+      "num_domains_statement_from_the_paper": [
+        "WorkArena++ is designed to evaluate the planning, problem-solving, logical/arithmetic reasoning, retrieval, and contextual understanding abilities of web agents."
+      ],
+      "num_tasks": "682",
+      "num_tasks_statement_from_the_paper": [
+        "we propose WorkArena++, a novel benchmark consisting of 682 tasks corresponding to realistic workflows routinely performed by knowledge workers."
+      ],
+      "has_human_task_curation": true,
+      "has_human_task_curation_statement_from_the_paper": [
+        "682 tasks corresponding to realistic workflows routinely performed by knowledge workers"
+      ],
+      "has_refusal_ability": false,
+      "has_refusal_ability_statement_from_the_paper": [],
+      "has_human_plans": true,
+      "has_human_plans_statement_from_the_paper": [
+        "we provide a mechanism to effortlessly generate thousands of ground-truth observation/action traces"
+      ]
+    },
+    {
+      "benchmark_name": "ITBench",
+      "num_domains": 3,
+      "num_domains_statement_from_the_paper": [
+        "Our initial release targets three key areas: Site Reliability Engineering (SRE), Compliance and Security Operations (CISO), and Financial Operations (FinOps)."
+      ],
+      "num_tasks": "94",
+      "num_tasks_statement_from_the_paper": [
+        "ITBench includes an initial set of 94 real-world scenarios, which can be easily extended by community contributions."
+      ],
+      "has_human_task_curation": true,
+      "has_human_task_curation_statement_from_the_paper": [
+        "ITBench includes an initial set of 94 real-world scenarios"
+      ],
+      "has_refusal_ability": true,
+      "has_refusal_ability_statement_from_the_paper": [
+        "We expect ITBench to be a key enabler of AI-driven IT automation that is correct, safe, and fast."
+      ],
+      "has_human_plans": false,
+      "has_human_plans_statement_from_the_paper": [
+        "interpretable metrics",
+        "push-button workflows"
+      ]
+    },
+    {
+      "benchmark_name": "WorkBench",
+      "num_domains": 5,
+      "num_domains_statement_from_the_paper": [
+        "WorkBench contains a sandbox environment with five databases, 26 tools, and 690 tasks."
+      ],
+      "num_tasks": "690",
+      "num_tasks_statement_from_the_paper": [
+        "WorkBench contains a sandbox environment with five databases, 26 tools, and 690 tasks."
+      ],
+      "has_human_task_curation": true,
+      "has_human_task_curation_statement_from_the_paper": [
+        "WorkBench contains a sandbox environment with five databases, 26 tools, and 690 tasks."
+      ],
+      "has_refusal_ability": true,
+      "has_refusal_ability_statement_from_the_paper": [
+        "WorkBench reveals weaknesses in agents' ability to undertake common business activities, raising questions about their use in high-stakes workplace settings."
+      ],
+      "has_human_plans": false,
+      "has_human_plans_statement_from_the_paper": [
+        "The correct outcome for each task is unique and unambiguous, which allows for robust, automated evaluation. We call this key contribution outcome-centric evaluation."
+      ]
+    },
+    {
+      "benchmark_name": "TheAgentCompany",
+      "num_domains": 1,
+      "num_domains_statement_from_the_paper": [
+        "We build a self-contained environment with internal web sites and data that mimics a small software company environment"
+      ],
+      "num_tasks": "not provided",
+      "num_tasks_statement_from_the_paper": [],
+      "has_human_task_curation": true,
+      "has_human_task_curation_statement_from_the_paper": [
+        "create a variety of tasks that may be performed by workers in such a company"
+      ],
+      "has_refusal_ability": false,
+      "has_refusal_ability_statement_from_the_paper": [],
+      "has_human_plans": false,
+      "has_human_plans_statement_from_the_paper": [
+        "find that the most competitive agent can complete 30% of tasks autonomously"
+      ]
+    },
+    {
+      "benchmark_name": "CRMArena",
+      "num_domains": 3,
+      "num_domains_statement_from_the_paper": [
+        "we designed CRMArena with nine customer service tasks distributed across three personas: service agent, analyst, and manager."
+      ],
+      "num_tasks": "9",
+      "num_tasks_statement_from_the_paper": [
+        "we designed CRMArena with nine customer service tasks distributed across three personas: service agent, analyst, and manager."
+      ],
+      "has_human_task_curation": true,
+      "has_human_task_curation_statement_from_the_paper": [
+        "Following guidance from CRM experts and industry best practices, we designed CRMArena"
+      ],
+      "has_refusal_ability": true,
+      "has_refusal_ability_statement_from_the_paper": [
+        "Our findings highlight the need for enhanced agent capabilities in function-calling and rule-following to be deployed in real-world work environments."
+      ],
+      "has_human_plans": false,
+      "has_human_plans_statement_from_the_paper": [
+        "state-of-the-art LLM agents succeed in less than 40% of the tasks with ReAct prompting"
+      ]
+    },
+    {
+      "benchmark_name": "CRMArena-Pro",
+      "num_domains": 5,
+      "num_domains_statement_from_the_paper": [
+        "CRMArena-Pro expands on CRMArena with nineteen expert-validated tasks across sales, service, and 'configure, price, and quote' processes, for both Business-to-Business and Business-to-Customer scenarios."
+      ],
+      "num_tasks": "19",
+      "num_tasks_statement_from_the_paper": [
+        "CRMArena-Pro expands on CRMArena with nineteen expert-validated tasks across sales, service, and 'configure, price, and quote' processes"
+      ],
+      "has_human_task_curation": true,
+      "has_human_task_curation_statement_from_the_paper": [
+        "nineteen expert-validated tasks"
+      ],
+      "has_refusal_ability": true,
+      "has_refusal_ability_statement_from_the_paper": [
+        "robust confidentiality awareness assessments"
+      ],
+      "has_human_plans": false,
+      "has_human_plans_statement_from_the_paper": [
+        "agents exhibit near-zero inherent confidentiality awareness"
+      ]
+    }
+  ]
+}

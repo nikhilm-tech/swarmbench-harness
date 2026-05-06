@@ -1,0 +1,152 @@
+coordination_pattern: fan-out-synthesize
+
+sub_tasks:
+  - id: fix_s3_duplicate_filenames
+    description: >
+      Fix image attachment uploads so filenames are always unique regardless
+      of storage backend. Refactor the upload path logic to use Django's
+      built-in collision avoidance even when an S3 backend is configured.
+    depends_on: []
+    parallel_group: fix
+
+  - id: fix_sync_classes_twice
+    description: >
+      Fix ScriptModule.save() so that class synchronization runs exactly once
+      per save instead of twice. Remove the redundant post-save signal handler.
+    depends_on: []
+    parallel_group: fix
+
+  - id: fix_humanize_speed_decimal
+    description: >
+      Update the humanize_speed template filter to always display speeds using
+      the largest appropriate unit, including decimal values where the result
+      is not a whole number (e.g. 2.5 Gbps, 1.6 Tbps).
+    depends_on: []
+    parallel_group: fix
+
+  - id: fix_cable_powerfeed_import
+    description: >
+      Fix cable CSV bulk import to handle power feed terminations that belong
+      to power panels instead of devices. Add power panel fields and update
+      the termination lookup logic to distinguish between device-based and
+      power-panel-based termination types.
+    depends_on: []
+    parallel_group: fix
+
+  - id: fix_speed_overflow
+    description: >
+      Fix the interface speed field that overflows above 2.1 Tbps by widening it
+      from a 32-bit integer to a 64-bit integer. Update the model, create a migration,
+      update all forms and filters that constrain the speed range, and update
+      the GraphQL schema.
+    depends_on: []
+    parallel_group: fix
+
+  - id: fix_plugin_content_panels
+    description: >
+      Restore plugin template extension support on detail views that use
+      declarative layouts. Add the missing PluginContentPanel slots to
+      views that were converted from template-based to declarative layouts.
+    depends_on: []
+    parallel_group: fix
+
+  - id: fix_faulty_script_registration
+    description: >
+      Add validation to the script upload path so that files with import or
+      syntax errors are rejected before being persisted to the database. This
+      prevents broken script modules from blocking re-uploads.
+    depends_on: []
+    parallel_group: fix
+
+  - id: fix_yaml_export_mappings
+    description: >
+      Add port-mapping data to the YAML export for device types and module types.
+      Create a serialization method on the port mapping model and call it from
+      both device type and module type export routines.
+    depends_on: []
+    parallel_group: fix
+
+  - id: fix_csv_connection_whitespace
+    description: >
+      Fix the interface CSV export so the connection column produces clean
+      single-line values instead of multi-line template whitespace artifacts.
+      Add a value method that formats connection data for CSV output.
+    depends_on: []
+    parallel_group: fix
+
+  - id: fix_custom_fields_changelog
+    description: >
+      Fix the API serializer to reject custom field names that do not exist for
+      the given object type. Ensure unknown keys are not persisted or shown in
+      change logs. Preserve any normalization the model clean performs.
+    depends_on: []
+    parallel_group: fix
+
+  - id: fix_port_mapping_import
+    description: >
+      Fix the module type YAML import so that port-mapping lookups are scoped
+      to the specific module type being imported. This prevents "get() returned
+      more than one" errors when multiple module types share similar port names.
+    depends_on: []
+    parallel_group: fix
+
+  - id: fix_script_last_run_time
+    description: >
+      Fix the custom script "last run" display to show the job's actual start
+      time instead of its creation/scheduling time. Update the query ordering
+      that computes this timestamp.
+    depends_on: []
+    parallel_group: fix
+
+  - id: fix_peppers_isinstance
+    description: >
+      Fix the API_TOKEN_PEPPERS configuration validation so it accepts
+      OrderedDict and other dict subclasses, not only plain dict instances.
+    depends_on: []
+    parallel_group: fix
+
+  - id: fix_script_edit_button
+    description: >
+      Fix the script module edit button visibility for non-superusers by
+      correcting the permission name checked in the template.
+    depends_on: []
+    parallel_group: fix
+
+  - id: fix_colorfield_help_text
+    description: >
+      Remove the misleading help text from the ColorField form field that
+      suggests manual hexadecimal input when the widget is a dropdown picker.
+    depends_on: []
+    parallel_group: fix
+
+  - id: fix_contact_group_count
+    description: >
+      Fix the contact group listing so that contacts assigned to multiple
+      child groups under the same parent are not double-counted. Replace
+      django-mptt's add_related_count with a custom manager annotation
+      that deduplicates contacts, and fix the detail view queryset.
+    depends_on: []
+    parallel_group: fix
+
+  - id: verify_all_fixes
+    description: >
+      Run the full verification suite to confirm all sixteen bugs are fixed
+      and no regressions were introduced.
+    depends_on:
+      - fix_s3_duplicate_filenames
+      - fix_sync_classes_twice
+      - fix_humanize_speed_decimal
+      - fix_cable_powerfeed_import
+      - fix_speed_overflow
+      - fix_plugin_content_panels
+      - fix_faulty_script_registration
+      - fix_yaml_export_mappings
+      - fix_csv_connection_whitespace
+      - fix_custom_fields_changelog
+      - fix_port_mapping_import
+      - fix_script_last_run_time
+      - fix_peppers_isinstance
+      - fix_script_edit_button
+      - fix_colorfield_help_text
+      - fix_contact_group_count
+    parallel_group: verify

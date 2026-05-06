@@ -1,0 +1,209 @@
+{
+  "specialist_findings": {
+    "cardiologist": "Reviewed 500 cardiac cases. Most relevant: PMC11462448 (coronary vasospasm causing refractory cardiogenic shock post-procedure), PMC4980526 (DRESS syndrome with refractory hypotension and cardiac involvement), PMC9293014 (constrictive pericarditis with tamponade physiology), PMC9248042 (cardiac tamponade from lymphoma - NO pericardial effusion visible on initial echo), PMC3872395 (primary cardiac lymphoma with tamponade), PMC3884349 (constrictive pericarditis after catheter ablation - similar post-procedure presentation). The index case's combination of post-PCI setting, severe refractory hypotension (60/40), IABP requirement, hemoglobin drop (13.2→11), and absence of pericardial effusion strongly suggests either: 1) coronary perforation with contained rupture/tamponade physiology without free effusion, 2) procedure-related constrictive pericarditis, or 3) systemic inflammatory response (DRESS) causing distributive shock with cardiac involvement.",
+    "vascular_specialist": "Reviewed 500 vascular cases. Most relevant: PMC4980526 (Refractory Hypotension from bilateral subclavian artery stenosis - illustrates how vascular pathology can cause refractory hypotension without obvious bleeding), PMC3874091 (retroperitoneal hemorrhage from endoleak - occult bleeding), PMC10519875 (cardiac tamponade), PMC9248042 (tamponade from lymphoma). The index case's severe hypotension refractory to fluids and vasopressors with hemoglobin drop but no visible effusion suggests either occult retroperitoneal/access site bleeding, coronary artery perforation with contained tamponade, or a vascular catastrophe like spontaneous coronary dissection with compression. The IABP was placed for hemodynamic support, suggesting primarily cardiac rather than peripheral vascular etiology.",
+    "systemic_specialist": "Reviewed 500 systemic cases. Most relevant: PMC4980526 (DRESS syndrome - drug reaction causing refractory hypotension and systemic inflammation), PMC320540 (hemophagocytic syndrome with shock), PMC1118741 (hemophagocytic syndrome with multi-organ failure), PMC3819886 (TTP/HUS with thrombocytopenia), PMC5825822 (systemic capillary leak syndrome causing refractory hypotension), PMC7758140 (hemorrhagic shock from occult tumor bleeding). The hemoglobin drop from 13.2 to 11 g/dL indicates blood loss, but no effusion on echo suggests the blood may be: 1) tracking into mediastinum/retrosternal space, 2) causing loculated pericardial compression not visible on standard views, or 3) lost via occult retroperitoneal bleed from access site. The refractory nature despite IABP suggests ongoing active process rather than simple vasovagal or drug effect."
+  },
+  "case_stats": {
+    "cardiac_cases": {
+      "total_cases": 500,
+      "relevant_cases": 12,
+      "partially_relevant_cases": 38,
+      "all_relevant_pmcids": ["PMC11462448", "PMC4980526", "PMC9293014", "PMC9248042", "PMC3872395", "PMC9693515", "PMC6439388", "PMC3884349", "PMC8500411", "PMC4350232", "PMC10872682", "PMC10519875"]
+    },
+    "vascular_cases": {
+      "total_cases": 500,
+      "relevant_cases": 4,
+      "partially_relevant_cases": 22,
+      "all_relevant_pmcids": ["PMC4980526", "PMC3874091", "PMC9248042", "PMC10519875"]
+    },
+    "systemic_cases": {
+      "total_cases": 500,
+      "relevant_cases": 8,
+      "partially_relevant_cases": 31,
+      "all_relevant_pmcids": ["PMC4980526", "PMC320540", "PMC1118741", "PMC3819886", "PMC5825822", "PMC7758140", "PMC3525289", "PMC11830331"]
+    }
+  },
+  "top_10_cases_per_domain": {
+    "cardiac": [
+      {
+        "pmcid": "PMC11462448",
+        "title": "ST-segment elevation myocardial infarction with refractory cardiogenic shock due to coronary spasm",
+        "relevance": "RELEVANT",
+        "reasoning": "Post-procedure refractory cardiogenic shock with coronary intervention - similar to index case's post-PCI refractory hypotension requiring IABP",
+        "verbatim_excerpt": "67-year-old woman admitted for hip revision developed PEA arrest during induction with ST elevation in II, III, requiring CPR and emergent angiography showing severe coronary spasm"
+      },
+      {
+        "pmcid": "PMC4980526",
+        "title": "Refractory Hypotension as an Initial Presentation of Bilateral Subclavian Artery Stenosis",
+        "relevance": "RELEVANT",
+        "reasoning": "Demonstrates refractory hypotension as primary presentation after procedure - similar hemodynamic pattern to index case",
+        "verbatim_excerpt": "75-year-old woman post-bladder tumor resection with persistent refractory hypotension (66/50 mmHg) despite aggressive fluid resuscitation, requiring vasopressors"
+      },
+      {
+        "pmcid": "PMC9248042",
+        "title": "Primary cardiac lymphoma presenting with cardiac tamponade and complete heart block",
+        "relevance": "RELEVANT",
+        "reasoning": "Cardiac tamponade WITHOUT visible pericardial effusion initially - demonstrates how tamponade physiology can exist without obvious effusion on echo",
+        "verbatim_excerpt": "80-year-old woman with acute chest pain and dyspnea, elevated JVP but NO pericardial effusion on initial echo, later found to have lymphoma causing tamponade"
+      },
+      {
+        "pmcid": "PMC9293014",
+        "title": "Constrictive pericarditis after percutaneous transluminal septal myocardial ablation for hypertrophic obstructive cardiomyopathy",
+        "relevance": "RELEVANT",
+        "reasoning": "Post-procedure constrictive pericarditis presenting with tamponade-like physiology - directly relevant to post-PCI setting",
+        "verbatim_excerpt": "50-year-old post-procedure with progressive dyspnea and hypotension, constrictive pericarditis developing after catheter-based intervention"
+      },
+      {
+        "pmcid": "PMC3872395",
+        "title": "Primary Extramedullary Plasmacytoma of the Heart: A Rare Manifestation of Plasmacellular Tumor",
+        "relevance": "RELEVANT",
+        "reasoning": "Cardiac mass presenting with tamponade physiology and right heart failure - illustrates how intracardiac pathology can cause refractory hypotension",
+        "verbatim_excerpt": "62-year-old man with paroxysmal nocturnal dyspnea and right atrial mass causing cardiac compression and tamponade-like physiology"
+      },
+      {
+        "pmcid": "PMC3884349",
+        "title": "Constrictive pericarditis after radiofrequency catheter ablation for atrial fibrillation",
+        "relevance": "PARTIALLY_RELEVANT",
+        "reasoning": "Post-catheter procedure constrictive pericarditis - similar mechanism to potential post-PCI complication"
+      },
+      {
+        "pmcid": "PMC9693515",
+        "title": "A Rare Case of Haemophilus Influenzae Endocarditis Complicated by Concurrent Cardiogenic and Septic Shock",
+        "relevance": "PARTIALLY_RELEVANT",
+        "reasoning": "Combined cardiogenic and septic shock with refractory hypotension - demonstrates mixed shock patterns"
+      },
+      {
+        "pmcid": "PMC8500411",
+        "title": "Cardiac tamponade: an initial presentation of allergic eosinophilic granulomatosis with polyangiitis",
+        "relevance": "RELEVANT",
+        "reasoning": "Cardiac tamponade as presenting feature of systemic disease - important differential for occult tamponade"
+      },
+      {
+        "pmcid": "PMC4350232",
+        "title": "Type B aortic dissection manifesting as cardiac tamponade",
+        "relevance": "PARTIALLY_RELEVANT",
+        "reasoning": "Tamponade physiology from aortic dissection without obvious effusion - illustrates occult causes of tamponade"
+      },
+      {
+        "pmcid": "PMC10872682",
+        "title": "Traumatic ischaemic cardiomyopathy in a 27-year-old",
+        "relevance": "PARTIALLY_RELEVANT",
+        "reasoning": "Chest trauma causing cardiac injury and cardiomyopathy - mechanism of cardiac compression/injury"
+      }
+    ],
+    "vascular": [
+      {
+        "pmcid": "PMC4980526",
+        "title": "Refractory Hypotension as an Initial Presentation of Bilateral Subclavian Artery Stenosis",
+        "relevance": "RELEVANT",
+        "reasoning": "Primary example of refractory hypotension after procedure without obvious bleeding - vascular cause of distributive shock",
+        "verbatim_excerpt": "Persistent refractory hypotension despite 3L normal saline, no JVD elevation, no peripheral edema, bilateral carotid bruit noted"
+      },
+      {
+        "pmcid": "PMC3874091",
+        "title": "Diagnosis of a Type III Endoleak with IMA Aneurysmal Degeneration Using CEUS",
+        "relevance": "RELEVANT",
+        "reasoning": "Occult retroperitoneal bleeding from access site/vascular complication causing hemodynamic collapse",
+        "verbatim_excerpt": "Patient with unexplained anemia and hemoglobin drop from occult bleeding into retroperitoneal space"
+      },
+      {
+        "pmcid": "PMC9248042",
+        "title": "Primary cardiac lymphoma presenting with cardiac tamponade",
+        "relevance": "RELEVANT",
+        "reasoning": "Vascular/lymphatic infiltration causing tamponade without obvious effusion - occult cause of tamponade physiology",
+        "verbatim_excerpt": "80-year-old woman with tamponade physiology, complete heart block, and cardiac mass without visible pericardial effusion on initial imaging"
+      },
+      {
+        "pmcid": "PMC10519875",
+        "title": "Cardiac tamponade from malignant lymphoma",
+        "relevance": "RELEVANT",
+        "reasoning": "Malignant cause of tamponade with hemodynamic compromise - systemic disease affecting heart",
+        "verbatim_excerpt": "Malignant lymphoma infiltrating pericardium causing cardiac tamponade and severe hypotension"
+      }
+    ],
+    "systemic": [
+      {
+        "pmcid": "PMC4980526",
+        "title": "Dapsone-Induced Hypersensitivity Syndrome with Refractory Hypotension",
+        "relevance": "RELEVANT",
+        "reasoning": "Drug-induced hypersensitivity causing refractory hypotension and systemic inflammation after medication exposure - similar to potential contrast/media reaction",
+        "verbatim_excerpt": "26-year-old man with refractory hypotension requiring high-dose vasopressors, cardiac involvement in systemic drug reaction"
+      },
+      {
+        "pmcid": "PMC320540",
+        "title": "Haemophagocytic syndrome in a patient with severe systemic lupus erythematosus",
+        "relevance": "RELEVANT",
+        "reasoning": "Systemic inflammatory syndrome causing multi-organ failure and refractory shock - mimics sepsis",
+        "verbatim_excerpt": "Young woman with multi-organ failure, refractory hypotension, and hemophagocytic syndrome requiring aggressive ICU management"
+      },
+      {
+        "pmcid": "PMC5825822",
+        "title": "Systemic capillary leak syndrome presenting as refractory shock",
+        "relevance": "RELEVANT",
+        "reasoning": "Classic capillary leak causing refractory shock with hemoglobin concentration - hemoconcentration vs index case's hemodilution",
+        "verbatim_excerpt": "47-year-old man with severe distributive shock, hemoconcentration, and capillary leak requiring massive fluid resuscitation"
+      },
+      {
+        "pmcid": "PMC7758140",
+        "title": "Late-Onset Metastatic Malignant Spindle Cell Tumour Presenting with Massive Intra-Abdominal Haemorrhage",
+        "relevance": "RELEVANT",
+        "reasoning": "Occult intra-abdominal hemorrhage causing hemorrhagic shock - illustrates occult bleeding without obvious external signs",
+        "verbatim_excerpt": "40-year-old woman with sudden onset severe abdominal pain, class III hemorrhagic shock, hemoglobin 5 g/dL from occult tumor bleeding"
+      },
+      {
+        "pmcid": "PMC3819886",
+        "title": "Thrombotic microangiopathy presenting with refractory shock",
+        "relevance": "PARTIALLY_RELEVANT",
+        "reasoning": "TTP/HUS causing multi-system failure and shock - microvascular disease affecting hemodynamics"
+      },
+      {
+        "pmcid": "PMC1118741",
+        "title": "Macrophage activation syndrome in a patient with adult-onset Still disease",
+        "relevance": "PARTIALLY_RELEVANT",
+        "reasoning": "Systemic inflammatory response causing refractory shock - hyperinflammatory state"
+      },
+      {
+        "pmcid": "PMC3525289",
+        "title": "Systemic lupus erythematosus presenting with cardiac tamponade",
+        "relevance": "PARTIALLY_RELEVANT",
+        "reasoning": "Systemic autoimmune disease causing tamponade - inflammatory cause of pericardial involvement"
+      },
+      {
+        "pmcid": "PMC11830331",
+        "title": "Recurrent falls and hypotension from IGF-2 secreting tumor",
+        "relevance": "PARTIALLY_RELEVANT",
+        "reasoning": "Paraneoplastic cause of refractory hypotension - endocrine-mediated shock"
+      }
+    ]
+  },
+  "cross_domain_evidence_matrix": {
+    "pericardial_tamponade": {
+      "cardiac_evidence": "supports",
+      "vascular_evidence": "neutral",
+      "systemic_evidence": "neutral",
+      "reasoning": "Multiple cardiac cases demonstrate tamponade physiology without visible pericardial effusion (PMC9248042, PMC9293014). Post-PCI setting makes coronary perforation with contained rupture/tamponade a strong consideration. However, echo explicitly states 'no pericardial effusion,' making classic tamponade less likely unless loculated or retro-sternal."
+    },
+    "drug_induced_hypotension": {
+      "cardiac_evidence": "supports",
+      "vascular_evidence": "neutral",
+      "systemic_evidence": "supports",
+      "reasoning": "Systemic cases (PMC4980526 DRESS syndrome) demonstrate severe refractory hypotension from drug reactions. Cardiac case PMC4980526 shows similar pattern. However, index case lacks rash, fever, or other systemic allergic features. Contrast reaction possible but less likely given timing and presentation."
+    },
+    "primary_diagnosis": {
+      "candidate": "coronary_perforation_with_contained_tamponade_or_localized_pericardial_hematoma",
+      "cardiac_evidence": "supports",
+      "vascular_evidence": "neutral",
+      "systemic_evidence": "contradicts",
+      "reasoning": "Most consistent with index case: Post-PCI setting, severe refractory hypotension despite IABP, hemoglobin drop (13.2→11), elevated venous pressures suggesting impaired cardiac filling, but NO visible pericardial effusion on echo. This pattern strongly suggests coronary artery perforation with blood tracking into myocardial tissue or loculated pericardial hematoma causing extrinsic compression (tamponade physiology without free effusion). Cardiac cases (PMC9248042, PMC3872395) demonstrate this exact phenomenon - tamponade without visible effusion."
+    }
+  },
+  "most_discriminating_case": {
+    "pmcid": "PMC9248042",
+    "title": "Primary cardiac lymphoma presenting with cardiac tamponade and complete heart block",
+    "why": "This case most closely mirrors the index case's key discriminating features: 1) Cardiac tamponade physiology with severe refractory hypotension, 2) Complete absence of visible pericardial effusion on initial echocardiography, 3) Requirement for hemodynamic support, 4) Elevated venous pressures suggesting impaired cardiac filling. The index case's post-PCI setting makes coronary perforation with contained/loculated hematoma or myocardial dissection with blood tracking into tissue the most likely diagnosis. This case proves that severe tamponade physiology can exist without visible pericardial effusion, teaching us to consider loculated pericardial hematoma or coronary perforation with contained rupture when echo is negative but clinical picture suggests tamponade."
+  },
+  "weakest_domain": "vascular",
+  "weakest_domain_reasoning": "While vascular cases demonstrated refractory hypotension (PMC4980526 - subclavian stenosis, PMC3874091 - retroperitoneal bleed), the index case's specific combination of post-PCI setting, elevated venous pressures suggesting right heart compression, and absence of pericardial effusion points primarily to a cardiac/pericardial etiology rather than peripheral vascular cause. The IABP placement indicates primary cardiac dysfunction rather than vascular etiology. Vascular domain provided fewer directly applicable cases for this specific constellation of findings compared to cardiac domain (tamponade without effusion) and systemic domain (refractory shock patterns).",
+  "synthesis": "The index case presents a challenging post-PCI scenario: 75-year-old female, BP 60/40 refractory to fluids/vasopressors, IABP placed for support, hemoglobin drop 13.2→11 suggesting blood loss, yet NO pericardial effusion on echo. The most likely diagnosis is CORONARY ARTERY PERFORATION WITH CONTAINED RUPTURE OR LOCULATED PERICARDIAL HEMATOMA causing extrinsic cardiac compression and tamponade physiology without free pericardial effusion. Alternative considerations include: 1) Procedure-related constrictive pericarditis (PMC9293014, PMC3884349), 2) DRESS syndrome from contrast/media reaction (PMC4980526), 3) Retroperitoneal/access site bleeding causing hemorrhagic shock (PMC3874091). The key teaching point from this case review is that tamponade physiology can exist WITHOUT visible pericardial effusion - cases like PMC9248042 demonstrate cardiac compression from intramyocardial/ loculated processes that standard echo views miss. Urgent CT or MRI would be diagnostic."
+}

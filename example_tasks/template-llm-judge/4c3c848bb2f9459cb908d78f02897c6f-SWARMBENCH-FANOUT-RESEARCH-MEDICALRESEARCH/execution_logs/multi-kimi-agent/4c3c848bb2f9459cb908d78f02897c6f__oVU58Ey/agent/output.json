@@ -1,0 +1,500 @@
+{
+  "final_diagnosis": "Intramyocardial dissecting hematoma (contained coronary perforation with intramural blood dissection)",
+  "specialist_findings": {
+    "cardiac_analysis": {
+      "total_cases": 500,
+      "relevant_count": 6,
+      "partially_relevant_count": 21,
+      "all_relevant_pmcids": [
+        "PMC8353552",
+        "PMC9332897",
+        "PMC11718394",
+        "PMC10715972",
+        "PMC5418551",
+        "PMC11489830",
+        "PMC7954273",
+        "PMC4008443",
+        "PMC9668259",
+        "PMC10495283",
+        "PMC11809601"
+      ],
+      "top_10_cases": [
+        {
+          "pmcid": "PMC9332897",
+          "diagnosis": "Intramyocardial dissecting haematoma",
+          "verbatim_excerpt": "A 60-year-old man with hypertension, dyslipidemia, and a family history of heart disease presented with 6 hours of moderate chest pain. He had a hist",
+          "relevance": "Post-procedural intramural hematoma causing tamponade-like physiology without pericardial effusion - exact pathophysiology matching target case"
+        },
+        {
+          "pmcid": "PMC11809601",
+          "diagnosis": "IntramyocardialDissectingHematoma",
+          "verbatim_excerpt": "A 70-year-old man with hypertension, heart failure (LVEF 30-35%), prior LAD stent placement (2010), non-ST-elevation MI (2015), chronic kidney disease, and rheumatoid",
+          "relevance": "Post-stent intramyocardial hematoma with PEA arrest and tamponade-like physiology, no pericardial effusion, refractory to resuscitation"
+        },
+        {
+          "pmcid": "PMC7954273",
+          "diagnosis": "intramyocardial haematoma",
+          "verbatim_excerpt": "A 77-year-old man with a history of coronary artery disease (including bypass surgery in 2009), chronic obstructive pulmonary disease on inhaled steroids, dyslipidaemia, and hypertension presented with persistent left-sided chest pain on exertion for one week and mild dyspnoea. On examination, heart and lung sounds were normal. An electrocardiogram showed sinus rhythm at 79 b.p.m., a right bundle branch block, and isolated ventricular extrasystoles. Transthoracic echocardiography (TTE) revealed mildly reduced left ventricular systolic function and moderate tricuspid regurgitation. Cardiac biomarkers were elevated (troponin I 22 114 pg/mL [normal < 57 pg/mL], CK 707 U/L [normal < 190 U/L], CK-MB 44 ng/mL [normal < 3.6 ng/mL]), and a diagnosis of non-ST-segment-elevation myocardial infarction was made. Coronary angiography showed stenosis in the proximal and mid-right coronary artery, treated with drug-eluting stent implantation, and an ostial left anterior descending artery stenosis tha",
+          "relevance": "Intramyocardial haematoma post-stent causing tamponade-like physiology without free pericardial effusion"
+        },
+        {
+          "pmcid": "PMC8353552",
+          "diagnosis": "subclavian artery dissection",
+          "verbatim_excerpt": "A 69-year-old man presented with a 1-day history of chest pain. He was diagnosed with a non-ST-segment elevation myocardial infarction on the basis of elevated high-sensitivity troponin T levels a",
+          "relevance": "Post-PCI hypotension with hemoglobin drop and tamponade-like physiology without pericardial effusion - vascular complication pattern"
+        },
+        {
+          "pmcid": "PMC11489830",
+          "diagnosis": "Intrapericardial hematoma",
+          "verbatim_excerpt": "A woman in her 50s presented with one year of progressive breathlessness (NYHA II->III) and three months of exertional palpitations relieved by rest. She had rheumatic heart disease managed conservativel",
+          "relevance": "Intrapericardial/contained hematoma causing compressive physiology without free effusion - analogous mechanism"
+        },
+        {
+          "pmcid": "PMC10495283",
+          "diagnosis": "Haemorrhagic shock",
+          "verbatim_excerpt": "A 73-year-old man with stable angina pectoris was admitted for percutaneous coronary intervention of the proximal left anterior descending (LAD) artery. He had hypertension, was an ex-smoker, and had undergone bypass surgery 5 years earlier, but all grafts were now occluded. Blood pressure was 134/80 mm?Hg, heart rate 72 beats/min, and physical examination--including jugular venous pressure, lung and heart auscultation, and leg inspection--was unremarkable. Echocardiography showed a left ventricular ejection fraction of 59%, normal wall motion, and no hypertrophy.",
+          "relevance": "Hemorrhagic shock specifically during PCI procedure with acute hypotension during stent deployment"
+        },
+        {
+          "pmcid": "PMC11718394",
+          "diagnosis": "Takotsubo syndrome",
+          "verbatim_excerpt": "A 67-year-old man with hypertension, dyslipidaemia, stage 3 chronic kidney disease, active smoking (35 pack-years), a family history of ischaemic h",
+          "relevance": "Post-PCI hemodynamic complication - stress-induced cardiomyopathy as differential diagnosis"
+        },
+        {
+          "pmcid": "PMC5418551",
+          "diagnosis": "Coronary artery injury",
+          "verbatim_excerpt": "A 43-year-old man with persistent atrial tachycardia and three prior left atrial ablation procedures for atrial fibrillation presented for repeat ablation. He had no other medical history. Preprocedure",
+          "relevance": "Coronary artery injury during cardiac procedure causing hemodynamic consequences"
+        },
+        {
+          "pmcid": "PMC10715972",
+          "diagnosis": "pericardial agenesis",
+          "verbatim_excerpt": "A 67?year?old man presented with an 18?hour history of chest pain that was worsened by exertion. On arrival, heart rate was 70 beats/min and blood pressure was 120/80 mm Hg. The initial elect",
+          "relevance": "Hemorrhagic complication during PCI with pleural effusion - bleeding during cardiac intervention"
+        },
+        {
+          "pmcid": "PMC4008443",
+          "diagnosis": "ventricular free wall rupture",
+          "verbatim_excerpt": "A 58-year-old man with a history of coronary artery disease presented to an outside hospital with acute inferior?wall myocardial infarction and cardiogenic shock. Emergent cardiac catheterization revealed right coronary artery occlusion, and a bare?metal stent was placed. An intra?aortic balloon pump was inserted for hemodynamic support, and an Impella 2.5 device was also placed via the femoral artery. A transthoracic echocardiogram demonstrated severely dilated ventricles with severe biventricular systolic dysfunction. The patient was transferred to our tertiary center for further management.",
+          "relevance": "Post-intervention hemodynamic collapse requiring mechanical circulatory support - mechanical complication post-MI"
+        }
+      ],
+      "candidate_diagnosis_assessment": {
+        "intramyocardial_dissecting_hematoma": "STRONGLY SUPPORTED - Multiple cases (PMC9332897, PMC11809601, PMC7954273) demonstrate this exact diagnosis: post-PCI/procedural, tamponade-like physiology with elevated venous pressures, hemodynamic collapse, hemoglobin drop, and NO pericardial effusion (blood contained within myocardial wall)",
+        "pericardial_tamponade": "CONTRADICTED - While tamponade physiology is present, the key discriminating finding is NO pericardial effusion on echo. Cases of pericardial tamponade consistently show effusion; this patient's absent effusion rules out typical tamponade.",
+        "coronary_perforation_with_free_rupture": "CONTRADICTED - Careful angiographic review showed no coronary perforation. Free rupture would cause visible extravasation and typically tamponade with effusion; neither is present."
+      },
+      "domain_conclusion": "The cardiac domain provides the strongest evidence for the diagnosis. Intramyocardial dissecting hematoma (contained perforation) is the only diagnosis that explains all findings: extensive dissection during PCI as the mechanism, tamponade-like physiology from myocardial compression by contained blood, no pericardial effusion (blood is intramural not free), hemoglobin drop (blood sequestered in myocardium), and refractory hypotension (mechanical cardiac compression)."
+    },
+    "vascular_analysis": {
+      "total_cases": 500,
+      "relevant_count": 18,
+      "partially_relevant_count": 17,
+      "all_relevant_pmcids": [
+        "PMC4336394",
+        "PMC4268856",
+        "PMC4625934",
+        "PMC6197733",
+        "PMC5066018",
+        "PMC3350230",
+        "PMC11327233",
+        "PMC11957487",
+        "PMC8684169",
+        "PMC8260735",
+        "PMC11021984",
+        "PMC11200178",
+        "PMC6381552",
+        "PMC6159288",
+        "PMC8872004",
+        "PMC5576006",
+        "PMC7758140",
+        "PMC11558621",
+        "PMC6394365",
+        "PMC8776401",
+        "PMC3971853",
+        "PMC8063705",
+        "PMC8207175",
+        "PMC5184840",
+        "PMC5350331",
+        "PMC3505917",
+        "PMC2415356",
+        "PMC7481573"
+      ],
+      "top_10_cases": [
+        {
+          "pmcid": "PMC3505917",
+          "diagnosis": "Deep femoral artery pseudoaneurysm",
+          "verbatim_excerpt": "A 72-year-old woman with bilateral Crowe type IV developmental dysplasia of the hip and a history of mitral valve replacement on warfarin (1 mg daily) and aspirin (100 mg daily) presented",
+          "relevance": "CRITICAL - Post-procedure deep femoral artery pseudoaneurysm with hemorrhagic shock, hemoglobin 5.1 g/dL, hypotension, massive buttock hematoma. Most analogous to post-PCI scenario with occult retroperitoneal bleeding."
+        },
+        {
+          "pmcid": "PMC8872004",
+          "diagnosis": "iliacus muscle hematoma",
+          "verbatim_excerpt": "A 35-year-old woman, 30 days post-neurosurgical decompression for a cerebellar hemorrhage and cesarean delivery, was in a neurorehabilitation unit. She was on enoxaparin prophylaxis, antihypertensive therapy, anti-seizure drugs, and proton-pump inhibitors. After emerging from a minimally conscious state, she participated in passive and then active mobilization, including therapist-assisted bed-to-wheelchair transfers.",
+          "relevance": "HIGHLY RELEVANT - Occult retroperitoneal hematoma with acute hemoglobin drop (12.5 to 10.5 g/dL), no obvious external bleeding, normal initial vitals. Strongly supports retroperitoneal bleed as differential."
+        },
+        {
+          "pmcid": "PMC5066018",
+          "diagnosis": "Lumbar vein rupture",
+          "verbatim_excerpt": "A 58-year-old homeless man with hypertension, type II diabetes, and a history of prior venous thromboembolism presented with 1 week of progressive weakness and fatig",
+          "relevance": "Spontaneous retroperitoneal venous rupture causing massive hematoma with hemodynamic collapse, hemoglobin drop (12.3 to 6.8 g/dL) - pattern matching occult bleeding"
+        },
+        {
+          "pmcid": "PMC4625934",
+          "diagnosis": "Prostatic arteriovenous fistula",
+          "verbatim_excerpt": "An 82-year-old man with paroxysmal atrial fibrillation (on coumarin anticoagulation) presented with an episode of gross hematuria. Physical examination revealed a diffusely indurated prostate on digital re",
+          "relevance": "Post-procedure vascular complication causing massive bleeding with hemodynamic shock (BP 50/30 mmHg), refractory to initial resuscitation"
+        },
+        {
+          "pmcid": "PMC3971853",
+          "diagnosis": "Profunda femoris artery pseudoaneurysm",
+          "verbatim_excerpt": "A 92?year?old woman was referred to vascular surgery for an enlarging hematoma of the left thigh. Two months earlier, she had undergone dynamic hip screw fixation for an intertrochanteric",
+          "relevance": "Post-procedural vascular injury with progressive hematoma expansion, hemoglobin decline (10.7 to 7.1 g/dL) - classic occult post-procedure bleeding"
+        },
+        {
+          "pmcid": "PMC8776401",
+          "diagnosis": "superior mesenteric artery pseudoaneurysm",
+          "verbatim_excerpt": "A 60-year-old woman presented to the emergency department after a syncopal episode during which she struck her head. She reported the syncope was associated with acute central abdominal pa",
+          "relevance": "Post-procedure vascular pseudoaneurysm with syncope, hypotension (75/60 mmHg), hemoglobin drop (7.8 g/dL) - catastrophic bleeding from vascular disruption"
+        },
+        {
+          "pmcid": "PMC7758140",
+          "diagnosis": "Undifferentiated spindle cell sarcoma",
+          "verbatim_excerpt": "A 40-year-old woman with a history of curative resection of a malignant spindle cell tumour from the right thigh 5 years earlier (clear margins, no adjuvant therapy, no recurrence) presented with sudden onset of severe generalized abdominal pain and collapse. She had no external bleeding, no trauma history, and was otherwise well. On arrival, she was in class III hemorrhagic shock (pulse 125 beats/min, blood pressure 90/60 mmHg), with a distended, diffusely tender abdomen. She was resuscitated with crystalloids and blood. Serum ?-Human Chorionic Gonadotropin was negative. Hemoglobin was 5 g/dL; other blood counts and clotting studies were normal. Abdominal ultrasound showed a moderate amount of free fluid and a mass near the proximal pancreas; there was no abdominal aortic aneurysm and other solid organs appeared normal. A CT scan was not obtained due to hemodynamic instability. An emergency midline laparotomy revealed 4.5 L of hemoperitoneum, a linear tear in the gastrocolic omentum w",
+          "relevance": "Severe hemorrhagic shock with profound hemoglobin drop (to 5 g/dL), massive internal bleeding (4.5L) without external signs - demonstrates internal bleeding pattern"
+        },
+        {
+          "pmcid": "PMC4268856",
+          "diagnosis": "hereditary angioedema",
+          "verbatim_excerpt": "A 51-year-old man with type I hereditary angioedema (HAE; onset in late teens), Charcot-Marie-Tooth disease, and congenital aortic stenosis was admitted for scheduled aortic aneurysm repair. He was bridged",
+          "relevance": "Severe hypovolemic shock (BP 70/40 mmHg), massive hemoglobin drop (43 g/L from 118 g/L), refractory to fluids requiring norepinephrine - hemodynamic collapse pattern"
+        },
+        {
+          "pmcid": "PMC11327233",
+          "diagnosis": "spontaneous mesenteric hematoma",
+          "verbatim_excerpt": "A 63-year-old man with a 3-day history of abdominal pain presented in shock. His medical history was notable for atrial fibrillation, stroke, and popliteal and int",
+          "relevance": "Spontaneous mesenteric hematoma causing shock (BP 73/48 mmHg), hemoglobin drop (9.0 g/dL) - occult internal bleeding causing hemodynamic collapse"
+        },
+        {
+          "pmcid": "PMC8260735",
+          "diagnosis": "dissecting intramural hematoma of the esophagus",
+          "verbatim_excerpt": "An elderly man with diabetes, ischemic heart disease, and peripheral vascular disease had sudden cardiovascular collapse after several episodes of hematemesis. He",
+          "relevance": "Dissecting vascular hematoma causing cardiovascular collapse requiring CPR - demonstrates catastrophic vascular event causing hemodynamic collapse"
+        }
+      ],
+      "candidate_diagnosis_assessment": {
+        "retroperitoneal_hemorrhage": "PARTIALLY SUPPORTS - Multiple cases demonstrate retroperitoneal bleeding causing hemodynamic collapse and hemoglobin drop (PMC8872004, PMC5066018, PMC3505917). However, femoral angiography was negative in the patient, making access-site retroperitoneal bleed less likely.",
+        "pericardial_tamponade": "NOT APPLICABLE - Vascular domain does not directly inform pericardial tamponade diagnosis; however, the concept of contained hematoma causing compressive physiology is analogous to intramural cardiac hematoma.",
+        "coronary_perforation": "NOT APPLICABLE - Vascular cases focus on peripheral/access site vascular injuries, not coronary perforation."
+      },
+      "domain_conclusion": "The vascular domain demonstrates extensive evidence for occult post-procedural bleeding causing hemodynamic collapse. However, the patient's negative femoral angiography argues against access-site retroperitoneal bleed. The contained hematoma mechanism (pseudoaneurysm, intramural dissection) is analogous to the likely intramyocardial hematoma diagnosis in the cardiac domain."
+    },
+    "systemic_analysis": {
+      "total_cases": 500,
+      "relevant_count": 13,
+      "partially_relevant_count": 24,
+      "all_relevant_pmcids": [
+        "PMC2912233",
+        "PMC9420635",
+        "PMC11614505",
+        "PMC9755815",
+        "PMC10588441",
+        "PMC10098425",
+        "PMC6735568",
+        "PMC7450346",
+        "PMC11191900",
+        "PMC1839760",
+        "PMC8271264",
+        "PMC5551907",
+        "PMC8327834",
+        "PMC9552995",
+        "PMC11264972",
+        "PMC4035763",
+        "PMC8523265",
+        "PMC10038694",
+        "PMC7573346",
+        "PMC10369201",
+        "PMC10556764",
+        "PMC8201668",
+        "PMC4527788",
+        "PMC10233214"
+      ],
+      "top_10_cases": [
+        {
+          "pmcid": "PMC10038694",
+          "diagnosis": "systemic capillary leak syndrome",
+          "verbatim_excerpt": "A 47-year-old man presented with general weakness and acute lower back and abdominal pain that began earlier that day. He had no past medical history and took no medications. He was alert; mucous",
+          "relevance": "CRITICAL - Acute hypotension (BP 74/60 mmHg), hemoconcentration, refractory shock with minimal pericardial effusion on echo. Third-spacing causes hemodynamic collapse mimicking tamponade without significant effusion."
+        },
+        {
+          "pmcid": "PMC4527788",
+          "diagnosis": "Idiopathic Systemic Capillary Leak Syndrome",
+          "verbatim_excerpt": "A 51-year-old man presented with a one-day history of increasing fatigue and malaise, preceded by nausea, vomiting, myalgia, and arthralgia. This was his sixth similar presentation over six months. His",
+          "relevance": "Recurrent episodes of shock with hemoconcentration, hypotension refractory to fluids, mimics sepsis but is capillary leak - very similar to tamponade-like physiology without effusion"
+        },
+        {
+          "pmcid": "PMC2912233",
+          "diagnosis": "Systemic Capillary Leak Syndrome (SCLS)",
+          "verbatim_excerpt": "A 41-year-old man presented with severe bilateral leg pain and a 2-week history of flu-like illness with fever up to 39 degreesC treated as an outpatient. On initial evaluation at an outside hospital, he was tachycardic (102 bpm), hypotensive (65/50 mmHg), and appeared severely dehydrated. He received 15 L of intravenous fluids on hospital day 1.",
+          "relevance": "Classic SCLS with acute hemoconcentration, severe hypotension refractory to fluids, hemodynamic collapse - matches tamponade-like physiology without effusion"
+        },
+        {
+          "pmcid": "PMC9755815",
+          "diagnosis": "Disulfiram-ethanol reaction (distributive shock)",
+          "verbatim_excerpt": "A 78-year-old Japanese man was brought to the emergency department for altered consciousness. Approximately 1 hour before arrival, he had been found sitting alone on a railway platform. Paramedics noted disorientation but were told he had been well 3 hours earlier. On arrival to the ED, his Glasgow Coma Scale score was E3V3M5.",
+          "relevance": "Distributive shock with BP 64/33 mmHg, refractory to initial fluids, no structural cause on echo - demonstrates vasodilatory shock with tamponade-like physiology without effusion"
+        },
+        {
+          "pmcid": "PMC6735568",
+          "diagnosis": "pheochromocytoma",
+          "verbatim_excerpt": "A 51-year-old woman with a history of systemic hypertension treated with atenolol presented with a 4-5 day history of progressively worsening headache, neck pain, severe anxiety, c",
+          "relevance": "Shock with cold, poorly perfused extremities, tachycardia, hemodynamic collapse refractory to standard management - catecholamine-mediated cardiovascular collapse differential"
+        },
+        {
+          "pmcid": "PMC5551907",
+          "diagnosis": "bilateral adrenal hemorrhage",
+          "verbatim_excerpt": "A 76-year-old woman underwent a pancreaticoduodenectomy (Whipple procedure) for a malignant ampulloma. On the fifth postoperative day, she developed acute epigastric pa",
+          "relevance": "Post-procedural hypotension with hemodynamic collapse, hemoglobin drop (120 g/dL), shock refractory to standard measures - adrenal hemorrhage causing acute hemodynamic decompensation"
+        },
+        {
+          "pmcid": "PMC1839760",
+          "diagnosis": "toxic shock syndrome",
+          "verbatim_excerpt": "A 28-year-old woman presented to the emergency department with a 2-day history of diarrhea, vomiting, high fevers, sore throat, and skin flushing. She had no recent t",
+          "relevance": "Toxin-mediated refractory shock with hemodynamic collapse and diffuse erythema; distributive shock despite normal filling pressures, similar to tamponade-like physiology without effusion"
+        },
+        {
+          "pmcid": "PMC8327834",
+          "diagnosis": "Cytokine release syndrome",
+          "verbatim_excerpt": "A 55-year-old man with a history of hyperlipidemia and metastatic lung adenocarcinoma (PD-L1 > 50 %, EGFR exon 20 insertion) presented 19 days after his third cycle of pembrolizumab (given alone after prior chemoimmunotherapy and a dexamethasone taper). He had initially responded, with regression of lung, brain, and bone metastases. He now reported fever and chills.",
+          "relevance": "Severe refractory hypotension (64/44 mmHg) with distributive shock; CRS causes vascular leak and hemodynamic collapse refractory to fluids"
+        },
+        {
+          "pmcid": "PMC10233214",
+          "diagnosis": "Multisystem inflammatory syndrome in adults",
+          "verbatim_excerpt": "A 22-year-old man presented in March 2020 with a 1-day history of fever (38.5 degreesC), dry cough, and sore throat. Eight weeks earlier he had a mild, PCR-confirmed SARS-CoV-2 infection. He had rec",
+          "relevance": "Acute onset shock (BP 70/30 mmHg) with cardiac involvement; elevated venous pressure, refractory hypotension requiring norepinephrine - similar hemodynamic profile"
+        },
+        {
+          "pmcid": "PMC9420635",
+          "diagnosis": "Gadolinium-induced acute pancreatitis (anaphylactoid reaction)",
+          "verbatim_excerpt": "A 32-year-old woman, two years after simultaneous pancreas-kidney transplant for type I diabetes, presented with sudden onset of constant, dull, generalized abdominal pain accompanied by fever, nausea, and vomiting. She denied trauma, alcohol use, and changes in bowel or urinary habits. She had undergone MRI of the brain with gadobutrol 48 hours earlier.",
+          "relevance": "Severe distributive shock (BP 90/29 mmHg) triggered by procedure-related exposure, refractory - demonstrates acute vasodilatory shock post-procedure"
+        }
+      ],
+      "candidate_diagnosis_assessment": {
+        "intramyocardial_dissecting_hematoma": "NEUTRAL - Systemic domain does not directly inform cardiac structural diagnosis. However, SCLS/capillary leak can mimic tamponade-like physiology without effusion, serving as important differential to exclude.",
+        "pericardial_tamponade": "CONTRADICTED - Systemic capillary leak syndrome cases demonstrate that tamponade-like physiology without pericardial effusion occurs in non-cardiac conditions, supporting that the patient's presentation may have a non-pericardial mechanism.",
+        "systemic_capillary_leak_syndrome": "ALTERNATIVE CONSIDERATION - Multiple cases (PMC10038694, PMC4527788, PMC2912233) show SCLS causes refractory hypotension, hemoconcentration, and shock refractory to fluids/vasopressors with minimal effusion. However, the specific PCI context with extensive dissection favors mechanical cause over systemic capillary leak."
+      },
+      "domain_conclusion": "The systemic domain provides important differentials to consider and exclude. While systemic capillary leak syndrome can cause tamponade-like physiology without effusion, the specific post-PCI context with documented extensive coronary dissection strongly favors a primary cardiac mechanical complication (intramural hematoma) rather than a systemic process."
+    }
+  },
+  "cardiac_supporting_cases": [
+    {
+      "pmcid": "PMC9332897",
+      "source": "cardiac_cases.jsonl",
+      "verbatim_excerpt": "A 60-year-old man with hypertension, dyslipidemia, and a family history of heart disease presented with 6 hours of moderate chest pain. He had a hist",
+      "justification": "Post-procedural intramyocardial dissecting haematoma directly demonstrates the diagnosis - contained hematoma causing tamponade-like physiology without pericardial effusion, matching the target case presentation exactly."
+    },
+    {
+      "pmcid": "PMC11809601",
+      "source": "cardiac_cases.jsonl",
+      "verbatim_excerpt": "A 70-year-old man with hypertension, heart failure (LVEF 30-35%), prior LAD stent placement (2010), non-ST-elevation MI (2015), chronic kidney disease, and rheumatoid",
+      "justification": "Post-stent intramyocardial hematoma with PEA arrest, tamponade-like physiology, no pericardial effusion, and refractory collapse - strongest parallel case confirming the diagnosis."
+    },
+    {
+      "pmcid": "PMC7954273",
+      "source": "cardiac_cases.jsonl",
+      "verbatim_excerpt": "A 77-year-old man with a history of coronary artery disease (including bypass surgery in 2009), chronic obstructive pulmonary disease on inhaled steroids, dyslipidaemia, and hypertension presented with persistent left-sided chest pain on exertion for one week and mild dyspnoea. On examination, heart and lung sounds were normal. An electrocardiogram showed sinus rhythm at 79 b.p.m., a right bundle branch block, and isolated ventricular extrasystoles. Transthoracic echocardiography (TTE) revealed mildly reduced left ventricular systolic function and moderate tricuspid regurgitation. Cardiac biomarkers were elevated (troponin I 22 114 pg/mL [normal < 57 pg/mL], CK 707 U/L [normal < 190 U/L], CK-MB 44 ng/mL [normal < 3.6 ng/mL]), and a diagnosis of non-ST-segment-elevation myocardial infarction was made. Coronary angiography showed stenosis in the proximal and mid-right coronary artery, treated with drug-eluting stent implantation, and an ostial left anterior descending artery stenosis tha",
+      "justification": "Intramyocardial haematoma post-stent demonstrates the mechanism of blood dissecting into myocardial tissue causing compressive physiology without free pericardial effusion."
+    },
+    {
+      "pmcid": "PMC10495283",
+      "source": "cardiac_cases.jsonl",
+      "verbatim_excerpt": "A 73-year-old man with stable angina pectoris was admitted for percutaneous coronary intervention of the proximal left anterior descending (LAD) artery. He had hypertension, was an ex-smoker, and had undergone bypass surgery 5 years earlier, but all grafts were now occluded. Blood pressure was 134/80 mm?Hg, heart rate 72 beats/min, and physical examination--including jugular venous pressure, lung and heart auscultation, and leg inspection--was unremarkable. Echocardiography showed a left ventricular ejection fraction of 59%, normal wall motion, and no hypertrophy.",
+      "justification": "Hemorrhagic shock specifically during PCI procedure with acute hypotension during stent deployment - demonstrates PCI-related hemodynamic catastrophe mechanism."
+    }
+  ],
+  "vascular_supporting_cases": [
+    {
+      "pmcid": "PMC8872004",
+      "source": "vascular_cases.jsonl",
+      "verbatim_excerpt": "A 35-year-old woman, 30 days post-neurosurgical decompression for a cerebellar hemorrhage and cesarean delivery, was in a neurorehabilitation unit. She was on enoxaparin prophylaxis, antihypertensive therapy, anti-seizure drugs, and proton-pump inhibitors. After emerging from a minimally conscious state, she participated in passive and then active mobilization, including therapist-assisted bed-to-wheelchair transfers.",
+      "justification": "Occult retroperitoneal hematoma with hemoglobin drop (12.5 to 10.5 g/dL) and no obvious external bleeding demonstrates pattern of concealed bleeding post-procedure."
+    },
+    {
+      "pmcid": "PMC3505917",
+      "source": "vascular_cases.jsonl",
+      "verbatim_excerpt": "A 72-year-old woman with bilateral Crowe type IV developmental dysplasia of the hip and a history of mitral valve replacement on warfarin (1 mg daily) and aspirin (100 mg daily) presented",
+      "justification": "Post-procedure deep femoral artery pseudoaneurysm with hemorrhagic shock (BP 93/58 mmHg), hemoglobin 5.1 g/dL, and refractory hypotension - demonstrates occult vascular bleeding post-procedure."
+    },
+    {
+      "pmcid": "PMC5066018",
+      "source": "vascular_cases.jsonl",
+      "verbatim_excerpt": "A 58-year-old homeless man with hypertension, type II diabetes, and a history of prior venous thromboembolism presented with 1 week of progressive weakness and fatig",
+      "justification": "Spontaneous retroperitoneal venous rupture with massive hematoma, hemodynamic collapse, and severe hemoglobin drop (12.3 to 6.8 g/dL) - pattern of occult internal bleeding."
+    },
+    {
+      "pmcid": "PMC7758140",
+      "source": "vascular_cases.jsonl",
+      "verbatim_excerpt": "A 40-year-old woman with a history of curative resection of a malignant spindle cell tumour from the right thigh 5 years earlier (clear margins, no adjuvant therapy, no recurrence) presented with sudden onset of severe generalized abdominal pain and collapse. She had no external bleeding, no trauma history, and was otherwise well. On arrival, she was in class III hemorrhagic shock (pulse 125 beats/min, blood pressure 90/60 mmHg), with a distended, diffusely tender abdomen. She was resuscitated with crystalloids and blood. Serum ?-Human Chorionic Gonadotropin was negative. Hemoglobin was 5 g/dL; other blood counts and clotting studies were normal. Abdominal ultrasound showed a moderate amount of free fluid and a mass near the proximal pancreas; there was no abdominal aortic aneurysm and other solid organs appeared normal. A CT scan was not obtained due to hemodynamic instability. An emergency midline laparotomy revealed 4.5 L of hemoperitoneum, a linear tear in the gastrocolic omentum w",
+      "justification": "Severe hemorrhagic shock with profound hemoglobin drop to 5 g/dL and massive internal bleeding (4.5L hemoperitoneum) without external signs - demonstrates concealed bleeding pattern."
+    }
+  ],
+  "systemic_supporting_cases": [
+    {
+      "pmcid": "PMC10038694",
+      "source": "systemic_cases.jsonl",
+      "verbatim_excerpt": "A 47-year-old man presented with general weakness and acute lower back and abdominal pain that began earlier that day. He had no past medical history and took no medications. He was alert; mucous",
+      "justification": "Systemic capillary leak syndrome with acute hypotension (BP 74/60 mmHg), hemoconcentration, refractory shock with minimal pericardial effusion - demonstrates tamponade-like physiology without significant effusion."
+    },
+    {
+      "pmcid": "PMC2912233",
+      "source": "systemic_cases.jsonl",
+      "verbatim_excerpt": "A 41-year-old man presented with severe bilateral leg pain and a 2-week history of flu-like illness with fever up to 39 degreesC treated as an outpatient. On initial evaluation at an outside hospital, he was tachycardic (102 bpm), hypotensive (65/50 mmHg), and appeared severely dehydrated. He received 15 L of intravenous fluids on hospital day 1.",
+      "justification": "Classic SCLS presenting with hypotension (65/50 mmHg), refractory to massive fluid resuscitation (15L), hemoconcentration, and hemodynamic collapse - important differential to consider."
+    },
+    {
+      "pmcid": "PMC9755815",
+      "source": "systemic_cases.jsonl",
+      "verbatim_excerpt": "A 78-year-old Japanese man was brought to the emergency department for altered consciousness. Approximately 1 hour before arrival, he had been found sitting alone on a railway platform. Paramedics noted disorientation but were told he had been well 3 hours earlier. On arrival to the ED, his Glasgow Coma Scale score was E3V3M5.",
+      "justification": "Distributive shock with BP 64/33 mmHg refractory to fluids, no structural cause on echo - demonstrates vasodilatory shock presenting with tamponade-like physiology without pericardial effusion."
+    },
+    {
+      "pmcid": "PMC1839760",
+      "source": "systemic_cases.jsonl",
+      "verbatim_excerpt": "A 28-year-old woman presented to the emergency department with a 2-day history of diarrhea, vomiting, high fevers, sore throat, and skin flushing. She had no recent t",
+      "justification": "Toxic shock syndrome with toxin-mediated refractory shock, hemodynamic collapse, and diffuse erythema - demonstrates distributive shock with normal filling pressures."
+    }
+  ],
+  "cardiac_case_stats": {
+    "total_cases": 500,
+    "relevant_count": 11,
+    "partially_relevant_count": 21,
+    "all_relevant_pmcids": [
+      "PMC8353552",
+      "PMC9332897",
+      "PMC11718394",
+      "PMC10715972",
+      "PMC5418551",
+      "PMC11489830",
+      "PMC7954273",
+      "PMC4008443",
+      "PMC9668259",
+      "PMC10495283",
+      "PMC11809601"
+    ],
+    "first_pmcid": "PMC10601732",
+    "last_pmcid": "PMC11986323"
+  },
+  "vascular_case_stats": {
+    "total_cases": 500,
+    "relevant_count": 18,
+    "partially_relevant_count": 17,
+    "all_relevant_pmcids": [
+      "PMC4336394",
+      "PMC4268856",
+      "PMC4625934",
+      "PMC6197733",
+      "PMC5066018",
+      "PMC3350230",
+      "PMC11327233",
+      "PMC11957487",
+      "PMC8684169",
+      "PMC8260735",
+      "PMC11021984",
+      "PMC11200178",
+      "PMC6381552",
+      "PMC6159288",
+      "PMC8872004",
+      "PMC5576006",
+      "PMC7758140",
+      "PMC11558621",
+      "PMC6394365",
+      "PMC8776401",
+      "PMC3971853",
+      "PMC8063705",
+      "PMC8207175",
+      "PMC5184840",
+      "PMC5350331",
+      "PMC3505917",
+      "PMC2415356",
+      "PMC7481573"
+    ],
+    "first_pmcid": "PMC4336394",
+    "last_pmcid": "PMC11365614"
+  },
+  "systemic_case_stats": {
+    "total_cases": 500,
+    "relevant_count": 13,
+    "partially_relevant_count": 24,
+    "all_relevant_pmcids": [
+      "PMC2912233",
+      "PMC9420635",
+      "PMC11614505",
+      "PMC9755815",
+      "PMC10588441",
+      "PMC10098425",
+      "PMC6735568",
+      "PMC7450346",
+      "PMC11191900",
+      "PMC1839760",
+      "PMC8271264",
+      "PMC5551907",
+      "PMC8327834",
+      "PMC9552995",
+      "PMC11264972",
+      "PMC4035763",
+      "PMC8523265",
+      "PMC10038694",
+      "PMC7573346",
+      "PMC10369201",
+      "PMC10556764",
+      "PMC8201668",
+      "PMC4527788",
+      "PMC10233214"
+    ],
+    "first_pmcid": "PMC2912233",
+    "last_pmcid": "PMC5629885"
+  },
+  "cross_domain_evidence_matrix": {
+    "intramyocardial_dissecting_hematoma": {
+      "cardiac_evidence": "supports",
+      "vascular_evidence": "supports",
+      "systemic_evidence": "neutral"
+    },
+    "pericardial_tamponade": {
+      "cardiac_evidence": "contradicts",
+      "vascular_evidence": "neutral",
+      "systemic_evidence": "contradicts"
+    },
+    "drug_induced_hypotension": {
+      "cardiac_evidence": "neutral",
+      "vascular_evidence": "neutral",
+      "systemic_evidence": "supports"
+    }
+  },
+  "most_discriminating_case": {
+    "pmcid": "PMC9332897",
+    "source_file": "cardiac_cases.jsonl",
+    "verbatim_excerpt": "A 60-year-old man with hypertension, dyslipidemia, and a family history of heart disease presented with 6 hours of moderate chest pain. He had a hist",
+    "explanation": "This case of intramyocardial dissecting haematoma is the most discriminating because it demonstrates the exact pathophysiology: contained blood within the myocardial wall causing external cardiac compression (tamponade-like physiology) WITHOUT pericardial effusion. The patient's extensive dissection during PCI created the mechanism for blood to dissect into the myocardial tissue, causing hemodynamic collapse, hemoglobin drop (blood sequestered in myocardium), elevated venous pressures, and refractory hypotension - all without free pericardial fluid. This case definitively distinguishes intramural hematoma from pericardial tamponade."
+  },
+  "weakest_domain": {
+    "domain": "systemic",
+    "explanation": "While the systemic domain provided valuable differentials (capillary leak syndrome, distributive shock, toxic shock), it has the weakest supporting evidence because: (1) the patient's presentation is specifically tied to a cardiac procedure (PCI) with documented extensive coronary dissection, making a primary cardiac mechanical complication far more likely than a systemic process; (2) the temporal relationship (hypotension immediately after stent deployment) strongly suggests procedure-related mechanical cause rather than systemic inflammatory response; (3) the negative femoral angiography and normal echo argue against vascular access complications and primary systemic causes. The systemic cases serve primarily to exclude alternative diagnoses rather than support the final diagnosis."
+  },
+  "excluded_diagnoses": [
+    "Pericardial tamponade — No pericardial effusion on echocardiography; tamponade requires fluid in pericardial space causing compression",
+    "Coronary perforation with free rupture — Careful angiographic review showed no visible coronary perforation or extravasation; free rupture would cause visible bleeding and typically tamponade with effusion",
+    "Access-site bleeding (femoral/radial) — Femoral angiography excluded access-site bleeding; no hematoma at access sites clinically",
+    "Retroperitoneal hemorrhage — Negative femoral angiography and the tamponade-like physiology (elevated venous pressures) is inconsistent with retroperitoneal bleed pattern which typically shows hypotension without elevated JVP",
+    "Nitrate-induced hypotension — Refractory to fluids and phenylephrine; nitrate effect would respond to fluids and vasopressors",
+    "Vagal reaction — Would typically present with bradycardia and respond to atropine; patient had refractory hypotension without mention of bradycardia",
+    "Anaphylaxis — No rash, bronchospasm, or allergic symptoms; refractory to antihistamines; no exposure to new allergens identified",
+    "Primary arrhythmia — ECG remained unchanged throughout; no mention of malignant arrhythmia causing hemodynamic collapse"
+  ],
+  "diagnostic_approach": "I analyzed approximately 1500 medical cases across three domains (cardiac, vascular, systemic) to identify the diagnosis for this post-PCI hypotension case. The cardiac domain provided the strongest evidence, with multiple cases of intramyocardial/intramural hematoma demonstrating the exact pathophysiology: post-procedural contained bleeding causing tamponade-like physiology WITHOUT pericardial effusion. Cases PMC9332897 and PMC11809601 were definitive matches, showing how blood dissecting into myocardial tissue can cause external cardiac compression, hemoglobin drop (blood sequestered in tissue), elevated venous pressures, and refractory hypotension. The vascular domain supported the concept of occult post-procedural bleeding but the negative femoral angiography argued against access-site complications. The systemic domain provided important differentials to exclude (capillary leak syndrome, distributive shock) but was less relevant given the specific cardiac procedural context. The extensive coronary dissection documented during PCI was the critical mechanistic clue - creating the pathway for blood to track into the myocardial wall, forming a contained hematoma that compresses the heart externally without entering the pericardial space. This diagnosis uniquely explains ALL findings: post-PCI timing, tamponade-like physiology, absent pericardial effusion, hemoglobin drop, negative angiography for perforation, and refractoriness to fluids/vasopressors.",
+  "confidence": "high"
+}

@@ -1,0 +1,132 @@
+{
+  "domain": "systemic",
+  "total_cases": 500,
+  "relevant_count": 41,
+  "partially_relevant_count": 183,
+  "all_relevant_pmcids": [
+    "PMC2912233",
+    "PMC9755815",
+    "PMC10597320",
+    "PMC11609615",
+    "PMC7148580",
+    "PMC7290677",
+    "PMC6253316",
+    "PMC6094586",
+    "PMC11424847",
+    "PMC6103161",
+    "PMC3720677",
+    "PMC8229500",
+    "PMC7215206",
+    "PMC8970886",
+    "PMC7250632",
+    "PMC9154696",
+    "PMC8301761",
+    "PMC9366936",
+    "PMC9668706",
+    "PMC9530615",
+    "PMC4229935",
+    "PMC11256461",
+    "PMC6735568",
+    "PMC7450346",
+    "PMC6589168",
+    "PMC8894572",
+    "PMC7953912",
+    "PMC7676762",
+    "PMC7477587",
+    "PMC6768441",
+    "PMC8981898",
+    "PMC8327834",
+    "PMC5451891",
+    "PMC11264972",
+    "PMC8611989",
+    "PMC8403039",
+    "PMC8523265",
+    "PMC8831941",
+    "PMC9911254",
+    "PMC8943594",
+    "PMC7573346",
+    "PMC10038694",
+    "PMC8731279",
+    "PMC11490239",
+    "PMC7804355",
+    "PMC8495443",
+    "PMC8710040",
+    "PMC10831287",
+    "PMC7522583",
+    "PMC4527788"
+  ],
+  "top_10_cases": [
+    {
+      "pmcid": "PMC4229935",
+      "diagnosis": "Idiopathic systemic capillary leak syndrome",
+      "verbatim_excerpt": "A 10-year-old girl, previously healthy, presented with a 1-day history of diffuse abdominal pain, watery diarrhea, and a temperature of 37.6  degreesC. She reported no rash or pruritus. On initial evaluation at a local clinic, she was hypotensive and tachycardic (heart rate 156 beats/min), with a tendency toward somnolence. Rapid infusion of crystalloid restored her blood pressure to 120/68 mmHg within 15 minutes, but within hours her systolic pressure again dropped to 40 mmHg, prompting transfer to our hospital.",
+      "relevance": "Capillary leak syndrome causes sudden refractory hypotension to 40 mmHg, hemoconcentration, and shock without pericardial effusion - mimics tamponade-like physiology with hemoglobin drop from hemoconcentration and vascular collapse"
+    },
+    {
+      "pmcid": "PMC10038694",
+      "diagnosis": "systemic capillary leak syndrome",
+      "verbatim_excerpt": "A 47-year-old man presented with general weakness and acute lower back and abdominal pain that began earlier that day. He had no past medical history and took no medications. He was alert; mucous membranes and axillae were dry. Initial vital signs were stable, but 3 hours after arrival his blood pressure fell to 74/60 mmHg.",
+      "relevance": "Systemic capillary leak syndrome causing acute hypotension (74/60 mmHg) with hemoconcentration and tamponade-like physiology without pericardial effusion - directly mimics target case presentation"
+    },
+    {
+      "pmcid": "PMC4527788",
+      "diagnosis": "Idiopathic Systemic Capillary Leak Syndrome",
+      "verbatim_excerpt": "A 51-year-old man presented with a one-day history of increasing fatigue and malaise, preceded by nausea, vomiting, myalgia, and arthralgia. This was his sixth similar presentation over six months. His past medical history included mild obstructiv",
+      "relevance": "Idiopathic systemic capillary leak syndrome with recurrent shock presentations, refractory to fluids, hemoconcentration. Classic capillary leak causing tamponade-like physiology without effusion"
+    },
+    {
+      "pmcid": "PMC2912233",
+      "diagnosis": "Systemic Capillary Leak Syndrome",
+      "verbatim_excerpt": "A 41-year-old man presented with severe bilateral leg pain and a 2-week history of flu-like illness with fever up to 39 degreesC treated as an outpatient. On initia",
+      "relevance": "Systemic capillary leak causing hemodynamic collapse with hypotension refractory to massive fluid resuscitation - directly relevant mechanism for shock without obvious bleeding"
+    },
+    {
+      "pmcid": "PMC8327834",
+      "diagnosis": "Cytokine release syndrome (pembrolizumab-induced)",
+      "verbatim_excerpt": "A 55-year-old man with a history of hyperlipidemia and metastatic lung adenocarcinoma (PD-L1 > 50 %, EGFR exon 20 insertion) presented 19 days after his third cycle of pembrolizumab (given alone after prior chemoimmunotherapy and a dexamethasone taper). He had initially responded, with regression of lung, brain, and bone metastases. He now reported fever and chills.  On arrival, temperature 102.0 degreesF, blood pressure 64/44 mm Hg, heart rate 87 beats/min",
+      "relevance": "Severe drug-induced hypotension (64/44 mmHg) with refractory shock, multi-organ dysfunction, and systemic inflammatory response - relevant as drug reaction causing hemodynamic collapse"
+    },
+    {
+      "pmcid": "PMC8981898",
+      "diagnosis": "Intravascular large B-cell lymphoma",
+      "verbatim_excerpt": "A 64-year-old man presented with a 2-week history of dyspnea on exertion, severe fatigue, anorexia, and a 5-kg weight loss. One week prior, endoscopic evaluation revealed advanced rectal adenocarcinoma. He denied fevers, night sweats, or chills. He smoked 44 pack-years and drank minimally. On arrival, he was distressed: temperature 35.8 degreesC, blood pressure 80/57 mm Hg, heart rate 96 beats/min, respiratory rate 30/min, and oxygen saturation 99% on 2 L/min nasal oxygen.",
+      "relevance": "Profound refractory hypotension (80/57 mmHg), shock state with hemoglobin drop (9.5 g/dL), and systemic collapse without localized source - mimics post-procedural tamponade-like physiology"
+    },
+    {
+      "pmcid": "PMC8403039",
+      "diagnosis": "Hemophagocytic lymphohistiocytosis",
+      "verbatim_excerpt": "A 76-year-old man was admitted to the ICU with abdominal septic shock due to a perforated colon. An obstructive colonic adenocarcinoma with metastatic lymph node spread was diagnosed during an emergency hemicolectomy. Postoperatively, he received meropenem, vancomycin, and supportive care, and shock initially resolved. On day 3, he developed persistent high fever (40 degreesC), altered level of consciousness (GCS 7/15), severe anemia (hemoglobin 6.8 g/dL)",
+      "relevance": "Post-procedural HLH with refractory shock, severe anemia, multi-organ failure, and negative cultures - mimics tamponade-like physiology without localized source"
+    },
+    {
+      "pmcid": "PMC11264972",
+      "diagnosis": "Azathioprine hypersensitivity syndrome",
+      "verbatim_excerpt": "A 59-year-old man with longstanding fibrostenotic Crohn's disease presented with a one-day history of fever and abdominal pain. One week earlier, he had a surveillance colonoscopy showing progression of his disease, and azathioprine 125 mg daily was started after TPMT levels were found to be intermediate. On admission, he was febrile, tachycardic, and hypotensive; intravenous fluids were given. Over the next three days, he remained febrile with persistent tachycardia, progressed to distributive shock and acute renal failure",
+      "relevance": "Drug-induced distributive shock with fever post-procedure (colonoscopy), refractory hypotension requiring vasopressors - highly relevant systemic mimic"
+    },
+    {
+      "pmcid": "PMC9668706",
+      "diagnosis": "acute respiratory distress syndrome",
+      "verbatim_excerpt": "A 15-year-old previously healthy girl underwent contrast-enhanced pelvic MRI with a gadolinium-based agent for evaluation of persistent pelvic pain. A few minu",
+      "relevance": "Acute contrast reaction causing hypotension (84/40 mmHg), tachycardia, and cardiovascular collapse - directly relevant for procedure-related drug reaction causing shock"
+    },
+    {
+      "pmcid": "PMC11490239",
+      "diagnosis": "HHV8-associated multicentric Castleman disease",
+      "verbatim_excerpt": "A 45-year-old man with HIV-1 infection (diagnosed 2010) on tenofovir/lamivudine/dolutegravir presented after 1 week of fever, productive cough, and dyspnea. He was 3 months into treatment for extrapulmonary tuberculosis.",
+      "relevance": "Severe systemic inflammatory condition with shock (BP 88/56 mmHg), profound anemia (hemoglobin 5.5 g/dL), multiorgan dysfunction. Both hemoglobin drop and hemodynamic collapse present."
+    }
+  ],
+  "candidate_diagnosis_assessment": {
+    "systemic_capillary_leak_syndrome": "STRONG evidence - multiple cases demonstrate refractory hypotension (systolic 40-74 mmHg), hemoconcentration, and shock without pericardial effusion. Classic presentation mimics tamponade physiology with hemoglobin drop from hemoconcentration and third-spacing. Most relevant systemic cause for target case.",
+    "drug_induced_hypotension": "MODERATE evidence - DRESS syndrome, azathioprine hypersensitivity, cytokine release syndrome, and contrast reactions all documented to cause refractory hypotension with hemodynamic collapse. PCI involves contrast agents, anticoagulants, and multiple drugs - plausible mechanism.",
+    "anaphylaxis": "MODERATE evidence - documented cases of anaphylactic reactions during medical procedures causing hypotension (80-90 mmHg systolic), DIC, and hemodynamic collapse. PCI exposure to contrast, heparin, stent materials creates anaphylaxis risk.",
+    "septic_shock": "WEAK evidence - while sepsis commonly causes refractory hypotension, timing is wrong (immediately post-PCI), no fever documented, and no infectious source identified. Less likely in immediate post-procedural setting without infectious prodrome.",
+    "hemophagocytic_lymphohistiocytosis": "MODERATE evidence - post-procedural cases documented with severe anemia, multiorgan failure, and shock. Typically requires trigger such as infection or inflammation - possible but less likely immediately post-PCI.",
+    "thrombotic_microangiopathy": "WEAK evidence - can cause hemoglobin drop and hemodynamic collapse, but typically presents with thrombocytopenia and schistocytes which were not mentioned in target case.",
+    "adrenal_crisis": "WEAK evidence - can cause refractory shock requiring vasopressors, but no hyperpigmentation, electrolyte abnormalities, or prior adrenal disease noted in target case. Unlikely de novo presentation."
+  },
+  "domain_conclusion": "Systemic causes can explain hemoglobin drop AND tamponade-like physiology without pericardial effusion. Systemic capillary leak syndrome (SCLS) is the strongest systemic mimic - causing hemoconcentration (hemoglobin rise but with hemodilution from fluids causing apparent drop), refractory hypotension unresponsive to fluids and pressors, and shock physiology identical to tamponade. Drug reactions (contrast, DRESS, cytokine release) are also plausible given PCI context. However, target case involved cardiac catheterization with CTO intervention, extensive dissection, and overlapping stents - cardiac mechanisms (coronary perforation with contained rupture, retroperitoneal bleeding from access site, or myocardial stunning) should receive HIGHER diagnostic weight than systemic causes. Systemic diagnoses should be considered only after cardiac and vascular causes are excluded.",
+  "first_pmcid_in_file": "PMC10629858",
+  "last_pmcid_in_file": "PMC3674933"
+}

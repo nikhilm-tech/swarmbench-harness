@@ -1,0 +1,25 @@
+[task]
+name = "swarmbench/33463224f8c044ed899e2d74fd19db23-SWARMBENCH-FANOUT-CODESWE-DJANGO-ZONEINFO-MIGRATION"
+description = "Migrate Django timezone implementation from pytz to stdlib zoneinfo across core utils, database backends, template tags, settings, documentation, and tests"
+
+[metadata]
+verifier_type = "executable"
+domain = "code-swe"
+coordination_pattern = "fan-out-synthesize"
+human_solving_hours_estimate = 60
+human_solving_hours_justification = "Requires understanding pytz and zoneinfo API differences and auditing all call sites (~6h), refactoring django/utils/timezone.py with backward-compatible deprecation path (~8h), updating 4 database backends and template tags with zoneinfo-based timezone construction (~6h), adding USE_DEPRECATED_PYTZ transitional setting with deprecation warnings (~4h), deprecating is_dst parameter across Trunc/QuerySet/make_aware (~4h), updating 7 documentation files with migration guides, deprecation notes, and zoneinfo code examples (~10h), updating 9 test files with conditional pytz/zoneinfo logic and new deprecation tests (~14h), and running full test suite across 7 test modules to verify no regressions (~8h)."
+estimated_sub_agents = 6
+input_token_estimate = 550000
+reference_link = "https://github.com/django/django/pull/14848"
+why_multi_agent = "Django's codebase is ~500K+ lines across ~4500 files. The pytz-to-zoneinfo migration spans 6 independent layers: core timezone utilities (~300 lines of complex logic), database backends (timezone construction in base and sqlite3), template tags (error handling), settings/configuration (global_settings.py, conf/__init__.py), 7 documentation files (~400 lines of prose changes), and 9 test files (~300 lines of test logic changes). A single agent reading all files sequentially will exhaust its effective context window. It typically fixes the core utils but misses the template tag error handling, forgets the is_dst deprecation in Trunc functions, or fails to update test assertions for the new zoneinfo default. Six parallel fan-out agents each own one layer with focused context, and a synthesizer verifies integration."
+
+[agent]
+timeout_sec = 3600
+
+[verifier]
+timeout_sec = 600
+
+[environment]
+cpus = 2
+memory_mb = 4096
+build_timeout_sec = 600

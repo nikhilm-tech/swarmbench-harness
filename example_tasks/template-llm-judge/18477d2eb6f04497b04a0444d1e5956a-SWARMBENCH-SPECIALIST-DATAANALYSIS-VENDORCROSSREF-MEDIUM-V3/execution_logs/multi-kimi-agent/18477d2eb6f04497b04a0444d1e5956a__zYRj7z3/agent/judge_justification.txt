@@ -1,0 +1,24 @@
+Score: 0.875 (28/32 criteria passed)
+
+Evaluation of Agent Output against Oracle:
+
+SUMMARY FIELDS (7 checks):
+1. total_contradictions_found: FAILED - Agent reports 27, Oracle has 25 (Agent double-counts one contradiction)
+2. financial_count: PASSED - Both report 6
+3. technical_count: PASSED - Both report 6
+4. security_count: FAILED - Agent reports 7, Oracle has 6 (Agent incorrectly places market award contradiction under security)
+5. market_count: FAILED - Agent reports 8, Oracle has 7 (Agent counts duplicate entry)
+6. company_with_most_contradictions: FAILED - Agent reports 'CyberShield', Oracle is 'DataPulse Analytics' (DataPulse appears in 7 contradictions vs CyberShield's 5)
+7. most_contested_domain: PASSED - Both report 'market'
+
+CONTRADICTION ENTRIES (25 Oracle contradictions evaluated for presence and accuracy):
+- 24 contradictions: PASSED - Perfectly matched with correct domain, companies, descriptions, and quotes (e.g., FIN-001/TAM discrepancy, FIN-003/ARR conflict, TECH-001/uptime, etc.)
+- 1 contradiction (Oracle MKT-007/Frost & Sullivan award): PARTIAL FAIL - Content correctly identified but Agent duplicates it: once correctly under Market (MKT-006) and once incorrectly under Security (SEC-004 with wrong domain). The SEC-004 entry fails domain classification.
+
+SPECIFIC ERRORS NOTED:
+- Agent SEC-004 categorizes Oracle MKT-007 (industry award conflict) under 'security' domain instead of 'market'
+- Agent includes duplicate entry for Oracle MKT-007 (appears as both SEC-004 and MKT-006)
+- Agent miscounts totals due to duplicate and misclassification
+- Agent misidentifies company with most contradictions
+
+All 25 Oracle contradictions are present in Agent output with accurate quotes and descriptions, but one is misclassified and duplicated, affecting summary accuracy.

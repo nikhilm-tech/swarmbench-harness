@@ -1,0 +1,46 @@
+{
+  "chunk_id": "vascular-chunk-2",
+  "lines_read": "101-200",
+  "cases_assessed": 100,
+  "relevant_cases": [
+    {
+      "pmcid": "PMC5066018",
+      "diagnosis": "Lumbar vein rupture",
+      "verbatim_excerpt": "A 58-year-old homeless man with hypertension, type II diabetes, and a history of prior venous thromboembolism presented with 1 week of progressive weakness and fatigue.",
+      "relevance_notes": "Spontaneous retroperitoneal hematoma causing acute hemodynamic collapse with severe hemoglobin drop (12.3→6.8 g/dL), shock requiring ACLS and ICU admission. Matches pattern of vascular rupture causing hemodynamic collapse with bleeding."
+    },
+    {
+      "pmcid": "PMC3350230",
+      "diagnosis": "Ureteroarterial fistula",
+      "verbatim_excerpt": "An 80-year-old woman with a history of rectal cancer treated in 2008 by liver metastasectomy followed by Hartmann's procedure with intraoperative",
+      "relevance_notes": "Iatrogenic vascular injury with arterial bleeding from ureteroarterial fistula following pelvic surgery. Pulsatile arterial bleeding from ureteral orifice represents vascular access complication with active hemorrhage."
+    },
+    {
+      "pmcid": "PMC10831081",
+      "diagnosis": "Pseudoaneurysm of the lateral inferior genicular artery",
+      "verbatim_excerpt": "A 32-year-old man with no prior medical or surgical history presented to the emergency department with a 3-week history of a pulsatile mass",
+      "relevance_notes": "Post-procedural (arthroscopy) iatrogenic arterial injury causing pseudoaneurysm. Direct procedural vascular complication requiring intervention."
+    },
+    {
+      "pmcid": "PMC11327233",
+      "diagnosis": "spontaneous mesenteric hematoma",
+      "verbatim_excerpt": "A 63-year-old man with a 3-day history of abdominal pain presented in shock. His medical history was notable for atrial fibrillation, stroke",
+      "relevance_notes": "Spontaneous mesenteric hematoma causing hemodynamic collapse (BP 73/48 mmHg), anemia (Hb 9.0 g/dL), and shock while on anticoagulation. Bleeding causing vascular collapse with elevated venous pressures."
+    },
+    {
+      "pmcid": "PMC9207955",
+      "diagnosis": "Bronchial artery pseudoaneurysm",
+      "verbatim_excerpt": "A 59-year-old man was referred for evaluation of a progressively enlarging thoracic para-aortic mass. He had undergone noncontrast CT at an",
+      "relevance_notes": "Post-surgical (Bentall procedure, aortoiliac bypass) vascular complication with bronchial artery pseudoaneurysm. Post-procedural vascular pseudoaneurysm requiring embolization."
+    },
+    {
+      "pmcid": "PMC8684169",
+      "diagnosis": "nutcracker syndrome",
+      "verbatim_excerpt": "A 77-year-old Japanese woman (para 7; menopause at age 48) with hypertension (on nifedipine and candesartan) and chronic hepatitis C (normal",
+      "relevance_notes": "Spontaneous ovarian vein rupture with retroperitoneal hematoma causing hemoglobin drop (9.5 g/dL). Spontaneous vascular rupture with bleeding complication."
+    }
+  ],
+  "partially_relevant_pmcids": ["PMC8020436", "PMC8260735", "PMC10368536", "PMC7493034", "PMC11858700", "PMC7841211", "PMC11021984", "PMC11291296", "PMC5047992", "PMC3888002", "PMC9008083", "PMC6629266", "PMC11957487"],
+  "first_pmcid_in_chunk": "PMC8020436",
+  "last_pmcid_in_chunk": "PMC8684169"
+}

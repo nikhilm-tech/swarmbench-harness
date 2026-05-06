@@ -1,0 +1,283 @@
+sub_tasks:
+- depends_on: []
+  description: 'You are a Financial Analyst specialist. Read ALL 10 reports in input_artifacts/.
+    Focus EXCLUSIVELY on the FINANCIAL domain.
+
+
+    **FINANCIAL** — revenue/ARR figures, year-over-year growth rates, total addressable
+    market (TAM) size estimates, net revenue retention rates, market share percentages,
+    and company valuations.
+
+
+    You MUST use a two-pass methodology:
+
+
+    **PASS 1 — EXTRACT**: For EACH of the 10 reports, extract EVERY financial claim
+    into a structured list. Specifically look for:
+
+    (a) TAM or total addressable market size estimates (dollar amounts, years)
+
+    (b) Market share percentages claimed by any company
+
+    (c) Revenue or ARR figures
+
+    (d) Year-over-year growth rates
+
+    (e) Net revenue retention (NRR) rates
+
+    (f) Company valuations (Series rounds, implied valuations)
+
+    Include the company name, the exact quote, and the report filename. Do NOT skip
+    any report — there are financial claims in ALL 10 reports, even those focused
+    on security or technical vendors. Some reports contain financial claims ABOUT
+    OTHER COMPANIES (e.g., a security vendor''s report may estimate a competitor''s
+    valuation).
+
+
+    **PASS 2 — CROSS-REFERENCE**: Compare every extracted claim against all others.
+    Look for:
+
+    - Two reports giving different TAM figures for the same market
+
+    - Market share percentages from multiple companies that sum to over 100%
+
+    - Different revenue/ARR figures for the same company from different reports
+
+    - Different growth rate claims for the same company
+
+    - Different NRR figures for the same company
+
+    - Different valuations for the same company from different reports
+
+
+    IMPORTANT RULES:
+
+    - If multiple companies each claim market share percentages that sum to over 100%,
+    that is ONE contradiction with ALL companies listed — do NOT split into pairwise
+    entries. Check ALL 10 reports for market share claims.
+
+    - Ignore cases where one report gives an estimate range that includes another
+    report''s exact figure (e.g., ''$95M'' vs ''$90-100M'' is NOT a contradiction).
+
+    - Revenue or market share numbers belong to FINANCIAL even if they''re about a
+    security or technical company.
+
+    - Do NOT stop after finding the first few contradictions — systematically check
+    every extracted claim against every other.
+
+
+    Return each contradiction with: id (FIN-NNN), domain (''financial''), type, companies_involved
+    (list ALL), description, report_a, quote_from_report_a, report_b, quote_from_report_b.
+    Include additional_reports if more than 2 reports are involved.'
+  id: financial-specialist
+  parallel_group: specialists
+- depends_on: []
+  description: 'You are a Technical Architecture specialist. Read ALL 10 reports in
+    input_artifacts/. Focus EXCLUSIVELY on the TECHNICAL domain.
+
+
+    **TECHNICAL** — performance throughput benchmarks (events/sec, queries/sec), query
+    latency percentiles (P99), uptime/availability percentages, encryption ALGORITHMS
+    and STANDARDS (e.g., AES-128 vs AES-256 — the algorithm itself, NOT key management),
+    API/protocol feature compatibility percentages, and first-to-market technology
+    claims.
+
+
+    You MUST use a two-pass methodology:
+
+
+    **PASS 1 — EXTRACT**: For EACH of the 10 reports, extract EVERY technical performance
+    claim. Specifically look for:
+
+    (a) Throughput benchmarks (events/sec, queries/sec)
+
+    (b) Latency percentiles (P50, P99) for queries or operations
+
+    (c) Uptime/availability percentages
+
+    (d) Encryption algorithm versions (AES-128, AES-256)
+
+    (e) API/protocol compatibility percentages
+
+    (f) First-to-market technology claims with dates
+
+    Some reports contain technical claims ABOUT OTHER COMPANIES (e.g., one vendor''s
+    report may benchmark a competitor''s platform).
+
+
+    **PASS 2 — CROSS-REFERENCE**: Compare every extracted claim against all others
+    to find contradictions.
+
+
+    IMPORTANT RULES:
+
+    - Encryption ALGORITHM disputes (AES-128 vs AES-256) belong here.
+
+    - Encryption KEY MANAGEMENT disputes (CMEK vs provider-managed keys) belong to
+    SECURITY, NOT here.
+
+    - Only report contradictions BETWEEN different reports.
+
+    - Do NOT stop after finding the first few contradictions — systematically check
+    every extracted claim against every other.
+
+
+    Return each contradiction with: id (TECH-NNN), domain (''technical''), type, companies_involved,
+    description, report_a, quote_from_report_a, report_b, quote_from_report_b. Include
+    additional_reports if more than 2 reports are involved.'
+  id: technical-specialist
+  parallel_group: specialists
+- depends_on: []
+  description: 'You are a Security & Compliance specialist. Read ALL 10 reports in
+    input_artifacts/. Focus EXCLUSIVELY on the SECURITY domain.
+
+
+    **SECURITY** — (a) compliance certification names and TIMELINES — when a certification
+    was first achieved, (b) exclusive compliance certification claims — two companies
+    both claiming to be the ''only'' vendor with a specific certification, (c) data
+    breach or security incident history, (d) compliance SCOPE — whether all product
+    modules have a certification (e.g., full HIPAA vs partial), (e) encryption KEY
+    MANAGEMENT practices — customer-managed keys (CMEK) vs provider-managed keys.
+
+
+    You MUST use a two-pass methodology:
+
+
+    **PASS 1 — EXTRACT**: For EACH of the 10 reports, extract EVERY security-related
+    claim. Specifically look for:
+
+    (a) When certifications were first achieved (SOC 2, ISO 27001, FedRAMP, etc.)
+    — exact years
+
+    (b) Exclusive/sole claims about certifications
+
+    (c) Statements about zero breaches or security incidents, AND any reports of breaches
+    at other companies
+
+    (d) HIPAA, FedRAMP, or other compliance scope claims — full platform vs partial
+
+    (e) Encryption key management — CMEK vs provider-managed (NOT the algorithm —
+    that is TECHNICAL)
+
+    Some reports contain security claims ABOUT OTHER COMPANIES.
+
+
+    **PASS 2 — CROSS-REFERENCE**: Compare every extracted claim against all others
+    to find contradictions.
+
+
+    IMPORTANT RULES:
+
+    - Encryption ALGORITHM disputes (AES-128 vs AES-256) belong to TECHNICAL, NOT
+    here.
+
+    - Encryption KEY MANAGEMENT disputes (who manages the keys) DO belong here.
+
+    - Only report contradictions BETWEEN different reports.
+
+    - Do NOT stop after finding the first few contradictions — systematically check
+    every extracted claim against every other.
+
+
+    Return each contradiction with: id (SEC-NNN), domain (''security''), type, companies_involved,
+    description, report_a, quote_from_report_a, report_b, quote_from_report_b.'
+  id: security-specialist
+  parallel_group: specialists
+- depends_on: []
+  description: 'You are a Market Positioning specialist. Read ALL 10 reports in input_artifacts/.
+    Focus EXCLUSIVELY on the MARKET domain.
+
+
+    **MARKET** — (a) partnership exclusivity — two companies both claiming ''exclusive''
+    partnerships with the same entity, (b) customer count disputes, (c) market leadership/ranking
+    — multiple companies each claiming to be ''#1'' in the same segment (report as
+    ONE contradiction listing ALL claimants — check ALL 10 reports carefully), (d)
+    customer deployment sizes — conflicting claims about the same customer''s infrastructure,
+    (e) industry award disputes.
+
+
+    You MUST use a two-pass methodology:
+
+
+    **PASS 1 — EXTRACT**: For EACH of the 10 reports, extract EVERY market positioning
+    claim. Specifically look for:
+
+    (a) Exclusive partnership claims — note the partner name (e.g., ''exclusive partnership
+    with GlobalBank'')
+
+    (b) Customer count claims (e.g., ''serves over 500 enterprise customers'')
+
+    (c) Market leadership claims (e.g., ''#1 in distributed computing'', ''undisputed
+    market leader'')
+
+    (d) Customer deployment details — specific node counts or infrastructure sizes
+    at named customers
+
+    (e) Industry awards — Gartner, Frost & Sullivan, Forrester — note whether ''Leader'',
+    ''only Leader'', ''winner'', ''finalist''
+
+    Some reports contain market claims ABOUT OTHER COMPANIES.
+
+
+    **PASS 2 — CROSS-REFERENCE**: Compare every extracted claim against all others.
+    Pay special attention to:
+
+    - Two companies claiming exclusive partnership with the SAME customer
+
+    - Multiple companies claiming #1 leadership in overlapping market segments
+
+    - Different node counts/deployment sizes at the same customer
+
+    - Award claims that conflict (winner vs finalist, ''only Leader'' vs multiple
+    Leaders)
+
+
+    IMPORTANT RULES:
+
+    - For market leadership where 3+ companies claim the #1 position, include ALL
+    of them in companies_involved. Scan EVERY report before finalizing — check ALL
+    10 reports for distributed computing, cloud computing, or data processing leadership
+    claims.
+
+    - Customer COUNT disputes belong to MARKET, not FINANCIAL.
+
+    - Partnership or customer claims belong to MARKET even if about a technical product.
+
+    - DO NOT report certification or compliance claims (FedRAMP, SOC 2, ISO 27001,
+    HIPAA, etc.) — those belong EXCLUSIVELY to the SECURITY specialist, even if two
+    companies make competing ''sole/only vendor'' certification claims. Your domain
+    covers market leadership, partnerships, customer references, deployment sizes,
+    and industry awards ONLY.
+
+    - Only report contradictions BETWEEN different reports.
+
+    - Do NOT stop after finding the first few contradictions — systematically check
+    every extracted claim against every other.
+
+
+    Return each contradiction with: id (MKT-NNN), domain (''market''), type, companies_involved
+    (list ALL), description, report_a, quote_from_report_a, report_b, quote_from_report_b.
+    Include additional_reports if more than 2 reports are involved.'
+  id: market-specialist
+  parallel_group: specialists
+- depends_on:
+  - financial-specialist
+  - technical-specialist
+  - security-specialist
+  - market-specialist
+  description: 'Collect the contradiction lists from all four specialist sub-agents
+    (financial, technical, security, market). Perform the following validation steps:
+    (1) CRITICAL DEDUPLICATION: Check if the same pair of companies with the same
+    conflicting claims appears in multiple specialists'' outputs. If so, keep the
+    entry from the specialist whose domain is the best fit (certification disputes
+    → security, revenue disputes → financial, performance disputes → technical, partnership/leadership
+    disputes → market) and REMOVE the duplicate. (2) Verify sequential IDs within
+    each domain: FIN-001..FIN-NNN, TECH-001..TECH-NNN, SEC-001..SEC-NNN, MKT-001..MKT-NNN.
+    (3) Ensure each entry has a ''domain'' field (''financial'', ''technical'', ''security'',
+    ''market''). (4) Merge into a single ''contradictions'' array. (5) Count entries
+    per domain. (6) Compute summary: total_contradictions_found = length of array,
+    per-domain counts (must sum to total), company_with_most_contradictions = company
+    name appearing in the most entries, most_contested_domain = domain with highest
+    count. (7) Verify total equals sum of domain counts. Write final JSON to /logs/agent/output.json.'
+  id: synthesize-output
+  parallel_group: synthesis

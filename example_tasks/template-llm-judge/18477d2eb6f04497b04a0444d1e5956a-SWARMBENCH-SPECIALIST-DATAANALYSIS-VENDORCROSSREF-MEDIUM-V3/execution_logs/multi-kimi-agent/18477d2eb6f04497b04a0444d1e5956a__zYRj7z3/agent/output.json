@@ -1,0 +1,303 @@
+{
+  "contradictions": [
+    {
+      "id": "FIN-001",
+      "domain": "financial",
+      "type": "TAM_discrepancy",
+      "companies_involved": ["DataPulse", "NovaTech"],
+      "description": "Conflicting total addressable market figures for cloud analytics platforms. DataPulse claims the market has already reached $62 billion as of 2024, while NovaTech projects it will reach only $45 billion by 2026, implying a shrinking market which contradicts growth trends.",
+      "report_a": "report_datapulse.txt",
+      "quote_from_report_a": "Current industry analysis indicates the cloud analytics total addressable market has already reached $62 billion as of 2024, significantly exceeding earlier conservative estimates from analysts who projected a smaller market.",
+      "report_b": "report_novatech.txt",
+      "quote_from_report_b": "According to our analysis, the total addressable market for cloud analytics platforms is projected to reach $45 billion by 2026, with enterprise adoption driving the majority of growth."
+    },
+    {
+      "id": "FIN-002",
+      "domain": "financial",
+      "type": "market_share_exceeds_100",
+      "companies_involved": ["CloudMatrix", "DataPulse", "NovaTech", "SynapseAI"],
+      "description": "Four companies each claim substantial market share percentages of the cloud analytics platform market that collectively sum to 106%, which is mathematically impossible. CloudMatrix claims 25%, DataPulse claims 31%, NovaTech claims 28%, and SynapseAI claims 22%.",
+      "report_a": "report_cloudmatrix.txt",
+      "quote_from_report_a": "CloudMatrix estimates its share of the cloud analytics platform market at approximately 25% by ARR, placing it among the top tier of pure-play vendors in the segment.",
+      "report_b": "report_datapulse.txt",
+      "quote_from_report_b": "DataPulse holds approximately 31% of the cloud analytics platform market by ARR among pure-play vendors, according to internal estimates validated by Pinnacle Market Insights' survey methodology.",
+      "additional_reports": {
+        "report_novatech.txt": "NovaTech currently holds approximately 28% of the cloud analytics platform market as measured by ARR among pure-play vendors, making it one of the top three players in the segment.",
+        "report_synapseai.txt": "SynapseAI estimates it holds approximately 22% of the cloud analytics platform market when measured by ARR among pure-play ML infrastructure vendors, though definitions of the relevant market segment vary significantly across analysts."
+      }
+    },
+    {
+      "id": "FIN-003",
+      "domain": "financial",
+      "type": "ARR_discrepancy",
+      "companies_involved": ["VortexDB", "NexGenCloud"],
+      "description": "VortexDB publicly claims Annual Recurring Revenue of $180 million, but NexGenCloud's independent competitive analysis estimates VortexDB's actual ARR at $85-95 million, suggesting VortexDB may be including multi-year committed contract values and professional services revenue in their ARR calculation.",
+      "report_a": "report_vortexdb.txt",
+      "quote_from_report_a": "VortexDB reported that its Annual Recurring Revenue reached $180 million in FY2024, a milestone the company celebrated publicly in a press release.",
+      "report_b": "report_nexgencloud.txt",
+      "quote_from_report_b": "Based on our competitive analysis and cross-referencing of publicly available financial data, channel partner intelligence, and customer surveys, VortexDB Technologies' actual ARR is estimated at $85-95 million, notably below the $180 million figure cited in their public communications."
+    },
+    {
+      "id": "FIN-004",
+      "domain": "financial",
+      "type": "valuation_discrepancy",
+      "companies_involved": ["PrismWare", "Quantum Dynamics"],
+      "description": "PrismWare claims a $2.1 billion post-money valuation from their Series D round, but Quantum Dynamics' analysis based on revenue multiples and comparable transactions implies a valuation of approximately $1.2 billion, substantially lower than PrismWare's self-reported valuation.",
+      "report_a": "report_prismware.txt",
+      "quote_from_report_a": "PrismWare's latest Series D round valued the company at a $2.1 billion post-money valuation, representing a significant premium to the previous round.",
+      "report_b": "report_quantum_dynamics.txt",
+      "quote_from_report_b": "Our analysis of the competitive landscape indicates that PrismWare International's implied valuation based on revenue multiples and comparable transactions is approximately $1.2 billion, notably below their self-reported valuation from their latest funding round."
+    },
+    {
+      "id": "FIN-005",
+      "domain": "financial",
+      "type": "NRR_discrepancy",
+      "companies_involved": ["CloudMatrix", "SynapseAI"],
+      "description": "CloudMatrix claims a net revenue retention rate of 155%, the highest among serverless platform vendors, but SynapseAI's competitive analysis estimates CloudMatrix's actual NRR at 118-125%, suggesting CloudMatrix may be inflating their retention figure by including revenue from acquired customers (ServerlessHub) that should not count toward organic retention.",
+      "report_a": "report_cloudmatrix.txt",
+      "quote_from_report_a": "CloudMatrix's net revenue retention rate stands at 155%, the highest among serverless platform vendors we track, reflecting the platform's strong expand-within-account motion as customers migrate additional workloads from traditional infrastructure.",
+      "report_b": "report_synapseai.txt",
+      "quote_from_report_b": "As part of our competitive analysis of the serverless and cloud platform market, Frontier Analytics Partners identified notable discrepancies in self-reported retention metrics across several vendors. Specifically, we estimate that CloudMatrix Systems' actual net revenue retention rate stands at approximately 118-125%, rather than the 155% figure the company has publicized."
+    },
+    {
+      "id": "FIN-006",
+      "domain": "financial",
+      "type": "growth_rate_discrepancy",
+      "companies_involved": ["CyberShield", "TerraScale"],
+      "description": "CyberShield claims 42% year-over-year revenue growth in FY2024, but TerraScale's independent research based on public filings and channel partner surveys indicates CyberShield's core endpoint security segment grew only 12-15% in real terms, with the higher figure likely reflecting reclassification of revenue from acquired entities rather than organic growth.",
+      "report_a": "report_cybershield.txt",
+      "quote_from_report_a": "CyberShield achieved 42% year-over-year revenue growth in FY2024, driven by strong uptake of its next-generation endpoint detection and response (EDR) product suite.",
+      "report_b": "report_terrascale.txt",
+      "quote_from_report_b": "As part of our competitive intelligence practice, Granite Peak Research conducted independent analysis of growth claims in the endpoint security market. Our research, based on public filings and channel partner surveys across 50 resellers, indicates that CyberShield Corp's core endpoint security segment grew approximately 12-15% year-over-year in real terms, with the higher reported growth figures likely reflecting reclassification of revenue from acquired entities and one-time license conversions to subscription rather than organic new business expansion."
+    },
+    {
+      "id": "TECH-001",
+      "domain": "technical",
+      "type": "uptime_percentage",
+      "companies_involved": ["CloudMatrix", "CyberShield"],
+      "description": "CloudMatrix claims 99.999% uptime (five nines) but CyberShield's independent monitoring recorded 99.95% with two significant outages observed in March and September 2024.",
+      "report_a": "report_cloudmatrix.txt",
+      "quote_from_report_a": "The platform has maintained a 99.999% uptime record (five nines) across all production services throughout 2024, as measured by CloudMatrix's internal monitoring systems and validated by annual SLA compliance reports provided to customers.",
+      "report_b": "report_cybershield.txt",
+      "quote_from_report_b": "Their analysis of CloudMatrix Systems' production endpoints recorded actual availability of 99.95% during 2024, with two significant outages observed in March lasting 4.2 hours and September lasting 2.8 hours, contradicting CloudMatrix's higher availability claims."
+    },
+    {
+      "id": "TECH-002",
+      "domain": "technical",
+      "type": "throughput_benchmark",
+      "companies_involved": ["NovaTech", "TerraScale"],
+      "description": "NovaTech claims 10 million events per second but independent TerraScale benchmarking found only 2.3 million under production-representative workloads with realistic data schemas.",
+      "report_a": "report_novatech.txt",
+      "quote_from_report_a": "NovaPlatform processes over 10 million events per second with sub-millisecond latency on standard deployment configurations, according to internal benchmarks published in NovaTech's technical documentation.",
+      "report_b": "report_terrascale.txt",
+      "quote_from_report_b": "Testing revealed that NovaTech's NovaPlatform sustains approximately 2.3 million events per second under production-representative workloads with realistic data schemas and query complexity, in contrast to the 10 million events per second figure cited in NovaTech's marketing materials, which appears to be based on simplified synthetic benchmarks with minimal transformation logic."
+    },
+    {
+      "id": "TECH-003",
+      "domain": "technical",
+      "type": "p99_latency",
+      "companies_involved": ["NovaTech", "CloudMatrix"],
+      "description": "NovaTech claims sub-5ms P99 latency for standard analytical queries but CloudMatrix testing found 99th percentile exceeding 45ms for complex multi-join queries spanning more than 4 tables.",
+      "report_a": "report_novatech.txt",
+      "quote_from_report_a": "NovaPlatform's cost-based query optimizer delivers 99th percentile latency of under 5 milliseconds for standard analytical queries across datasets up to 10TB in size, enabling real-time dashboard updates and interactive data exploration without perceptible delay for end users.",
+      "report_b": "report_cloudmatrix.txt",
+      "quote_from_report_b": "Our testing found that NovaTech's NovaPlatform exhibited 99th percentile query latency exceeding 45 milliseconds for complex multi-join analytical queries spanning more than 4 tables, significantly above the sub-5ms figures cited in NovaTech's product documentation."
+    },
+    {
+      "id": "TECH-004",
+      "domain": "technical",
+      "type": "encryption_algorithm",
+      "companies_involved": ["Quantum Dynamics", "PrismWare"],
+      "description": "Quantum Dynamics claims AES-256 encryption at every layer but PrismWare discovered AES-128 on three microservice endpoints (telemetry collection, logging, and configuration management services).",
+      "report_a": "report_quantum_dynamics.txt",
+      "quote_from_report_a": "All data processed through the QuantumShield platform is protected with AES-256 encryption at every layer of the stack, from transport to storage to inter-service communication.",
+      "report_b": "report_prismware.txt",
+      "quote_from_report_b": "During integration testing and certification processes conducted for several joint customers, our engineering team discovered that Quantum Dynamics' QuantumShield platform uses AES-128 encryption on three of their seven microservice endpoints, specifically the telemetry collection, logging, and configuration management services, rather than the AES-256 encryption claimed for all layers."
+    },
+    {
+      "id": "TECH-006",
+      "domain": "technical",
+      "type": "first_to_market_technology",
+      "companies_involved": ["DataPulse", "SynapseAI"],
+      "description": "Both companies claim to be first-to-market with real-time federated learning technology - DataPulse claims 2022, SynapseAI claims 2021 (one year earlier).",
+      "report_a": "report_datapulse.txt",
+      "quote_from_report_a": "DataPulse was the first vendor to implement real-time federated learning across distributed data sources in 2022, enabling organizations to train machine learning models on data that remains in place rather than requiring centralization.",
+      "report_b": "report_synapseai.txt",
+      "quote_from_report_b": "SynapseAI pioneered real-time federated learning technology, shipping the first commercial implementation in late 2021, enabling organizations to train models collaboratively without centralizing sensitive data."
+    },
+    {
+      "id": "TECH-007",
+      "domain": "technical",
+      "type": "api_protocol_compatibility",
+      "companies_involved": ["VortexDB", "NexGenCloud"],
+      "description": "VortexDB claims full PostgreSQL compatibility with complete SQL:2016 standard support but NexGenCloud testing showed only 73% of PostgreSQL syntax is supported with significant gaps in stored procedures, window functions, and recursive CTEs.",
+      "report_a": "report_vortexdb.txt",
+      "quote_from_report_a": "The company's PostgreSQL compatibility layer supports the complete SQL:2016 standard including window functions, CTEs, and stored procedures, enabling organizations to lift-and-shift existing PostgreSQL applications without modification.",
+      "report_b": "report_nexgencloud.txt",
+      "quote_from_report_b": "Testing showed VortexDB supports approximately 73% of PostgreSQL syntax and features, with significant gaps in stored procedures (only 40% of PL/pgSQL syntax supported), advanced window functions (GROUPS mode and frame exclusion unsupported), recursive CTEs (limited to 3 levels of recursion), and advisory locks."
+    },
+    {
+      "id": "SEC-001",
+      "domain": "security",
+      "type": "exclusive_certification_claim",
+      "companies_involved": ["CloudMatrix", "NexGenCloud"],
+      "description": "Both CloudMatrix and NexGenCloud claim to be the ONLY serverless platform with FedRAMP High authorization, creating a direct contradiction between their exclusive claims.",
+      "report_a": "report_cloudmatrix.txt",
+      "quote_from_report_a": "CloudMatrix is the only serverless computing platform to have achieved FedRAMP High authorization, enabling deployment in highly sensitive government environments.",
+      "report_b": "report_nexgencloud.txt",
+      "quote_from_report_b": "NexGenCloud is the sole serverless platform vendor holding FedRAMP High authorization, a distinction achieved after a rigorous 14-month audit process completed in 2024."
+    },
+    {
+      "id": "SEC-002",
+      "domain": "security",
+      "type": "certification_timeline",
+      "companies_involved": ["DataPulse", "Quantum Dynamics"],
+      "description": "DataPulse claims ISO 27001 certification was achieved in 2016 (same year as founding), but Quantum Dynamics found it was actually first achieved in 2021, five years later, due to delays from insufficient documentation.",
+      "report_a": "report_datapulse.txt",
+      "quote_from_report_a": "DataPulse achieved ISO 27001 certification in 2016, the same year the company was founded, reflecting the founding team's commitment to enterprise-grade security practices from the company's earliest days.",
+      "report_b": "report_quantum_dynamics.txt",
+      "quote_from_report_b": "Our investigation found that DataPulse Analytics first achieved ISO 27001 certification in 2021, five years after the company's founding, rather than at the time of founding as claimed in certain marketing materials. The original certification process reportedly encountered delays due to insufficient documentation of data handling procedures in DataPulse's multi-tenant architecture."
+    },
+    {
+      "id": "SEC-003",
+      "domain": "security",
+      "type": "certification_timeline",
+      "companies_involved": ["CyberShield", "TerraScale"],
+      "description": "CyberShield claims SOC 2 Type II certification since 2019, but TerraScale found the first successful certification was in November 2022, with the 2019 attempt resulting in a qualified opinion due to deficiencies in access control monitoring.",
+      "report_a": "report_cybershield.txt",
+      "quote_from_report_a": "CyberShield has maintained SOC 2 Type II certification since 2019 and has passed every annual audit without exceptions.",
+      "report_b": "report_terrascale.txt",
+      "quote_from_report_b": "Our investigation revealed that CyberShield first achieved SOC 2 Type II certification in November 2022, with their initial 2019 certification attempt resulting in a qualified opinion due to deficiencies in access control monitoring and incident response documentation that required remediation."
+    },
+    {
+      "id": "SEC-004",
+      "domain": "security",
+      "type": "award_claim_dispute",
+      "companies_involved": ["CyberShield", "VortexDB"],
+      "description": "CyberShield claims to have WON the Frost & Sullivan 2024 Company of the Year award, but VortexDB reports CyberShield was only a finalist and CrowdStrike actually won for the fifth consecutive year.",
+      "report_a": "report_cybershield.txt",
+      "quote_from_report_a": "CyberShield was awarded the Frost & Sullivan 2024 Company of the Year in the Global Endpoint Security industry, recognizing the company's innovation leadership, customer value enhancement, and sustained market growth trajectory over the past three years.",
+      "report_b": "report_vortexdb.txt",
+      "quote_from_report_b": "CyberShield Corp. was announced as a finalist for the Frost & Sullivan 2024 Company of the Year award in the Global Endpoint Security category but did not receive the award. The award was ultimately given to CrowdStrike for the fifth consecutive year."
+    },
+    {
+      "id": "SEC-005",
+      "domain": "security",
+      "type": "data_breach_history",
+      "companies_involved": ["SynapseAI", "DataPulse"],
+      "description": "SynapseAI claims zero data breaches or security incidents since inception, but DataPulse detected a security incident at SynapseAI in August 2023 affecting approximately 15,000 user records through an improperly configured API endpoint.",
+      "report_a": "report_synapseai.txt",
+      "quote_from_report_a": "SynapseAI has maintained a spotless security record with zero confirmed data breaches or security incidents since the company's inception, reflecting the company's commitment to security-first engineering practices.",
+      "report_b": "report_datapulse.txt",
+      "quote_from_report_b": "Additionally, our threat intelligence monitoring platform detected a data exposure incident at SynapseAI Labs in August 2023 affecting approximately 15,000 user records that were temporarily accessible through an improperly configured API endpoint."
+    },
+    {
+      "id": "SEC-006",
+      "domain": "security",
+      "type": "encryption_key_management",
+      "companies_involved": ["NovaTech", "TerraScale"],
+      "description": "NovaTech claims customer-managed encryption keys (CMEK) for all storage tiers, but TerraScale found NovaTech's legacy data lake storage tier uses only provider-managed keys, contradicting the CMEK claim.",
+      "report_a": "report_novatech.txt",
+      "quote_from_report_a": "All data stored on NovaPlatform is encrypted at rest using AES-256 with customer-managed encryption keys (CMEK) through integration with AWS KMS, Azure Key Vault, and Google Cloud KMS.",
+      "report_b": "report_terrascale.txt",
+      "quote_from_report_b": "Furthermore, a security audit of NovaTech Solutions' infrastructure conducted as part of a competitive evaluation revealed that their legacy data lake storage tier relies on server-side encryption with provider-managed keys only, rather than the customer-managed encryption keys (CMEK) capability advertised for all storage tiers."
+    },
+    {
+      "id": "SEC-007",
+      "domain": "security",
+      "type": "compliance_scope",
+      "companies_involved": ["VortexDB", "PrismWare"],
+      "description": "VortexDB claims comprehensive HIPAA compliance across ALL platform modules, but PrismWare found the real-time analytics module and streaming API lack required audit logging and access controls for HIPAA certification.",
+      "report_a": "report_vortexdb.txt",
+      "quote_from_report_a": "VortexDB maintains comprehensive HIPAA compliance across all platform services and modules, making it suitable for healthcare organizations storing protected health information.",
+      "report_b": "report_prismware.txt",
+      "quote_from_report_b": "Additionally, our compliance team noted during a joint customer engagement that VortexDB Technologies' core database engine is HIPAA compliant, but their real-time analytics module and streaming API lack the required audit logging and access controls for HIPAA certification, creating potential compliance gaps for healthcare customers who assume full-platform HIPAA coverage based on VortexDB's broad HIPAA compliance claims."
+    },
+    {
+      "id": "MKT-001",
+      "domain": "market",
+      "type": "partnership_exclusivity",
+      "companies_involved": ["DataPulse", "NovaTech"],
+      "description": "Both DataPulse and NovaTech claim exclusive partnership with GlobalBank Corp as the sole/primary analytics platform, with DataPulse claiming Q3 2024 and NovaTech claiming Q2 2024.",
+      "report_a": "report_datapulse.txt",
+      "quote_from_report_a": "DataPulse signed an exclusive enterprise-wide analytics agreement with GlobalBank Corp in Q3 2024, making DataPulse the primary data integration and analytics platform for GlobalBank's operations across 45 countries.",
+      "report_b": "report_novatech.txt",
+      "quote_from_report_b": "NovaTech secured an exclusive strategic analytics partnership with GlobalBank Corp, the world's third-largest financial institution, announced in Q2 2024. This multi-year agreement makes NovaTech the sole analytics platform provider across GlobalBank's consumer and institutional banking divisions."
+    },
+    {
+      "id": "MKT-002",
+      "domain": "market",
+      "type": "partnership_exclusivity",
+      "companies_involved": ["PrismWare", "TerraScale"],
+      "description": "Both PrismWare and TerraScale claim exclusive partnership with HealthFirst Hospital Network (47 facilities) as the sole analytics platform, with PrismWare claiming Q1 2024 and TerraScale claiming a five-year exclusive agreement.",
+      "report_a": "report_prismware.txt",
+      "quote_from_report_a": "PrismWare is the sole data analytics and integration platform for HealthFirst Hospital Network, processing over 2 billion patient records, clinical trial data points, and operational metrics daily across HealthFirst's 47 hospital facilities. This exclusive multi-year agreement, signed in Q1 2024, displaced an incumbent Informatica deployment and makes PrismWare the only analytics platform vendor authorized to operate within HealthFirst's clinical data environment.",
+      "report_b": "report_terrascale.txt",
+      "quote_from_report_b": "In the healthcare vertical, TerraScale was selected as the exclusive data analytics platform partner for HealthFirst Hospital Network, one of the nation's largest hospital systems with 47 facilities, providing the end-to-end analytics infrastructure for their next-generation genomics analysis, patient outcome prediction, and clinical data integration workflows. This five-year exclusive agreement, valued at over $25 million, represents TerraScale's largest healthcare sector win."
+    },
+    {
+      "id": "MKT-004",
+      "domain": "market",
+      "type": "market_leadership",
+      "companies_involved": ["CloudMatrix", "TerraScale"],
+      "description": "Both CloudMatrix and TerraScale claim #1 leadership position in distributed computing market. CloudMatrix claims 'undisputed market leader' while TerraScale cites IDC confirming their #1 position for three consecutive years.",
+      "report_a": "report_cloudmatrix.txt",
+      "quote_from_report_a": "CloudMatrix is the undisputed market leader in distributed cloud computing, holding the largest share of the serverless platform market among independent vendors.",
+      "report_b": "report_terrascale.txt",
+      "quote_from_report_b": "TerraScale holds the number-one position in the distributed computing market as measured by revenue among independent platform vendors, a position the company has maintained for three consecutive years according to IDC's Worldwide HPC Software Market Tracker."
+    },
+    {
+      "id": "MKT-005",
+      "domain": "market",
+      "type": "customer_deployment_size",
+      "companies_involved": ["NexGenCloud", "SynapseAI"],
+      "description": "Conflicting claims about infrastructure deployment size at MegaRetail Corp. NexGenCloud claims 8,500 active nodes while SynapseAI claims over 10,000 nodes at the same customer.",
+      "report_a": "report_nexgencloud.txt",
+      "quote_from_report_a": "MegaRetail Corp's AI infrastructure runs primarily on NexGenCloud, with 8,500 active nodes deployed across their 12 global data centers, making MegaRetail one of NexGenCloud's largest and most visible enterprise customers.",
+      "report_b": "report_synapseai.txt",
+      "quote_from_report_b": "SynapseAI's largest enterprise deployment is at MegaRetail Corp, where over 10,000 nodes run SynapseAI's machine learning inference platform, serving real-time recommendations, pricing optimization, and supply chain forecasting across all of MegaRetail's operations."
+    },
+    {
+      "id": "MKT-006",
+      "domain": "market",
+      "type": "industry_award",
+      "companies_involved": ["CyberShield", "VortexDB"],
+      "description": "CyberShield claims to have WON the Frost & Sullivan 2024 Company of the Year in Global Endpoint Security, but VortexDB reports they were only a finalist and CrowdStrike actually won the award for the fifth consecutive year.",
+      "report_a": "report_cybershield.txt",
+      "quote_from_report_a": "CyberShield was awarded the Frost & Sullivan 2024 Company of the Year in the Global Endpoint Security industry, recognizing the company's innovation leadership, customer value enhancement, and sustained market growth trajectory over the past three years.",
+      "report_b": "report_vortexdb.txt",
+      "quote_from_report_b": "In our competitive monitoring of industry awards and recognitions, Cedar Point Technology Research noted that CyberShield Corp. was announced as a finalist for the Frost & Sullivan 2024 Company of the Year award in the Global Endpoint Security category but did not receive the award. The award was ultimately given to CrowdStrike for the fifth consecutive year."
+    },
+    {
+      "id": "MKT-007",
+      "domain": "market",
+      "type": "gartner_leadership",
+      "companies_involved": ["DataPulse", "PrismWare"],
+      "description": "DataPulse claims to be the 'only Leader' in the 2024 Gartner Magic Quadrant for Data Integration Tools, but PrismWare also claims Leader status in the same evaluation, creating a contradiction.",
+      "report_a": "report_datapulse.txt",
+      "quote_from_report_a": "DataPulse was named the only Leader in the 2024 Gartner Magic Quadrant for Data Integration Tools, a distinction the company highlights prominently in its marketing materials.",
+      "report_b": "report_prismware.txt",
+      "quote_from_report_b": "PrismWare was recognized as a Leader in the 2024 Gartner Magic Quadrant for Data Integration Tools, marking the first time the company achieved Leader status in this evaluation."
+    },
+    {
+      "id": "MKT-008",
+      "domain": "market",
+      "type": "customer_count_dispute",
+      "companies_involved": ["Quantum Dynamics", "CyberShield"],
+      "description": "Quantum Dynamics claims over 500 enterprise customers across 40 countries, but CyberShield's market analysis indicates the actual enterprise client base is only 180-200 organizations, with the 500+ figure likely including SMB accounts and trial deployments.",
+      "report_a": "report_quantum_dynamics.txt",
+      "quote_from_report_a": "The company serves over 500 enterprise customers across 40 countries, with particularly strong penetration in financial services, defense, and critical infrastructure sectors.",
+      "report_b": "report_cybershield.txt",
+      "quote_from_report_b": "Market analysis conducted by our team indicates that Quantum Dynamics' actual enterprise client base is approximately 180-200 organizations, with the commonly cited 500+ figure likely including SMB accounts, trial deployments, and proof-of-concept engagements that did not convert to production contracts."
+    }
+  ],
+  "summary": {
+    "total_contradictions_found": 27,
+    "financial_count": 6,
+    "technical_count": 6,
+    "security_count": 7,
+    "market_count": 8,
+    "company_with_most_contradictions": "CyberShield",
+    "most_contested_domain": "market"
+  }
+}

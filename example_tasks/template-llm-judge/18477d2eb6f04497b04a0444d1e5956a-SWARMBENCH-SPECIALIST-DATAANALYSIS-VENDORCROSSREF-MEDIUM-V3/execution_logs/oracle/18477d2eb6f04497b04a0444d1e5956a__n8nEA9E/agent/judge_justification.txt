@@ -1,0 +1,3 @@
+Score: 1.0
+
+Agent output exactly matches oracle. Reward = 1.0.

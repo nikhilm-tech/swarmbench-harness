@@ -1,0 +1,207 @@
+sub_tasks:
+- depends_on: []
+  description: Search web for 'API-Bank' (Li et al., 2023). Read the paper and extract
+    benchmark_name, num_domains, num_tasks, has_human_task_curation, has_refusal_ability,
+    has_human_plans. For each field, provide 1-3 verbatim quotes from the paper as
+    evidence in _statement_from_the_paper arrays.
+  id: research-api-bank
+  parallel_group: fan-out
+- depends_on: []
+  description: Search web for 'ACEBench' (Chen et al., 2025). Read the paper and extract
+    benchmark_name, num_domains, num_tasks, has_human_task_curation, has_refusal_ability,
+    has_human_plans. For each field, provide 1-3 verbatim quotes from the paper as
+    evidence in _statement_from_the_paper arrays.
+  id: research-acebench
+  parallel_group: fan-out
+- depends_on: []
+  description: Search web for 'τ-bench' (Yao et al., 2024). Read the paper and extract
+    benchmark_name, num_domains, num_tasks, has_human_task_curation, has_refusal_ability,
+    has_human_plans. For each field, provide 1-3 verbatim quotes from the paper as
+    evidence in _statement_from_the_paper arrays.
+  id: research-tau-bench
+  parallel_group: fan-out
+- depends_on: []
+  description: Search web for 'τ²-bench' (Barres et al., 2025). Read the paper and
+    extract benchmark_name, num_domains, num_tasks, has_human_task_curation, has_refusal_ability,
+    has_human_plans. For each field, provide 1-3 verbatim quotes from the paper as
+    evidence in _statement_from_the_paper arrays.
+  id: research-tau2-bench
+  parallel_group: fan-out
+- depends_on: []
+  description: Search web for 'WorkArena' (Drouin et al., 2024). Read the paper and
+    extract benchmark_name, num_domains, num_tasks, has_human_task_curation, has_refusal_ability,
+    has_human_plans. For each field, provide 1-3 verbatim quotes from the paper as
+    evidence in _statement_from_the_paper arrays.
+  id: research-workarena
+  parallel_group: fan-out
+- depends_on: []
+  description: Search web for 'WorkArena++' (Boisvert et al., 2024). Read the paper
+    and extract benchmark_name, num_domains, num_tasks, has_human_task_curation, has_refusal_ability,
+    has_human_plans. For each field, provide 1-3 verbatim quotes from the paper as
+    evidence in _statement_from_the_paper arrays.
+  id: research-workarena-plus
+  parallel_group: fan-out
+- depends_on: []
+  description: Search web for 'ITBench' (Jha et al., 2025). Read the paper and extract
+    benchmark_name, num_domains, num_tasks, has_human_task_curation, has_refusal_ability,
+    has_human_plans. For each field, provide 1-3 verbatim quotes from the paper as
+    evidence in _statement_from_the_paper arrays.
+  id: research-itbench
+  parallel_group: fan-out
+- depends_on: []
+  description: Search web for 'WorkBench' (Styles et al., 2024). Read the paper and
+    extract benchmark_name, num_domains, num_tasks, has_human_task_curation, has_refusal_ability,
+    has_human_plans. For each field, provide 1-3 verbatim quotes from the paper as
+    evidence in _statement_from_the_paper arrays.
+  id: research-workbench
+  parallel_group: fan-out
+- depends_on: []
+  description: Search web for 'TheAgentCompany' (Xu et al., 2024). Read the paper
+    and extract benchmark_name, num_domains, num_tasks, has_human_task_curation, has_refusal_ability,
+    has_human_plans. For each field, provide 1-3 verbatim quotes from the paper as
+    evidence in _statement_from_the_paper arrays.
+  id: research-agentcompany
+  parallel_group: fan-out
+- depends_on: []
+  description: Search web for 'CRMArena' (Huang et al., 2025). Read the paper and
+    extract benchmark_name, num_domains, num_tasks, has_human_task_curation, has_refusal_ability,
+    has_human_plans. For each field, provide 1-3 verbatim quotes from the paper as
+    evidence in _statement_from_the_paper arrays.
+  id: research-crmarena
+  parallel_group: fan-out
+- depends_on: []
+  description: Search web for 'CRMArena-Pro' (Huang et al., 2025). Read the paper
+    and extract benchmark_name, num_domains, num_tasks, has_human_task_curation, has_refusal_ability,
+    has_human_plans. For each field, provide 1-3 verbatim quotes from the paper as
+    evidence in _statement_from_the_paper arrays.
+  id: research-crmarena-pro
+  parallel_group: fan-out
+- depends_on:
+  - research-api-bank
+  description: 'Independently re-read the API-Bank paper. Verify each field value
+    and its supporting quotes from the research agent. Check that: (1) quotes are
+    verbatim from the paper, (2) values correctly follow from the quotes, (3) no fields
+    are misinterpreted. If any mismatches are found, interact with the research-api-bank
+    agent to discuss the discrepancy, share your evidence, and collaboratively resolve
+    it. Produce a verified extraction with corrected values and quotes.'
+  id: evaluate-api-bank
+  parallel_group: evaluate
+- depends_on:
+  - research-acebench
+  description: 'Independently re-read the ACEBench paper. Verify each field value
+    and its supporting quotes from the research agent. Check that: (1) quotes are
+    verbatim from the paper, (2) values correctly follow from the quotes, (3) no fields
+    are misinterpreted. If any mismatches are found, interact with the research-acebench
+    agent to discuss the discrepancy, share your evidence, and collaboratively resolve
+    it. Produce a verified extraction with corrected values and quotes.'
+  id: evaluate-acebench
+  parallel_group: evaluate
+- depends_on:
+  - research-tau-bench
+  description: 'Independently re-read the τ-bench paper. Verify each field value and
+    its supporting quotes from the research agent. Check that: (1) quotes are verbatim
+    from the paper, (2) values correctly follow from the quotes, (3) no fields are
+    misinterpreted. If any mismatches are found, interact with the research-tau-bench
+    agent to discuss the discrepancy, share your evidence, and collaboratively resolve
+    it. Produce a verified extraction with corrected values and quotes.'
+  id: evaluate-tau-bench
+  parallel_group: evaluate
+- depends_on:
+  - research-tau2-bench
+  description: 'Independently re-read the τ²-bench paper. Verify each field value
+    and its supporting quotes from the research agent. Check that: (1) quotes are
+    verbatim from the paper, (2) values correctly follow from the quotes, (3) no fields
+    are misinterpreted. If any mismatches are found, interact with the research-tau2-bench
+    agent to discuss the discrepancy, share your evidence, and collaboratively resolve
+    it. Produce a verified extraction with corrected values and quotes.'
+  id: evaluate-tau2-bench
+  parallel_group: evaluate
+- depends_on:
+  - research-workarena
+  description: 'Independently re-read the WorkArena paper. Verify each field value
+    and its supporting quotes from the research agent. Check that: (1) quotes are
+    verbatim from the paper, (2) values correctly follow from the quotes, (3) no fields
+    are misinterpreted. If any mismatches are found, interact with the research-workarena
+    agent to discuss the discrepancy, share your evidence, and collaboratively resolve
+    it. Produce a verified extraction with corrected values and quotes.'
+  id: evaluate-workarena
+  parallel_group: evaluate
+- depends_on:
+  - research-workarena-plus
+  description: 'Independently re-read the WorkArena++ paper. Verify each field value
+    and its supporting quotes from the research agent. Check that: (1) quotes are
+    verbatim from the paper, (2) values correctly follow from the quotes, (3) no fields
+    are misinterpreted. If any mismatches are found, interact with the research-workarena-plus
+    agent to discuss the discrepancy, share your evidence, and collaboratively resolve
+    it. Produce a verified extraction with corrected values and quotes.'
+  id: evaluate-workarena-plus
+  parallel_group: evaluate
+- depends_on:
+  - research-itbench
+  description: 'Independently re-read the ITBench paper. Verify each field value and
+    its supporting quotes from the research agent. Check that: (1) quotes are verbatim
+    from the paper, (2) values correctly follow from the quotes, (3) no fields are
+    misinterpreted. If any mismatches are found, interact with the research-itbench
+    agent to discuss the discrepancy, share your evidence, and collaboratively resolve
+    it. Produce a verified extraction with corrected values and quotes.'
+  id: evaluate-itbench
+  parallel_group: evaluate
+- depends_on:
+  - research-workbench
+  description: 'Independently re-read the WorkBench paper. Verify each field value
+    and its supporting quotes from the research agent. Check that: (1) quotes are
+    verbatim from the paper, (2) values correctly follow from the quotes, (3) no fields
+    are misinterpreted. If any mismatches are found, interact with the research-workbench
+    agent to discuss the discrepancy, share your evidence, and collaboratively resolve
+    it. Produce a verified extraction with corrected values and quotes.'
+  id: evaluate-workbench
+  parallel_group: evaluate
+- depends_on:
+  - research-agentcompany
+  description: 'Independently re-read the TheAgentCompany paper. Verify each field
+    value and its supporting quotes from the research agent. Check that: (1) quotes
+    are verbatim from the paper, (2) values correctly follow from the quotes, (3)
+    no fields are misinterpreted. If any mismatches are found, interact with the research-agentcompany
+    agent to discuss the discrepancy, share your evidence, and collaboratively resolve
+    it. Produce a verified extraction with corrected values and quotes.'
+  id: evaluate-agentcompany
+  parallel_group: evaluate
+- depends_on:
+  - research-crmarena
+  description: 'Independently re-read the CRMArena paper. Verify each field value
+    and its supporting quotes from the research agent. Check that: (1) quotes are
+    verbatim from the paper, (2) values correctly follow from the quotes, (3) no fields
+    are misinterpreted. If any mismatches are found, interact with the research-crmarena
+    agent to discuss the discrepancy, share your evidence, and collaboratively resolve
+    it. Produce a verified extraction with corrected values and quotes.'
+  id: evaluate-crmarena
+  parallel_group: evaluate
+- depends_on:
+  - research-crmarena-pro
+  description: 'Independently re-read the CRMArena-Pro paper. Verify each field value
+    and its supporting quotes from the research agent. Check that: (1) quotes are
+    verbatim from the paper, (2) values correctly follow from the quotes, (3) no fields
+    are misinterpreted. If any mismatches are found, interact with the research-crmarena-pro
+    agent to discuss the discrepancy, share your evidence, and collaboratively resolve
+    it. Produce a verified extraction with corrected values and quotes.'
+  id: evaluate-crmarena-pro
+  parallel_group: evaluate
+- depends_on:
+  - evaluate-api-bank
+  - evaluate-acebench
+  - evaluate-tau-bench
+  - evaluate-tau2-bench
+  - evaluate-workarena
+  - evaluate-workarena-plus
+  - evaluate-itbench
+  - evaluate-workbench
+  - evaluate-agentcompany
+  - evaluate-crmarena
+  - evaluate-crmarena-pro
+  description: 'Merge all 11 verified paper extractions into a unified benchmarks
+    array. IMPORTANT: When a research agent and its evaluate agent disagree on a value,
+    always use the evaluate agent''s corrected value — the evaluate agent independently
+    re-read the paper and its correction takes precedence. Do not silently revert
+    to the research agent''s original value. Write the final result to /logs/agent/output.json.'
+  id: synthesize-comparison
+  parallel_group: synthesize

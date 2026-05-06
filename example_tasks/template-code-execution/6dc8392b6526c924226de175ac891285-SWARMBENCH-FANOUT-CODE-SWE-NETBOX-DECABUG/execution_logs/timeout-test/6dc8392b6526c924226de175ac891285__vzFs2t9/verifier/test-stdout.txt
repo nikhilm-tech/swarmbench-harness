@@ -1,0 +1,39 @@
+============================================================
+NetBox 16-Bug Verification
+============================================================
+  FAIL  Bug01: _build_image_attachment_path exists: _build_image_attachment_path function not found
+  FAIL  Bug01: image_upload uses get_available_name: get_available_name not called in image_upload
+  FAIL  Bug02: No post_save signal handler: post_save signal still referenced in scripts.py
+  PASS  Bug02: sync_classes called once in save
+  FAIL  Bug03: humanize_speed renders 2.5 Gbps: humanize_speed does not appear to handle decimal values
+  PASS  Bug03: humanize_speed renders 1.6 Tbps
+  FAIL  Bug04: CableImportForm has power_panel fields: side_a_power_panel field not found in CableImportForm
+  FAIL  Bug04: _clean_side handles powerfeed type: powerfeed handling not found in _clean_side
+  FAIL  Bug05: Interface.speed is 64-bit: speed field is PositiveIntegerField, expected 64-bit integer type
+  FAIL  Bug05: Migration 0227 exists: Migration 0227_alter_interface_speed_bigint.py not found
+  FAIL  Bug05: InterfaceBulkEditForm uses 64-bit field: No 64-bit integer form field found in bulk_edit.py
+  FAIL  Bug05: MultiValueBigNumberFilter class exists: MultiValueBigNumberFilter class not found
+  FAIL  Bug06: IPAM views include PluginContentPanel: PluginContentPanel not imported in ipam/views.py
+  FAIL  Bug06: Core views include PluginContentPanel: PluginContentPanel not in DataFileView layout
+  FAIL  Bug07: validate_script_content exists: validate_script_content function not found
+  FAIL  Bug07: ScriptFileForm.clean validates scripts: clean method not found on ScriptFileForm
+  FAIL  Bug07: ScriptModuleSerializer.validate checks scripts: validate_script_content not called in ScriptModuleSerializer.validate
+  FAIL  Bug08: PortTemplateMapping.to_yaml exists: to_yaml method not found on PortTemplateMapping
+  FAIL  Bug08: DeviceType.to_yaml includes port-mappings: port_mappings not in DeviceType.to_yaml
+  FAIL  Bug08: ModuleType.to_yaml includes port-mappings: port_mappings not in ModuleType.to_yaml
+  FAIL  Bug09: PathEndpointTable.value_connection exists: value_connection method not found on PathEndpointTable
+  FAIL  Bug09: InterfaceTable.value_connection exists: value_connection method not found on InterfaceTable
+  FAIL  Bug10: API rejects unknown custom fields: invalid_fields check not found in to_internal_value
+  FAIL  Bug10: Serializer preserves custom_field_data: custom_field_data normalization not found in validate
+  FAIL  Bug11: clean_module_type scopes queryset: clean_module_type method not found
+  FAIL  Bug11: clean_device_type scopes queryset: clean_device_type method not found
+  FAIL  Bug12: JobsMixin orders by '-started': JobsMixin does not order by '-started'
+  FAIL  Bug13: validate_peppers uses isinstance: API_TOKEN_PEPPERS must be a dictionary.
+  FAIL  Bug14: Template uses change_scriptmodule: change_scriptmodule not found in template
+  FAIL  Bug15: ColorField.formfield has no help_text: ColorField.formfield still sets help_text
+  FAIL  Bug16: ContactGroupManager.annotate_contacts exists: ContactGroupManager class not found
+  FAIL  Bug16: Views use annotate_contacts: annotate_contacts not used in tenancy/views.py
+  FAIL  Bug16: API views use annotate_contacts: annotate_contacts not used in tenancy/api/views.py
+  FAIL  Bug16: Detail view uses distinct(): ContactGroupView detail does not use distinct()
+
+Result: 2/34 checks passed

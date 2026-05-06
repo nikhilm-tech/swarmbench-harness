@@ -1,0 +1,101 @@
+{
+    "id": "f78a8325-8e56-464a-892c-cfa6b2b5e0ad",
+    "task_name": "swarmbench/18477d2eb6f04497b04a0444d1e5956a-SWARMBENCH-SPECIALIST-DATAANALYSIS-VENDORCROSSREF-MEDIUM-V3",
+    "trial_name": "18477d2eb6f04497b04a0444d1e5956a__n8nEA9E",
+    "trial_uri": "file:///Users/mathavansg/Desktop/multi-agent-swarm-bench/example_tasks/18477d2eb6f04497b04a0444d1e5956a-SWARMBENCH-SPECIALIST-DATAANALYSIS-VENDORCROSSREF-MEDIUM-V3/execution_logs/oracle/18477d2eb6f04497b04a0444d1e5956a__n8nEA9E",
+    "task_id": {
+        "path": "/Users/mathavansg/Desktop/multi-agent-swarm-bench/example_tasks/18477d2eb6f04497b04a0444d1e5956a-SWARMBENCH-SPECIALIST-DATAANALYSIS-VENDORCROSSREF-MEDIUM-V3"
+    },
+    "source": null,
+    "task_checksum": "6d5def4d9bb5ad1351ae66400a303bea67d335bf9704da0b63e5a5eecb7f4fc3",
+    "config": {
+        "task": {
+            "path": "/Users/mathavansg/Desktop/multi-agent-swarm-bench/example_tasks/18477d2eb6f04497b04a0444d1e5956a-SWARMBENCH-SPECIALIST-DATAANALYSIS-VENDORCROSSREF-MEDIUM-V3",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "18477d2eb6f04497b04a0444d1e5956a__n8nEA9E",
+        "trials_dir": "/Users/mathavansg/Desktop/multi-agent-swarm-bench/example_tasks/18477d2eb6f04497b04a0444d1e5956a-SWARMBENCH-SPECIALIST-DATAANALYSIS-VENDORCROSSREF-MEDIUM-V3/execution_logs/oracle",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "oracle",
+            "import_path": null,
+            "model_name": null,
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {}
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {
+                "FIREWORKS_API_KEY": "fw_7****GUE"
+            },
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "ed559142-df20-4db6-a571-9ff21616a311"
+    },
+    "agent_info": {
+        "name": "oracle",
+        "version": "1.0.0",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-04-13T13:41:34.367137Z",
+    "finished_at": "2026-04-13T13:41:47.254982Z",
+    "environment_setup": {
+        "started_at": "2026-04-13T13:41:34.483553Z",
+        "finished_at": "2026-04-13T13:41:35.729312Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-04-13T13:41:35.729408Z",
+        "finished_at": "2026-04-13T13:41:35.729527Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-04-13T13:41:35.729601Z",
+        "finished_at": "2026-04-13T13:41:35.986955Z"
+    },
+    "verifier": {
+        "started_at": "2026-04-13T13:41:36.077437Z",
+        "finished_at": "2026-04-13T13:41:36.748483Z"
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "id": "3bf939b1-e45d-4f1a-bd06-3decc81c4343",
+    "started_at": "2026-04-16T20:57:37.542112",
+    "finished_at": "2026-04-16T21:10:14.522735",
+    "n_total_trials": 1,
+    "stats": {
+        "n_trials": 1,
+        "n_errors": 0,
+        "evals": {
+            "swarm-kimi-single__accounts/fireworks/models/kimi-k2p5__adhoc": {
+                "n_trials": 1,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.3333333333333333
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0.3333333333333333": [
+                            "1560dd4f75fa49f88574f5c47ce06aac__rmGQmrC"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        }
+    }
+}

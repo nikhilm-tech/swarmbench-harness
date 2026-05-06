@@ -1,0 +1,96 @@
+{
+  "chunk_id": "systemic-chunk-5",
+  "lines_read": "401-479",
+  "cases_assessed": 79,
+  "relevant_cases": [
+    {
+      "pmcid": "PMC7573346",
+      "diagnosis": "Pigment-induced nephropathy",
+      "verbatim_excerpt": "A 33-year-old man with known arrhythmogenic right ventricular cardiomyopathy presented with palpitations, tachycardia, and multiple shocks from his dual-chamber implantable cardioverter-defibrillator for ventricular tachycardia (VT) with left bundle branch-block morphology and inferior axis (cycle length, 375 ms). Despite amiodarone and lidocaine infusions, VT recurred with hypotension and signs of volume overload. Transthoracic echocardiography showed biventricular dysfunction: left ventricular ejection fraction of 14% and a severely enlarged right ventricle with reduced systolic function.",
+      "relevance_notes": "Cardiac procedure (VT ablation) with hemodynamic instability requiring hemodynamic support device (Impella). Post-procedural hypotension and hemodynamic collapse during cardiac intervention - similar clinical context to target case."
+    },
+    {
+      "pmcid": "PMC10038694",
+      "diagnosis": "systemic capillary leak syndrome",
+      "verbatim_excerpt": "A 47-year-old man presented with general weakness and acute lower back and abdominal pain that began earlier that day. He had no past medical history and took no medications. He was alert; mucous membranes and axillae were dry. Initial vital signs were stable, but 3 hours after arrival his blood pressure fell to 74/60 mmHg.",
+      "relevance_notes": "Systemic capillary leak syndrome causing acute hypotension (74/60 mmHg) with hemoconcentration and tamponade-like physiology without pericardial effusion - directly mimics target case presentation."
+    },
+    {
+      "pmcid": "PMC8731279",
+      "diagnosis": "AnaphylacticReactionToNafamostatMesylate",
+      "verbatim_excerpt": "A 66-year-old man with end-stage renal disease from diabetic nephropathy, on thrice-weekly hemodialysis for 20 years, was evaluated for right carpal tunnel syndrome due to nocturnal numbness in the thumb, index, and middle fingers.",
+      "relevance_notes": "Drug-induced anaphylactic reaction with hypotension (80-90 mmHg systolic), tachycardia, and DIC during medical procedure. Severe systemic drug reaction causing hemodynamic collapse."
+    },
+    {
+      "pmcid": "PMC11490239",
+      "diagnosis": "HHV8-associated multicentric Castleman disease",
+      "verbatim_excerpt": "A 45-year-old man with HIV-1 infection (diagnosed 2010) on tenofovir/lamivudine/dolutegravir presented after 1 week of fever, productive cough, and dyspnea. He was 3 months into treatment for extrapulmonary tuberculosis.",
+      "relevance_notes": "Severe systemic inflammatory condition with shock (BP 88/56 mmHg), profound anemia (hemoglobin 5.5 g/dL), multiorgan dysfunction. Both hemoglobin drop and hemodynamic collapse present."
+    },
+    {
+      "pmcid": "PMC7804355",
+      "diagnosis": "Leukemoid reaction",
+      "verbatim_excerpt": "A 28-year-old previously healthy Chinese woman at 4 months' gestation underwent water-sac induced abortion. Two days later she developed high fever, chills, and continuous vaginal bleeding. She was treated with intravenous ceftazidime but progressed",
+      "relevance_notes": "Post-procedural (post-abortion) shock with refractory hypotension (BP not detectable off vasopressors), DIC, hemoglobin drop (7.0 g/dL), severe thrombocytopenia. Classic post-procedural hemodynamic collapse with bleeding."
+    },
+    {
+      "pmcid": "PMC8495443",
+      "diagnosis": "macrophage activation syndrome",
+      "verbatim_excerpt": "A 33-year-old Egyptian woman with a 5-year history of systemic lupus erythematosus (arthritis, oral ulcers, leukopenia, ANA and anti-dsDNA positivity) and antiphospholipid syndrome (recurrent venous thrombosis, miscarriages, antiphospholipid an",
+      "relevance_notes": "Severe systemic inflammatory syndrome with pancytopenia (hemoglobin 77 g/L = 7.7 g/dL), markedly elevated ferritin, systemic inflammation. Hemoglobin drop with systemic shock-like presentation."
+    },
+    {
+      "pmcid": "PMC8710040",
+      "diagnosis": "MIS-C",
+      "verbatim_excerpt": "A 25-month-old boy was admitted with three days of fever and a one-day history of maculopapular rash. The rash began with mild itching on the feet, then spread to the thighs and genital area despite antihistamines.",
+      "relevance_notes": "Multisystem inflammatory syndrome with shock (BP 82/10 mmHg), severe systemic inflammation, and hemodynamic collapse. Systemic cause of refractory hypotension."
+    },
+    {
+      "pmcid": "PMC10831287",
+      "diagnosis": "Streptococcal toxic shock syndrome",
+      "verbatim_excerpt": "A previously healthy 22-year-old woman presented with a 1-day history of worsening left lower abdominal pain. She had eaten raw chicken 7 days earlier and had no significant past medical history.",
+      "relevance_notes": "Toxic shock syndrome with fever, hemodynamic compromise, and systemic inflammatory response. Severe systemic infection causing shock."
+    },
+    {
+      "pmcid": "PMC7522583",
+      "diagnosis": "primary myelofibrosis",
+      "verbatim_excerpt": "A 73-year-old man underwent laparoscopic right adrenalectomy for a rapidly enlarging 3.5 ? 2.5 cm right adrenal mass discovered incidentally on CT performed for dyspnea. Over the preceding two years, MRI and PET scans had shown an increasing lesi",
+      "relevance_notes": "Postoperative (post-adrenalectomy) hypotension refractory to fluids, tachycardia, anemia unresponsive to transfusion. Systemic bleeding disorder causing post-procedural hemodynamic collapse."
+    },
+    {
+      "pmcid": "PMC4527788",
+      "diagnosis": "Idiopathic Systemic Capillary Leak Syndrome",
+      "verbatim_excerpt": "A 51-year-old man presented with a one-day history of increasing fatigue and malaise, preceded by nausea, vomiting, myalgia, and arthralgia. This was his sixth similar presentation over six months. His past medical history included mild obstructiv",
+      "relevance_notes": "Idiopathic systemic capillary leak syndrome with recurrent shock presentations, refractory to fluids, hemoconcentration. Classic capillary leak causing tamponade-like physiology without effusion."
+    }
+  ],
+  "partially_relevant_pmcids": [
+    "PMC4427370",
+    "PMC10347672",
+    "PMC7545440",
+    "PMC4214168",
+    "PMC5933029",
+    "PMC10507548",
+    "PMC9780426",
+    "PMC4610771",
+    "PMC7153680",
+    "PMC10258732",
+    "PMC8424888",
+    "PMC6295965",
+    "PMC5240427",
+    "PMC11511043",
+    "PMC3357531",
+    "PMC8665311",
+    "PMC7174907",
+    "PMC8299617",
+    "PMC10556764",
+    "PMC8201668",
+    "PMC10553106",
+    "PMC10973095",
+    "PMC9121423",
+    "PMC8667974",
+    "PMC3674933"
+  ],
+  "first_pmcid_in_chunk": "PMC7310241",
+  "last_pmcid_in_chunk": "PMC3674933"
+}

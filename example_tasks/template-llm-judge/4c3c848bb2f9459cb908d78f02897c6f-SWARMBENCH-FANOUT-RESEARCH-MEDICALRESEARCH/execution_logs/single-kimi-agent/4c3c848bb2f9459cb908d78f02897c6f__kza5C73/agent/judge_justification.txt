@@ -1,0 +1,63 @@
+Score: 0.22 (10/45 criteria passed)
+
+Field-by-field evaluation:
+
+**final_diagnosis**: FAIL - Field missing. Agent provides diagnosis in 'synthesis' and 'cross_domain_evidence_matrix.primary_diagnosis' as 'coronary artery perforation with contained rupture/loculated pericardial hematoma', which is semantically close to accepted answers (contained haematoma), but field name violation and lack of explicit 'intramural' terminology penalized.
+
+**specialist_findings**: FAIL - Structure incorrect. Oracle requires sub-fields 'cardiac_analysis', 'vascular_analysis', 'systemic_analysis'. Agent provides 'cardiologist', 'vascular_specialist', 'systemic_specialist' instead. Missing required sub-sub-fields: total_cases, relevant_count, all_relevant_pmcids, top_10_cases, candidate_diagnosis_assessment, domain_conclusion within each analysis section.
+
+**cardiac_supporting_cases**: FAIL - Agent provides 12 PMCIDs in case_stats, but none match gold_required (PMC9364049, PMC9332897, PMC7954273). Minimum 2 gold matches required. Also, verbatim_excerpts and justifications are in 'top_10_cases_per_domain' rather than dedicated supporting_cases field.
+
+**vascular_supporting_cases**: FAIL - Agent PMCIDs (PMC4980526, PMC3874091, PMC9248042, PMC10519875) do not match gold_expected list (PMC8872004, PMC8684169, etc.). Minimum 2 gold matches required. Also, PMC4980526 appears in both cardiac and vascular lists, violating 'NOT in cardiac' requirement.
+
+**systemic_supporting_cases**: FAIL - Agent PMCIDs (PMC4980526, PMC320540, etc.) do not match gold_expected list (PMC4229935, PMC4194386, etc.). Minimum 1 gold match required.
+
+**cardiac_case_stats.total_cases**: PASS - Value is 500 (matches required).
+
+**cardiac_case_stats.relevant_count**: PASS - Value is 12 (within min 3, max 50).
+
+**cardiac_case_stats.all_relevant_pmcids**: FAIL - Does not contain required gold PMCIDs (PMC9364049, PMC9332897, PMC7954273). Minimum 2 matches required.
+
+**cardiac_case_stats.first_pmcid**: FAIL - Field missing (should be PMC10601732).
+
+**cardiac_case_stats.last_pmcid**: FAIL - Field missing (should be PMC11986323).
+
+**vascular_case_stats.total_cases**: PASS - Value is 500.
+
+**vascular_case_stats.relevant_count**: PASS - Value is 4 (within min 3, max 80).
+
+**vascular_case_stats.all_relevant_pmcids**: FAIL - Contains PMC4980526 which overlaps with cardiac domain (violates 'must exist in vascular_cases.jsonl NOT in cardiac'). No gold matches.
+
+**vascular_case_stats.first_pmcid**: FAIL - Field missing (should be PMC8081020).
+
+**vascular_case_stats.last_pmcid**: FAIL - Field missing (should be PMC11365614).
+
+**systemic_case_stats.total_cases**: PASS - Value is 500.
+
+**systemic_case_stats.relevant_count**: PASS - Value is 8 (within min 3, max 100).
+
+**systemic_case_stats.all_relevant_pmcids**: FAIL - No gold_expected PMCIDs present (PMC4229935, etc.). Minimum 1 match required.
+
+**systemic_case_stats.first_pmcid**: FAIL - Field missing (should be PMC10629858).
+
+**systemic_case_stats.last_pmcid**: FAIL - Field missing (should be PMC5629885).
+
+**cross_domain_evidence_matrix.3_candidate_diagnoses**: PASS - Contains 3 keys (pericardial_tamponade, drug_induced_hypotension, primary_diagnosis).
+
+**cross_domain_evidence_matrix.intramural_haematoma**: FAIL - Key name is 'primary_diagnosis' instead of diagnosis name. While candidate value mentions contained hematoma, the key naming violates semantic matching requirements.
+
+**cross_domain_evidence_matrix.pericardial_tamponade.cardiac_evidence**: FAIL - Agent value is 'supports'. Oracle requires 'contradicts' (echo shows no effusion, contradicting tamponade).
+
+**cross_domain_evidence_matrix.drug_induced_hypotension.cardiac_evidence**: FAIL - Agent value is 'supports'. Oracle requires 'neutral' or 'contradicts' (cardiac domain should not support drug-induced hypotension for this case).
+
+**most_discriminating_case**: FAIL - Agent provides PMC9248042. Oracle accepts only PMC9364049, PMC9332897, or PMC7954273.
+
+**weakest_domain**: PASS - Value is 'vascular' (accepted value per oracle).
+
+**weakest_domain.explanation**: PASS - Non-empty reasoning provided.
+
+**excluded_diagnoses**: FAIL - Field missing. Agent does not explicitly list 4+ required exclusions (pericardial tamponade, free rupture, access-site bleeding, nitrate-induced hypotension, vagal reaction, anaphylaxis) with reasons.
+
+**diagnostic_approach**: PASS - 'Synthesis' section serves as non-empty paragraph referencing all three domains (cardiac/pericardial, vascular, systemic) and does not mention prohibited keywords (script/grep/regex).
+
+**confidence**: FAIL - Field missing (should be high/medium/low).

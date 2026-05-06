@@ -1,0 +1,26 @@
+[task]
+name = "swarmbench/4c3c848bb2f9459cb908d78f02897c6f-SWARMBENCH-FANOUT-RESEARCH-MEDICALRESEARCH"
+description = "Multi-domain clinical case analysis: diagnose a rare cardiac complication from 1500 medical case files across three specialties"
+
+[metadata]
+verifier_type = "llm-judge"
+domain = "knowledge-research"
+coordination_pattern = "fan-out-synthesize"
+human_solving_hours_estimate = 120.0
+human_solving_hours_justification = "A clinical expert must read and assess 1500 case files (~500K tokens) across 3 specialties using domain reasoning — not keyword matching. At ~5 min per case for cardiac (500 cases = 41h), ~4 min per case for vascular and systemic (500 each = 33h each), plus ~10h for cross-domain synthesis and diagnosis = ~120h total."
+estimated_sub_agents = 19
+input_token_estimate = 500000
+reference_link = "https://huggingface.co/datasets/zou-lab/MedCaseReasoning"
+why_multi_agent ="Three domain databases (~650KB each, ~1.96MB total, ~500K tokens) must each be read and analyzed in their entirety using clinical reasoning (not scripted keyword matching). A single agent attempting to ReadFile and clinically analyze all 1500 cases faces catastrophic context overload — reading ~480K tokens of case narratives into context far exceeds effective reasoning capacity, causing truncated reads, missed cases, hallucinated PMCIDs, and degraded clinical judgment. Hierarchical multi-agent fan-out solves this: 15 chunk-reader sub-agents (5 per domain, each reading ~100 cases / ~33K tokens via ReadFile) perform clinical assessment within manageable context windows, then 3 domain synthesizers merge their domain's 5 chunk reports, and a final synthesizer produces the diagnosis. 19 sub-agents total: 15 chunk-readers + 3 domain synthesizers + 1 final synthesizer."
+
+[agent]
+timeout_sec = 3600
+
+[verifier]
+timeout_sec = 600
+# FIREWORKS_API_KEY passed via --ve flag at run time
+
+[environment]
+cpus = 2
+memory_mb = 4096
+build_timeout_sec = 600

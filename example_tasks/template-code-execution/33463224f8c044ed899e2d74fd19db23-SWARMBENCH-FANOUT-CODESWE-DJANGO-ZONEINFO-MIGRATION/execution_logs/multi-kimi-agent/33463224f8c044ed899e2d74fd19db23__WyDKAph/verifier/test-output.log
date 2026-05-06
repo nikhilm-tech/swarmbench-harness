@@ -1,0 +1,27 @@
+  PASS  timezone.py: imports zoneinfo
+  PASS  timezone.py: no top-level import pytz
+  PASS  timezone.py: utc is datetime.timezone.utc
+  PASS  timezone.py: uses zoneinfo.ZoneInfo
+  PASS  timezone.py: is_dst deprecated with RemovedInDjango50Warning
+  PASS  global_settings.py: USE_DEPRECATED_PYTZ defined
+  PASS  conf/__init__.py: USE_DEPRECATED_PYTZ deprecation warning
+  PASS  base/base.py: uses zoneinfo, no hard pytz import
+  PASS  sqlite3/base.py: uses zoneinfo, no hard pytz import
+  PASS  templatetags/tz.py: uses zoneinfo
+  PASS  datetime functions: Trunc is_dst no longer defaults to None
+  PASS  query.py: datetimes() is_dst no longer defaults to None
+  FAIL  serializer.py: no pytz <UTC> repr: serializer.py still uses pytz's <UTC> representation
+  PASS  setup.cfg: pytz not a hard dependency
+  PASS  docs/releases/4.0.txt: zoneinfo + USE_DEPRECATED_PYTZ
+  PASS  docs/internals/deprecation.txt: pytz deprecation entries
+  PASS  docs/ref/settings.txt: USE_DEPRECATED_PYTZ documented
+  PASS  docs/topics/i18n/timezones.txt: mentions zoneinfo
+  PASS  docs/ref/utils.txt: is_dst deprecated
+  PASS  docs/ref/models/database-functions.txt: mentions zoneinfo
+  PASS  test suite: utils_tests.test_timezone
+  PASS  test suite: settings_tests
+  PASS  test suite: timezones
+  PASS  test suite: datetimes
+  PASS  test suite: migrations.test_writer
+
+Result: 24/25 checks passed

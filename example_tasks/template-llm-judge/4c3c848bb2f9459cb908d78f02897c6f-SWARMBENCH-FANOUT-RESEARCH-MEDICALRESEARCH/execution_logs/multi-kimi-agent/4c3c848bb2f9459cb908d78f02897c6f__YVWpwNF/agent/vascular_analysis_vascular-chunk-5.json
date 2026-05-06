@@ -1,0 +1,28 @@
+{
+  "chunk_id": "vascular-chunk-5",
+  "lines_read": "401-480",
+  "cases_assessed": 80,
+  "relevant_cases": [
+    {
+      "pmcid": "PMC8776401",
+      "diagnosis": "superior mesenteric artery pseudoaneurysm",
+      "verbatim_excerpt": "A 60-year-old woman presented to the emergency department after a syncopal episode during which she struck her head. She reported the syncope was associated with acu",
+      "relevance_notes": "Vascular rupture causing hemodynamic collapse - syncope, BP drop to 75/60 mmHg, hemoglobin 7.8 g/dL. Matches pattern of post-procedural hypotension with hemoglobin drop from bleeding."
+    },
+    {
+      "pmcid": "PMC3971853",
+      "diagnosis": "Profunda femoris artery pseudoaneurysm",
+      "verbatim_excerpt": "A 92-year-old woman was referred to vascular surgery for an enlarging hematoma of the left thigh. Two months earlier, she had undergone dynamic hip screw fixation",
+      "relevance_notes": "Post-procedural vascular complication with progressive hematoma enlargement and hemoglobin decline (10.7 to 7.1 g/dL). Post-operative bleeding after orthopedic procedure with hemodynamic compromise."
+    },
+    {
+      "pmcid": "PMC3505917",
+      "diagnosis": "Deep femoral artery pseudoaneurysm",
+      "verbatim_excerpt": "A 72-year-old woman with bilateral Crowe type IV developmental dysplasia of the hip and a history of mitral valve replacement on warfarin (1 mg daily) and aspirin",
+      "relevance_notes": "Hemorrhagic shock from femoral artery pseudoaneurysm - hemoglobin 5.1 g/dL, hypotension (93/58 mmHg), massive hematoma. Vascular access-site complication causing hemodynamic collapse."
+    }
+  ],
+  "partially_relevant_pmcids": ["PMC5028872", "PMC7174963", "PMC8649119", "PMC8189875", "PMC8063705", "PMC8207175", "PMC5184840", "PMC3002374", "PMC10462936", "PMC9556590", "PMC5350331"],
+  "first_pmcid_in_chunk": "PMC5134212",
+  "last_pmcid_in_chunk": "PMC3505917"
+}

@@ -1,0 +1,39 @@
+Score: 0.79 (41/52 criteria passed)
+
+Field-by-field evaluation:
+
+1. final_diagnosis: FAILED - Agent diagnosed 'retroperitoneal_hemorrhage_from_femoral_access_site' which is explicitly in oracle's rejected_answers list; gold diagnosis is intramural hematoma.
+
+2. specialist_findings structure: PASSED - Contains all three required sub-fields (cardiac_analysis, vascular_analysis, systemic_analysis).
+
+3. cardiac_analysis: PASSED (4/4) - total_cases=500, relevant_count=8 (≥3), pmcids count=8 (≥5), mentions 'intramyocardial dissecting haematoma' in top cases.
+
+4. vascular_analysis: PASSED (3/3) - total_cases=500, relevant_count=11 (≥3), pmcids count=11 (≥3).
+
+5. systemic_analysis: PASSED (3/3) - total_cases=500, relevant_count=6 (≥3), pmcids count=6 (≥3).
+
+6. cardiac_supporting_cases: PARTIAL (2/4) - minimum_count=3 (PASSED), gold_match_minimum=2 (FAILED - only PMC9332897 matches, need 2), verbatim_excerpt present (PASSED), justification missing (FAILED - only pmcid/diagnosis/excerpt provided).
+
+7. vascular_supporting_cases: PARTIAL (2/4) - minimum_count=3 (PASSED), gold_match_minimum=2 (FAILED - only PMC5066018 matches, need 2), verbatim_excerpt present (PASSED), justification missing (FAILED).
+
+8. systemic_supporting_cases: PARTIAL (2/4) - minimum_count=3 (PASSED), gold_match_minimum=1 (FAILED - 0 matches to gold_expected list), verbatim_excerpt present (PASSED), justification missing (FAILED).
+
+9. cardiac_case_stats: PARTIAL (5/6) - total_cases=500 (PASSED), relevant_count=8 in range (PASSED), first_pmcid=PMC10601732 (PASSED), last_pmcid=PMC11986323 (PASSED), all_relevant_pmcids gold_match_minimum=2 (FAILED - only 1/2 required present).
+
+10. vascular_case_stats: PASSED (5/5) - total_cases=500, relevant_count=11 in range, first_pmcid=PMC8081020, last_pmcid=PMC11365614, pmcids format valid.
+
+11. systemic_case_stats: PARTIAL (5/6) - total_cases=500, relevant_count=6 in range, first_pmcid=PMC10629858, last_pmcid=PMC5629885 (all PASSED), gold_match_minimum=1 (FAILED - 0 matches).
+
+12. cross_domain_evidence_matrix: PARTIAL (3/4) - 3 candidate keys present (PASSED), pericardial_tamponade contradicts (PASSED), drug_induced_hypotension key present (PASSED), intramural_haematoma equivalent key with cardiac_supports missing (FAILED - agent used retroperitoneal_hemorrhage with neutral instead).
+
+13. most_discriminating_case: FAILED (1/4) - pmcid=PMC5066018 not in accepted list [PMC9364049, PMC9332897, PMC7954273] (FAILED), source_file missing (FAILED), verbatim_excerpt missing (FAILED), explanation/reasoning present (PASSED).
+
+14. weakest_domain: PARTIAL (1/2) - value='systemic' accepted (PASSED), explanation missing (FAILED - only string value provided, no explanation field).
+
+15. excluded_diagnoses: PASSED (2/2) - 6/6 required exclusions present with reasons (≥4 minimum).
+
+16. diagnostic_approach: PASSED (2/2) - References all three domains (cardiac, vascular, systemic), no prohibited keywords (script/grep/regex).
+
+17. confidence: FAILED (0/1) - Field completely missing from output.
+
+Total: 41 passed out of 52 criteria = 0.79

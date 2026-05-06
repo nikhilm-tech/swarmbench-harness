@@ -1,0 +1,16 @@
+{
+  "chunk_id": "cardiac-chunk-2",
+  "lines_read": "101-200",
+  "cases_assessed": 100,
+  "relevant_cases": [
+    {
+      "pmcid": "PMC9332897",
+      "diagnosis": "Intramyocardial dissecting haematoma",
+      "verbatim_excerpt": "A 60-year-old man with hypertension, dyslipidemia, and a family history of heart disease presented with 6 hours of moderate chest pain. He had a history of episodes of brief dull left shoulder pain over the preceding month",
+      "relevance_notes": "Intramyocardial dissecting hematoma after PCI with stenting - similar mechanism of coronary intervention complication with hematoma formation. Post-PCI complication with intramural hematoma."
+    }
+  ],
+  "partially_relevant_pmcids": ["PMC11044188", "PMC4605211", "PMC11442330", "PMC126", "PMC133", "PMC138", "PMC146", "PMC147", "PMC148", "PMC156", "PMC171", "PMC173", "PMC187", "PMC188"],
+  "first_pmcid_in_chunk": "PMC4008442",
+  "last_pmcid_in_chunk": "PMC9361461"
+}
