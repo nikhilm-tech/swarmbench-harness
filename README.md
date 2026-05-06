@@ -1,4 +1,4 @@
-# SwarmBench Harness
+sim# SwarmBench Harness
 
 Evaluation harness for SwarmBench — runs single-agent and multi-agent benchmarks using [Harbor](https://github.com/harbor-framework/harbor).
 
