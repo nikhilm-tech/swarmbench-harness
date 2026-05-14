@@ -36,8 +36,14 @@ uv run harbor --version
 
 ### 2. Set API Key
 
+Pick one provider depending on which backend you want to hit:
+
 ```bash
+# Option A: Fireworks (shared serverless)
 export FIREWORKS_API_KEY=your_fireworks_api_key_here
+
+# Option B: OpenRouter (alternative provider, independent rate limits)
+export OPENROUTER_API_KEY=your_openrouter_api_key_here
 ```
 
 ---
@@ -88,6 +94,44 @@ uv run harbor run \
   --ae FIREWORKS_API_KEY=$FIREWORKS_API_KEY \
   --quiet
 ```
+
+---
+
+## Running with OpenRouter
+
+OpenRouter hosts `kimi-k2.5` (equivalent to Fireworks `kimi-k2p5`, same 262k context) with independent rate limits. To run on OpenRouter, swap the `-m` value and the API key env vars:
+
+### Single Agent (OpenRouter)
+
+```bash
+uv run harbor run \
+  -p $TASK \
+  -a swarm-kimi-single \
+  -m openrouter/moonshotai/kimi-k2.5 \
+  -k 1 -n 1 \
+  --job-name "single-kimi-agent-openrouter" \
+  --jobs-dir "$TASK/execution_logs" \
+  --ve OPENROUTER_API_KEY=$OPENROUTER_API_KEY \
+  --ae OPENROUTER_API_KEY=$OPENROUTER_API_KEY \
+  --quiet
+```
+
+### Multi Agent (OpenRouter)
+
+```bash
+uv run harbor run \
+  -p $TASK \
+  -a swarm-kimi-multi \
+  -m openrouter/moonshotai/kimi-k2.5 \
+  -k 1 -n 1 \
+  --job-name "multi-kimi-agent-openrouter" \
+  --jobs-dir "$TASK/execution_logs" \
+  --ve OPENROUTER_API_KEY=$OPENROUTER_API_KEY \
+  --ae OPENROUTER_API_KEY=$OPENROUTER_API_KEY \
+  --quiet
+```
+
+Other available OpenRouter Kimi variants (substitute after `openrouter/`): `moonshotai/kimi-k2-0905` (pinned), `moonshotai/kimi-k2.6` (newer), `moonshotai/kimi-k2-thinking`.
 
 ---
 
