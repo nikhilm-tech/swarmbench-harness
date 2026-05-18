@@ -1,4 +1,4 @@
-sim# SwarmBench Harness
+# SwarmBench Harness
 
 Evaluation harness for SwarmBench — runs single-agent and multi-agent benchmarks using [Harbor](https://github.com/harbor-framework/harbor).
 
@@ -39,7 +39,7 @@ uv run harbor --version
 Pick one provider depending on which backend you want to hit:
 
 ```bash
-# Option A: Fireworks (shared serverless)
+# Option A: Fireworks (covers both the dedicated K2.5 deployment and serverless fallback)
 export FIREWORKS_API_KEY=your_fireworks_api_key_here
 
 # Option B: OpenRouter (alternative provider, independent rate limits)
@@ -58,6 +58,15 @@ All commands run from inside the `harbor/` directory.
 TASK=../example_tasks/template-llm-judge/4c3c848bb2f9459cb908d78f02897c6f-SWARMBENCH-FANOUT-RESEARCH-MEDICALRESEARCH
 ```
 
+### Model selection
+
+Two model IDs are available with the **same** `FIREWORKS_API_KEY`:
+
+| Pool | Model ID | Precision | Notes |
+|---|---|---|---|
+| **Dedicated K2.5 pool** | `accounts/bhanu-nalamadgu-7pl5/deployments/ba0vhq9e` | FP4 | H200 × 8, GLOBAL region. Independent rate-limit pool. Use for production trainer runs. |
+| **Global serverless pool** | `accounts/fireworks/models/kimi-k2p5` | FP8 | Shared across all Fireworks customers. Use for ad-hoc runs or if the dedicated pool is unavailable. |
+
 ### Oracle Validation (expected reward = 1.0)
 
 ```bash
@@ -65,7 +74,22 @@ uv run harbor run -p $TASK -a oracle \
   --ve FIREWORKS_API_KEY=$FIREWORKS_API_KEY
 ```
 
-### Single Agent
+### Single Agent — dedicated pool
+
+```bash
+uv run harbor run \
+  -p $TASK \
+  -a swarm-kimi-single \
+  -m fireworks_ai/accounts/bhanu-nalamadgu-7pl5/deployments/ba0vhq9e \
+  -k 1 -n 1 \
+  --job-name "single-kimi-agent" \
+  --jobs-dir "$TASK/execution_logs" \
+  --ve FIREWORKS_API_KEY=$FIREWORKS_API_KEY \
+  --ae FIREWORKS_API_KEY=$FIREWORKS_API_KEY \
+  --quiet
+```
+
+### Single Agent — global serverless pool
 
 ```bash
 uv run harbor run \
@@ -80,7 +104,22 @@ uv run harbor run \
   --quiet
 ```
 
-### Multi Agent
+### Multi Agent — dedicated pool
+
+```bash
+uv run harbor run \
+  -p $TASK \
+  -a swarm-kimi-multi \
+  -m fireworks_ai/accounts/bhanu-nalamadgu-7pl5/deployments/ba0vhq9e \
+  -k 1 -n 1 \
+  --job-name "multi-kimi-agent" \
+  --jobs-dir "$TASK/execution_logs" \
+  --ve FIREWORKS_API_KEY=$FIREWORKS_API_KEY \
+  --ae FIREWORKS_API_KEY=$FIREWORKS_API_KEY \
+  --quiet
+```
+
+### Multi Agent — global serverless pool
 
 ```bash
 uv run harbor run \
@@ -162,7 +201,7 @@ cd harbor && uv run harbor view ../example_tasks/
 |---|---|
 | `-p` | Path to task directory |
 | `-a` | Agent: `oracle`, `swarm-kimi-single`, `swarm-kimi-multi` |
-| `-m` | Model: `fireworks_ai/accounts/fireworks/models/kimi-k2p5` |
+| `-m` | Model: `fireworks_ai/accounts/bhanu-nalamadgu-7pl5/deployments/ba0vhq9e` (dedicated, recommended) or `fireworks_ai/accounts/fireworks/models/kimi-k2p5` (serverless fallback) |
 | `-k` | Number of runs per task |
 | `-n` | Concurrent trials within the run |
 | `--job-name` | Output folder name under `--jobs-dir` |
