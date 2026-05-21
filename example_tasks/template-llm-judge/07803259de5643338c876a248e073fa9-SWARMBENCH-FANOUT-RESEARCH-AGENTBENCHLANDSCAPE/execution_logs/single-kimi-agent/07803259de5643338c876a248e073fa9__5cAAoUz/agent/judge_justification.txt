@@ -1,3 +1,0 @@
-Score: 0.0
-
-Agent output file missing or invalid: [Errno 2] No such file or directory: '/logs/agent/output.json'

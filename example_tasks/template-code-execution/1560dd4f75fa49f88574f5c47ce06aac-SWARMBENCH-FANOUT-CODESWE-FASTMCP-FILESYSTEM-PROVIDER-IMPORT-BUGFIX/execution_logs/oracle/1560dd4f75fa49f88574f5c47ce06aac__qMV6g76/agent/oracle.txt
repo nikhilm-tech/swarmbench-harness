@@ -1,2 +1,0 @@
-patching file src/fastmcp/server/providers/filesystem.py
-patching file src/fastmcp/server/providers/filesystem_discovery.py
