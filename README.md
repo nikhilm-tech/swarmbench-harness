@@ -19,15 +19,49 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ### 1. Clone Harbor and apply SwarmBench patch
 
+Clone and pin to the exact commit the diff targets:
+
 ```bash
 git clone https://github.com/harbor-framework/harbor.git
 cd harbor
 git checkout e70d5f060ffeb4525f320669d50b290925b55425
+```
+
+> The commit SHA is pinned to ensure the diff applies cleanly. Do not skip `git checkout`.
+
+There are two diff files in this directory — pick the one matching your OS. They contain identical changes; the Windows copy is just labeled separately so it's clear which one to use after download.
+
+#### macOS / Linux
+
+```bash
 git apply ../swarmbench_harbor_changes.diff
 uv sync --all-extras
 ```
 
-> The commit SHA is pinned to ensure the diff applies cleanly. Do not skip `git checkout`.
+#### Windows (PowerShell, from inside `harbor\`)
+
+`git apply` requires LF line endings. If your browser, editor, or `core.autocrlf=true` converted the diff to CRLF on download, it will fail at empty-file stanzas with `git diff header lacks filename information`. Normalize first, then apply:
+
+```powershell
+# Re-emit the diff as LF + UTF-8 (no BOM)
+$src  = "..\swarmbench_harbor_changes_windows.diff"
+$dst  = "..\swarmbench_harbor_changes_windows.lf.diff"
+$text = [System.IO.File]::ReadAllText((Resolve-Path $src)) -replace "`r`n","`n"
+[System.IO.File]::WriteAllText($dst, $text, (New-Object System.Text.UTF8Encoding $false))
+
+git apply --check $dst
+git apply $dst
+uv sync --all-extras
+```
+
+#### Windows (Git Bash, from inside `harbor/`)
+
+```bash
+tr -d '\r' < ../swarmbench_harbor_changes_windows.diff > ../swarmbench_harbor_changes_windows.lf.diff
+git apply --check ../swarmbench_harbor_changes_windows.lf.diff
+git apply ../swarmbench_harbor_changes_windows.lf.diff
+uv sync --all-extras
+```
 
 Verify:
 ```bash
@@ -216,6 +250,9 @@ cd harbor && uv run harbor view ../example_tasks/
 
 **Patch fails to apply**
 Make sure you ran `git checkout e70d5f060ffeb4525f320669d50b290925b55425` before `git apply`. Applying on a different Harbor commit will cause context mismatches.
+
+**`git diff header lacks filename information when removing 1 leading pathname component` (Windows)**
+The diff has CRLF line endings (or a UTF-8 BOM) — `git apply`'s parser breaks at empty-file stanzas. Use the PowerShell or Git Bash snippet in [Setup → Windows](#windows-powershell-from-inside-harbor) to re-emit the diff as LF + UTF-8 (no BOM), then apply the `.lf.diff` file.
 
 **`NonZeroAgentExitCodeError` / `curl: (6) Could not resolve host`**
 The Docker container needs outbound internet access to install `kimi-cli`. Check Docker network settings — containers must be able to reach `astral.sh` and `pypi.org`.
