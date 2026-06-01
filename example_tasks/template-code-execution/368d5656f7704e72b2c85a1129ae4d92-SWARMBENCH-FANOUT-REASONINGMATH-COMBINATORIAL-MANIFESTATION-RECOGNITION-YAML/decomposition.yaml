@@ -1,0 +1,217 @@
+coordination_pattern: fan-out-synthesize
+strategy: |
+  Fan-out over the thirty-six handles of the combinatorial-manifestation
+  handbook. The handbook partitions cleanly along the sequential-ordinal
+  axis into six contiguous six-handle worker batches: handles
+  COUNT-01..COUNT-06, COUNT-07..COUNT-12, COUNT-13..COUNT-18,
+  COUNT-19..COUNT-24, COUNT-25..COUNT-30, and COUNT-31..COUNT-36. The
+  thirty-six handles are mutually independent (no recognition or
+  evaluation flows from one handle to another), so partitioning along the
+  sequential-ordinal axis loses nothing at worker boundaries and the six
+  batches are disjoint by construction. One synthesizer sub-task gathers
+  the six six-key worker dictionaries, unions them into the thirty-six-
+  handle worksheet, and writes the final YAML mapping document to
+  /logs/agent/integer_counts.yaml under the deliverable contract from
+  instruction.md. Total dispatch: six parallel worker calls plus one
+  synthesizer call = exactly seven Agent tool-calls for the entire trial.
+
+# ============================================================================
+# ORCHESTRATION RUNTIME CONTRACT (topology and output discipline only)
+# These rules govern dispatch topology and output completeness. Per-handle
+# recognition methodology lives in instruction.md and is applied identically
+# by every agent on this task (single-agent and multi-agent); the
+# decomposition does not prescribe internal reasoning sequence, invocation
+# budgets, or cross-verification methodology.
+# ============================================================================
+#
+# (1) Total Agent / Task / CreateSubagent tool-call count for the entire
+#     trial is exactly seven: six parallel worker sub-tasks dispatched in
+#     a single wave (recognise-handles-01-06, recognise-handles-07-12,
+#     recognise-handles-13-18, recognise-handles-19-24,
+#     recognise-handles-25-30, recognise-handles-31-36) plus one
+#     synthesizer (synthesize-worksheet) dispatched after every worker has
+#     returned. The synthesizer waits on all six workers via its
+#     depends_on list. No further sub-agent dispatch is permitted at any
+#     level of the call tree.
+#
+# (2) No-nested-sub-agent rule. Each worker sub-task must produce its own
+#     handle_to_integer output from within its own context using only the
+#     Shell, ReadFile, and Write tools. Spawning further Agent / Task /
+#     CreateSubagent calls from inside a worker is forbidden.
+#
+# (3) Synthesizer output discipline. The synthesizer is a deterministic
+#     dictionary-merge plus YAML serialisation step; it does not re-read
+#     /input_artifacts/, does not modify any worker's submitted integer,
+#     does not spawn further sub-tasks, and writes exactly one file at
+#     /logs/agent/integer_counts.yaml.
+#
+# (4) Fail-soft output completeness. The synthesizer must write the
+#     deliverable file containing all thirty-six COUNT-NN handles even
+#     when some worker did not return; any missing worker's six handle
+#     slots are filled with the placeholder integer 0 so the worksheet
+#     body is never truncated below thirty-six mapping lines.
+
+sub_tasks:
+  - id: recognise-handles-01-06
+    description: >
+      Inputs available to this sub-agent: the read-only mount file
+      /input_artifacts/combinatorial_handbook/corpus.json (the full
+      thirty-six-handle handbook) and instruction.md (the task-wide
+      recognition-and-evaluation methodology). Restrict attention to the
+      six handles whose tag matches ^COUNT-0[1-6]$ (COUNT-01 through
+      COUNT-06). PRODUCE a JSON object with one top-level key
+      "handle_to_integer" mapping each of the six tags to a JSON integer:
+      the integer count for that handle's combinatorial-family closed-
+      form evaluated at the supplied parameters. FORMAT: a single JSON
+      object {"handle_to_integer": {"COUNT-01": <int>, "COUNT-02": <int>,
+      "COUNT-03": <int>, "COUNT-04": <int>, "COUNT-05": <int>, "COUNT-06":
+      <int>}} with all six tags present and every value a bare JSON
+      integer (booleans rejected, floats rejected, strings rejected).
+      NESTED-SUB-AGENT RESTRICTION: this worker MUST NOT call the Agent,
+      Task, or CreateSubagent tool. Never return without all six
+      COUNT-0[1-6] handle integers present in the output object. Return
+      the JSON object as the worker's final message.
+    depends_on: []
+    parallel_group: recognise
+
+  - id: recognise-handles-07-12
+    description: >
+      Inputs available to this sub-agent: the read-only mount file
+      /input_artifacts/combinatorial_handbook/corpus.json and
+      instruction.md. Restrict attention to the six handles whose tag
+      matches ^COUNT-(0[7-9]|1[0-2])$ (COUNT-07 through COUNT-12).
+      PRODUCE a JSON object with one top-level key "handle_to_integer"
+      mapping each of the six tags to a JSON integer: the integer count
+      for that handle's combinatorial-family closed-form evaluated at
+      the supplied parameters. FORMAT: a single JSON object
+      {"handle_to_integer": {"COUNT-07": <int>, "COUNT-08": <int>,
+      "COUNT-09": <int>, "COUNT-10": <int>, "COUNT-11": <int>, "COUNT-12":
+      <int>}} with all six tags present and every value a bare JSON
+      integer. NESTED-SUB-AGENT RESTRICTION: this worker MUST NOT call
+      the Agent, Task, or CreateSubagent tool. Never return without all
+      six COUNT-(0[7-9]|1[0-2]) handle integers present in the output
+      object. Return the JSON object as the worker's final message.
+    depends_on: []
+    parallel_group: recognise
+
+  - id: recognise-handles-13-18
+    description: >
+      Inputs available to this sub-agent: the read-only mount file
+      /input_artifacts/combinatorial_handbook/corpus.json and
+      instruction.md. Restrict attention to the six handles whose tag
+      matches ^COUNT-1[3-8]$ (COUNT-13 through COUNT-18). PRODUCE a
+      JSON object with one top-level key "handle_to_integer" mapping
+      each of the six tags to a JSON integer: the integer count for that
+      handle's combinatorial-family closed-form evaluated at the supplied
+      parameters. FORMAT: a single JSON object {"handle_to_integer":
+      {"COUNT-13": <int>, "COUNT-14": <int>, "COUNT-15": <int>,
+      "COUNT-16": <int>, "COUNT-17": <int>, "COUNT-18": <int>}} with all
+      six tags present and every value a bare JSON integer. NESTED-SUB-
+      AGENT RESTRICTION: this worker MUST NOT call the Agent, Task, or
+      CreateSubagent tool. Never return without all six COUNT-1[3-8]
+      handle integers present in the output object. Return the JSON
+      object as the worker's final message.
+    depends_on: []
+    parallel_group: recognise
+
+  - id: recognise-handles-19-24
+    description: >
+      Inputs available to this sub-agent: the read-only mount file
+      /input_artifacts/combinatorial_handbook/corpus.json and
+      instruction.md. Restrict attention to the six handles whose tag
+      matches ^COUNT-(19|2[0-4])$ (COUNT-19 through COUNT-24). PRODUCE
+      a JSON object with one top-level key "handle_to_integer" mapping
+      each of the six tags to a JSON integer: the integer count for that
+      handle's combinatorial-family closed-form evaluated at the supplied
+      parameters. FORMAT: a single JSON object {"handle_to_integer":
+      {"COUNT-19": <int>, "COUNT-20": <int>, "COUNT-21": <int>,
+      "COUNT-22": <int>, "COUNT-23": <int>, "COUNT-24": <int>}} with all
+      six tags present and every value a bare JSON integer. NESTED-SUB-
+      AGENT RESTRICTION: this worker MUST NOT call the Agent, Task, or
+      CreateSubagent tool. Never return without all six handle integers
+      present in the output object. Return the JSON object as the
+      worker's final message.
+    depends_on: []
+    parallel_group: recognise
+
+  - id: recognise-handles-25-30
+    description: >
+      Inputs available to this sub-agent: the read-only mount file
+      /input_artifacts/combinatorial_handbook/corpus.json and
+      instruction.md. Restrict attention to the six handles whose tag
+      matches ^COUNT-(2[5-9]|30)$ (COUNT-25 through COUNT-30). PRODUCE
+      a JSON object with one top-level key "handle_to_integer" mapping
+      each of the six tags to a JSON integer: the integer count for that
+      handle's combinatorial-family closed-form evaluated at the supplied
+      parameters. FORMAT: a single JSON object {"handle_to_integer":
+      {"COUNT-25": <int>, "COUNT-26": <int>, "COUNT-27": <int>,
+      "COUNT-28": <int>, "COUNT-29": <int>, "COUNT-30": <int>}} with all
+      six tags present and every value a bare JSON integer. NESTED-SUB-
+      AGENT RESTRICTION: this worker MUST NOT call the Agent, Task, or
+      CreateSubagent tool. Never return without all six handle integers
+      present in the output object. Return the JSON object as the
+      worker's final message.
+    depends_on: []
+    parallel_group: recognise
+
+  - id: recognise-handles-31-36
+    description: >
+      Inputs available to this sub-agent: the read-only mount file
+      /input_artifacts/combinatorial_handbook/corpus.json and
+      instruction.md. Restrict attention to the six handles whose tag
+      matches ^COUNT-3[1-6]$ (COUNT-31 through COUNT-36). PRODUCE a
+      JSON object with one top-level key "handle_to_integer" mapping
+      each of the six tags to a JSON integer: the integer count for that
+      handle's combinatorial-family closed-form evaluated at the supplied
+      parameters. FORMAT: a single JSON object {"handle_to_integer":
+      {"COUNT-31": <int>, "COUNT-32": <int>, "COUNT-33": <int>,
+      "COUNT-34": <int>, "COUNT-35": <int>, "COUNT-36": <int>}} with all
+      six tags present and every value a bare JSON integer. NESTED-SUB-
+      AGENT RESTRICTION: this worker MUST NOT call the Agent, Task, or
+      CreateSubagent tool. Never return without all six handle integers
+      present in the output object. Return the JSON object as the
+      worker's final message.
+    depends_on: []
+    parallel_group: recognise
+
+  - id: synthesize-worksheet
+    description: >
+      READ the six JSON objects returned in your prompt by the six worker
+      sub-tasks (recognise-handles-01-06, recognise-handles-07-12,
+      recognise-handles-13-18, recognise-handles-19-24,
+      recognise-handles-25-30, recognise-handles-31-36), each of the form
+      {"handle_to_integer": {"COUNT-NN": <int>, ...}} carrying six handle
+      integers. Do NOT re-read /input_artifacts/, do NOT re-recognise any
+      handle, do NOT re-evaluate any integer count, do NOT modify any
+      worker's submitted integer, do NOT spawn further sub-tasks. This
+      sub-task is purely deterministic dictionary-merge plus YAML
+      serialisation. PRODUCE the final task output as follows. STEP A:
+      union-merge the six worker "handle_to_integer" maps into a single
+      thirty-six-entry mapping (the six batches are disjoint by
+      construction so no key conflict is possible; any overlapping key
+      implies a malformed worker response and the synthesizer keeps the
+      earlier-received integer and notes the conflict in its scratch
+      trail). STEP B: for any worker whose response was not a parseable
+      object of the expected one-key form, fill that worker's six handle
+      entries with the placeholder integer 0 so that all thirty-six
+      worksheet lines are populated. STEP C: serialise the thirty-six-
+      entry mapping as a YAML 1.2 block-style mapping document, one
+      mapping line per handle, formatted as "COUNT-NN: <int>" with
+      exactly one ASCII space between the colon and the integer, line-
+      feed terminator only (no carriage returns, no byte-order mark, no
+      flow-style braces, no top-level list, no top-level scalar). STEP
+      D: write the resulting YAML mapping document directly as the body
+      of the file /logs/agent/integer_counts.yaml (with NO further
+      wrapper such as n_items, items, results, schema, or similar — the
+      thirty-six COUNT-NN mapping lines ARE the document body). After
+      writing /logs/agent/integer_counts.yaml successfully, return a
+      one-line confirmation message identifying the output path and the
+      total mapping-line count written.
+    depends_on:
+      - recognise-handles-01-06
+      - recognise-handles-07-12
+      - recognise-handles-13-18
+      - recognise-handles-19-24
+      - recognise-handles-25-30
+      - recognise-handles-31-36
+    parallel_group: synthesize

@@ -1,0 +1,266 @@
+{
+  "corpus_format": "combinatorial-handbook-v1",
+  "origin": "Paraphrased combinatorial manifestation prose drawn from canonical enumeration references: Stanley, Enumerative Combinatorics, Volume 2, Cambridge University Press, 1999 (Exercise 6.19, with near-Catalan extensions); the Online Encyclopedia of Integer Sequences entries A000108 (Catalan), A001006 (Motzkin), A000110 (Bell), A006318 (large Schroder), A001263 (Narayana triangle), and A000041 (unrestricted partition function); Aigner, Discrete Mathematics, AMS, 2007.",
+  "editorial_note": "Each manifestation entry is a self-contained natural-language description of a counting problem. The integer answer for each entry is the value of the underlying combinatorial sequence at the supplied evaluation index (and, for Narayana entries, at the supplied secondary block-count index). Manifestation prose deliberately avoids naming the underlying sequence family or any OEIS A-number; structure recognition from the prose is the agent workload.",
+  "item_count": 36,
+  "items": [
+    {
+      "tag": "COUNT-01",
+      "description": "Consider the number of ways to triangulate a convex polygon with exactly fourteen labelled vertices by drawing non-crossing diagonals between vertices (only the diagonals are counted; the polygon's boundary is fixed). Compute this count exactly.",
+      "parameters": [
+        12
+      ]
+    },
+    {
+      "tag": "COUNT-02",
+      "description": "Compute the number of lattice paths from (0, 0) to (10, 0) that use unit horizontal-right steps (1, 0), unit up-diagonal steps (1, +1), and unit down-diagonal steps (1, -1), and which never venture strictly below the x-axis.",
+      "parameters": [
+        10
+      ]
+    },
+    {
+      "tag": "COUNT-03",
+      "description": "Compute the number of equivalence relations definable on a set of eight distinguishable elements. (Equivalently, the number of partitions of an eight-element set into unordered, non-empty, pairwise-disjoint blocks whose union is the whole set.)",
+      "parameters": [
+        8
+      ]
+    },
+    {
+      "tag": "COUNT-04",
+      "description": "Compute the number of monotone lattice paths from (0, 0) to (8, 8) that use unit-right, unit-up, and unit-northeast-diagonal steps (each diagonal step covers one unit of both x and y), and that stay weakly above the diagonal y = x at every lattice point.",
+      "parameters": [
+        8
+      ]
+    },
+    {
+      "tag": "COUNT-05",
+      "description": "Compute the number of Dyck paths of semilength nine (so total length eighteen) that have exactly four peaks, where a peak is a local maximum \u2014 i.e. an up-step immediately followed by a down-step. Emit a single integer.",
+      "parameters": [
+        9,
+        4
+      ]
+    },
+    {
+      "tag": "COUNT-06",
+      "description": "Compute the number of ways to write the positive integer thirty as a sum of one or more positive integers, where the order of summands does not matter (so 3 + 1 + 1 and 1 + 3 + 1 are the same partition). Emit the count p(30).",
+      "parameters": [
+        30
+      ]
+    },
+    {
+      "tag": "COUNT-07",
+      "description": "Let T denote the number of full binary trees that have exactly ten internal (non-leaf) nodes, where left and right subtrees are distinguished. Output T as an integer.",
+      "parameters": [
+        10
+      ]
+    },
+    {
+      "tag": "COUNT-08",
+      "description": "How many chord diagrams can be drawn on nine labelled points arranged on a circle such that no two chords cross and unmatched points are permitted? (Equivalently: non-crossing matchings of an ordered nine-point set, where any subset of the nine points may be left unmatched.)",
+      "parameters": [
+        9
+      ]
+    },
+    {
+      "tag": "COUNT-09",
+      "description": "How many distinct ways are there to colour ten labelled balls with an unbounded supply of indistinguishable colours, where only the induced partition of balls into same-colour groups is recorded (the colours themselves carry no labels)? Emit a single integer.",
+      "parameters": [
+        10
+      ]
+    },
+    {
+      "tag": "COUNT-10",
+      "description": "How many distinct ways exist to insert one or more pairs of (redundant) matched parentheses around the symbols of the string x_0 x_1 x_2 x_3 x_4 x_5 x_6 x_7 such that the resulting bracketing is well-formed and each pair groups a non-empty contiguous subsequence? Equivalently, the number of dissections of a convex (8+2)-gon into sub-polygons by non-crossing diagonals where the empty dissection is permitted.",
+      "parameters": [
+        7
+      ]
+    },
+    {
+      "tag": "COUNT-11",
+      "description": "How many non-crossing partitions of the set {1, 2, \u2026, 8} consist of exactly three blocks? A partition is non-crossing iff the blocks, when drawn as arcs above the line of labelled points, do not cross.",
+      "parameters": [
+        8,
+        3
+      ]
+    },
+    {
+      "tag": "COUNT-12",
+      "description": "How many integer partitions are there of the number forty, where a partition of forty is any multiset of positive integers whose sum equals forty?",
+      "parameters": [
+        40
+      ]
+    },
+    {
+      "tag": "COUNT-13",
+      "description": "Compute the number of Dyck words of length eighteen, i.e. strings over the two-letter alphabet {U, D} of length eighteen for which every prefix has at least as many U's as D's and the full word has an equal number of U's and D's.",
+      "parameters": [
+        9
+      ]
+    },
+    {
+      "tag": "COUNT-14",
+      "description": "Determine the number of plane trees with exactly twelve nodes in which every internal node has either one child or two children (no internal node has three or more children, and leaves are permitted at every level). Equivalently, plane unary-binary trees of size twelve.",
+      "parameters": [
+        11
+      ]
+    },
+    {
+      "tag": "COUNT-15",
+      "description": "Determine the number of partitions of the integer set {1, 2, \u2026, 9} into unordered non-empty blocks, where the number of blocks is unrestricted (so a single-block partition through to a nine-singleton partition are all admissible).",
+      "parameters": [
+        9
+      ]
+    },
+    {
+      "tag": "COUNT-16",
+      "description": "Determine the number of separable permutations of length seven, where a permutation is separable iff it can be built from the one-element permutation by repeated direct and skew sums. (Equivalently, the number of permutations of {1, \u2026, 7} that avoid both the pattern 2413 and the pattern 3142.)",
+      "parameters": [
+        6
+      ]
+    },
+    {
+      "tag": "COUNT-17",
+      "description": "Determine the number of ordered binary trees with exactly ten internal nodes that have exactly five leaves at odd depth, where the root sits at depth zero. (This is the Narayana count N(10, 5).)",
+      "parameters": [
+        10,
+        5
+      ]
+    },
+    {
+      "tag": "COUNT-18",
+      "description": "Determine the number of distinct multisets of positive integers whose sum equals twenty-five. (Equivalently, the value of the unrestricted partition function p(25).)",
+      "parameters": [
+        25
+      ]
+    },
+    {
+      "tag": "COUNT-19",
+      "description": "How many monotone lattice paths from (0, 0) to (11, 11) lie weakly below the diagonal y = x, where each step is either a unit step to the right or a unit step upward? Output the count as a non-negative integer.",
+      "parameters": [
+        11
+      ]
+    },
+    {
+      "tag": "COUNT-20",
+      "description": "Count the sequences (a_1, a_2, \u2026, a_8) of integers with each a_i \u2208 {-1, 0, +1}, partial sums a_1 + a_2 + \u2026 + a_k non-negative for every k in {1, \u2026, 8}, and total sum a_1 + a_2 + \u2026 + a_8 = 0. Output the count.",
+      "parameters": [
+        8
+      ]
+    },
+    {
+      "tag": "COUNT-21",
+      "description": "Count the surjections from an eleven-element set onto an ordered label-set of unbounded size, where two surjections are deemed equivalent iff they induce the same partition on the domain. (Equivalently, set partitions of an eleven-element domain.)",
+      "parameters": [
+        11
+      ]
+    },
+    {
+      "tag": "COUNT-22",
+      "description": "Compute the number of lattice paths from the origin (0, 0) to the point (9, 9) using steps right (+1, 0), up (0, +1), and north-east diagonal (+1, +1), where the path is required to remain weakly above the line y = x throughout.",
+      "parameters": [
+        9
+      ]
+    },
+    {
+      "tag": "COUNT-23",
+      "description": "Count the lattice paths from (0, 0) to (7, 7) using only unit right and unit up steps, staying weakly below the diagonal y = x, and crossing the diagonal exactly three times by a returning step. (This is the Narayana number N(7, 3).)",
+      "parameters": [
+        7,
+        3
+      ]
+    },
+    {
+      "tag": "COUNT-24",
+      "description": "Compute p(50), the number of integer partitions of fifty into positive integer parts where the order of parts is immaterial and the number of parts is unrestricted.",
+      "parameters": [
+        50
+      ]
+    },
+    {
+      "tag": "COUNT-25",
+      "description": "Count the non-crossing partitions of the set {1, 2, \u2026, 8}: a partition is non-crossing when, for any four elements a < b < c < d, if a and c lie in one block and b and d lie in another block, that configuration is forbidden. Emit the total number of such partitions.",
+      "parameters": [
+        8
+      ]
+    },
+    {
+      "tag": "COUNT-26",
+      "description": "Compute the number of unit-step lattice paths in the upper half-plane that begin at (0, 0), end at (12, 0), and at every step take exactly one of the three vectors right (+1, 0), north-east (+1, +1), or south-east (+1, -1).",
+      "parameters": [
+        12
+      ]
+    },
+    {
+      "tag": "COUNT-27",
+      "description": "Compute the number of finite topologies on a seven-element set X whose only open sets are unions of the blocks of some partition of X (i.e. T_0-quotients reduced to set partitions). Equivalently, the number of partitions of {1, 2, \u2026, 7} into unordered blocks.",
+      "parameters": [
+        7
+      ]
+    },
+    {
+      "tag": "COUNT-28",
+      "description": "Count the polygon dissections of a convex heptagon (a 7-gon) by non-crossing diagonals into smaller sub-polygons. The empty dissection (using no diagonals) counts as a single arrangement; two dissections are distinguished by the set of diagonals they draw.",
+      "parameters": [
+        5
+      ]
+    },
+    {
+      "tag": "COUNT-29",
+      "description": "Compute the number of Dyck paths of semilength eleven (total length twenty-two) with exactly six peaks, where a peak is an up-step followed immediately by a down-step.",
+      "parameters": [
+        11,
+        6
+      ]
+    },
+    {
+      "tag": "COUNT-30",
+      "description": "Count the unordered representations of the integer thirty-five as a sum of one or more positive integers, where two represent-ations are identified iff they are multisets of the same parts.",
+      "parameters": [
+        35
+      ]
+    },
+    {
+      "tag": "COUNT-31",
+      "description": "Determine the number of distinct ways to fully parenthesise a non-associative product of fourteen indistinguishable factors x \u00b7 x \u00b7 x \u00b7 \u2026 \u00b7 x (fourteen factors in total). Equivalently, the number of rooted ordered binary trees with fourteen leaves.",
+      "parameters": [
+        13
+      ]
+    },
+    {
+      "tag": "COUNT-32",
+      "description": "Determine the number of distinct ways to draw a (possibly empty) set of non-crossing chords among seven labelled points placed in convex position on a circle, where any number of the seven points (including all of them, or none of them) may be left unmatched.",
+      "parameters": [
+        7
+      ]
+    },
+    {
+      "tag": "COUNT-33",
+      "description": "Determine the total number of ways to distribute twelve distinguish-able physical objects into an indeterminate number of indistinguish-able non-empty boxes, where two distributions are identified iff they induce the same grouping of the twelve objects.",
+      "parameters": [
+        12
+      ]
+    },
+    {
+      "tag": "COUNT-34",
+      "description": "How many monotone right-and-up lattice paths from (0, 0) to (10, 10), augmented with the third permissible step type of a unit north-east diagonal (+1, +1), stay weakly above the main diagonal y = x at every lattice point visited?",
+      "parameters": [
+        10
+      ]
+    },
+    {
+      "tag": "COUNT-35",
+      "description": "How many non-crossing partitions of {1, 2, \u2026, 12} consist of exactly four non-empty blocks (where blocks are unordered and the union of all blocks is {1, \u2026, 12})?",
+      "parameters": [
+        12,
+        4
+      ]
+    },
+    {
+      "tag": "COUNT-36",
+      "description": "How many distinct integer partitions does the positive integer forty-five admit? A partition is a non-increasing sequence of positive integers summing to forty-five.",
+      "parameters": [
+        45
+      ]
+    }
+  ]
+}
