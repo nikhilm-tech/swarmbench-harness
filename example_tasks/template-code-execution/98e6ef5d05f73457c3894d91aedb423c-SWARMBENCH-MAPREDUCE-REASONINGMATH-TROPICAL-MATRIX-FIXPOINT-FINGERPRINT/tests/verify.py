@@ -73,10 +73,19 @@ FAMILY_INTERVALS = (
 
 
 def _write_reward(reward: float, extra: dict[str, Any] | None = None) -> None:
+    """Write reward.json. Harbor parses this file as a flat dict of numeric
+    rewards (Pydantic `dict[str, float | int]`), so EVERY value MUST be a
+    bare number; non-numeric diagnostics (lists, strings, dicts) belong in
+    report.json instead, otherwise harbor raises VerifierResult validation
+    errors and discards the trial.
+    """
     VERIFIER_LOG_DIR.mkdir(parents=True, exist_ok=True)
-    payload: dict[str, Any] = {"reward": reward}
+    payload: dict[str, float | int] = {"reward": float(reward)}
     if extra:
-        payload.update(extra)
+        for k, v in extra.items():
+            if isinstance(v, bool) or not isinstance(v, (int, float)):
+                continue
+            payload[k] = v
     REWARD_PATH.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
 
 
@@ -254,7 +263,7 @@ def main() -> int:
         "extra_family_keys": extra_family_keys,
         "production_cardinality_gate": PRODUCTION_CARDINALITY,
     }
-    _write_reward(reward, {"valid_atoms": valid_atoms, "total_atoms": total_atoms, "failures": failures[:30]})
+    _write_reward(reward, {"valid_atoms": valid_atoms, "total_atoms": total_atoms})
     _write_report(report)
     print(f"verifier: reward={reward:.6f} valid_atoms={valid_atoms}/{total_atoms}")
     return 0
