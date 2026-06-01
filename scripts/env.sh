@@ -38,6 +38,16 @@ if [ -z "${FIREWORKS_API_KEY:-}" ]; then
   exit 1
 fi
 
+# LiteLLM-based agents (mini-swe-agent, openhands, etc.) inspect the harbor
+# HOST process environment for the canonical per-provider api-key name,
+# which for 'fireworks_ai/...' models is FIREWORKS_AI_API_KEY (note the
+# extra _AI_). Codespaces only exposes FIREWORKS_API_KEY, so mirror it.
+: "${FIREWORKS_AI_API_KEY:=$FIREWORKS_API_KEY}"
+export FIREWORKS_AI_API_KEY
+# Universal fallback for mini-swe-agent
+: "${MSWEA_API_KEY:=$FIREWORKS_API_KEY}"
+export MSWEA_API_KEY
+
 if [ -z "${SWARM_MODEL:-}" ]; then
   echo "ERROR: SWARM_MODEL not set (and no SWARM_MODEL_DEDICATED / SWARM_MODEL_SHARED fallback)." >&2
   exit 1

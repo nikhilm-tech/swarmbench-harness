@@ -46,6 +46,8 @@ uv run harbor run \
   --jobs-dir "$TASK_ABS/execution_logs" \
   --ve FIREWORKS_API_KEY="$FIREWORKS_API_KEY" \
   --ae FIREWORKS_API_KEY="$FIREWORKS_API_KEY" \
+  --ae FIREWORKS_AI_API_KEY="$FIREWORKS_AI_API_KEY" \
+  --ae MSWEA_API_KEY="$MSWEA_API_KEY" \
   --quiet
 
 if [[ "$SKIP_MULTI" != "1" && "$AGENT_MULTI" != "$AGENT_SINGLE" ]]; then
@@ -60,6 +62,8 @@ if [[ "$SKIP_MULTI" != "1" && "$AGENT_MULTI" != "$AGENT_SINGLE" ]]; then
     --jobs-dir "$TASK_ABS/execution_logs" \
     --ve FIREWORKS_API_KEY="$FIREWORKS_API_KEY" \
     --ae FIREWORKS_API_KEY="$FIREWORKS_API_KEY" \
+    --ae FIREWORKS_AI_API_KEY="$FIREWORKS_AI_API_KEY" \
+    --ae MSWEA_API_KEY="$MSWEA_API_KEY" \
     --quiet
 fi
 
