@@ -1,0 +1,201 @@
+# =============================================================================
+# Oracle-shortcut documentation (QD-02 check 9 justification).
+#
+# instruction.md prescribes that the SwarmBench AGENT compute four tropical
+# invariants per matrix from first principles. The oracle reference solver
+# under solution/solve.sh is NOT an agent; it is the trainer-shipped gold
+# solver that Harbor invokes only to round-trip the verifier pipeline. The
+# oracle is allowed and expected to short-circuit the computation by copying
+# the trainer-curated ground-truth JSON from solution/oracle.json (mounted
+# only for the oracle invocation, never for the agent's container). Standard
+# SwarmBench oracle-shortcut convention for verifier_type = "executable"
+# tasks; permitted under QD-02 check 9.
+# =============================================================================
+
+coordination_pattern: map-reduce
+
+strategy: |
+  Partition the work by FINGERPRINT FACET, not by matrix subset. Four
+  facet-specific mapper sub-agents each receive the full twenty-four-matrix
+  tropical corpus and each commits to ONE column of the per-matrix
+  fingerprint table:
+    * lambda-mapper      -> column lambda_floor              (Karp cycle-mean + sympy.Rational floor)
+    * closure-mapper     -> column kleene_finite_count       (Floyd-Warshall min-plus + finite-entry scan)
+    * cyclicity-mapper   -> column cyclicity                 (critical-subgraph extraction + Johnson circuits + gcd)
+    * critical-mapper    -> column critical_arc_count        (critical-subgraph extraction + arc-list size)
+  One reducer sub-agent merges the four columns row-by-row into the
+  per_matrix object, partitions the resulting four-tuples by family token
+  parsed from each matrix's id (TRP_2025_<PRI|RED|NCC>_*), and runs the
+  four trivial per-family aggregations (count, sum_lambda_floor,
+  max_kleene_finite_count, sum_critical_arc_count) to populate
+  family_rollup. The reducer never re-derives any column atom. Total
+  dispatch: four parallel mapper calls in a single wave plus one reducer
+  call after every mapper has returned = exactly five Agent tool-calls
+  for the entire trial.
+
+# ============================================================================
+# ORCHESTRATION RUNTIME CONTRACT (topology and output discipline only)
+# These rules govern dispatch topology and output completeness. Per-facet
+# computation methodology lives in instruction.md and is applied identically
+# by every agent on this task (single-agent and multi-agent); the
+# decomposition does not prescribe internal reasoning sequence, invocation
+# budgets, or cross-verification methodology.
+# ============================================================================
+#
+# (1) Total Agent / Task / CreateSubagent tool-call count for the entire
+#     trial is exactly five: four parallel mapper sub-tasks dispatched in
+#     a single wave (lambda-mapper, closure-mapper, cyclicity-mapper,
+#     critical-mapper) plus one reducer (reduce-and-rollup) dispatched
+#     after every mapper has returned. The reducer waits on all four
+#     mappers via its depends_on list. No further sub-agent dispatch is
+#     permitted at any level of the call tree.
+#
+# (2) No-nested-sub-agent rule. Each mapper sub-task must produce its
+#     own column output from within its own context using only the Shell,
+#     ReadFile, and Write tools. Spawning further Agent / Task /
+#     CreateSubagent calls from inside a mapper is forbidden.
+#
+# (3) Reducer output discipline. The reducer is a deterministic merge plus
+#     JSON serialisation step; it does not re-read /input_artifacts/,
+#     does not recompute any column atom, does not modify any mapper's
+#     submitted integer, does not spawn further sub-tasks, and writes
+#     exactly one file at /logs/agent/tropical_fingerprint.json.
+#
+# (4) Fail-soft output completeness. The reducer must write the
+#     deliverable file containing all twenty-four per_matrix entries and
+#     all three family_rollup entries even when some mapper did not
+#     return; any missing mapper's column slots are filled with the
+#     placeholder integer 0 so the deliverable body is never truncated
+#     below the 24 + 3 cardinality contract from instruction.md §4. The
+#     reducer also synthesises the family_rollup tallies from whatever
+#     per-matrix integers are in hand (treating missing mapper outputs
+#     as 0 contributions); the family_rollup cardinality is always 3.
+
+sub_tasks:
+  - id: lambda-mapper
+    description: >
+      Inputs available to this sub-agent: the read-only mount file
+      /input_artifacts/tropical_matrices.jsonl (24 records, one per line)
+      and instruction.md (the task-wide methodology). Recognise the
+      structural family of every record from its id token but compute
+      ONLY the lambda_floor column. METHOD: Karp's cycle-mean algorithm
+      via tropical matrix powers to depth n+1 with sympy.Rational
+      arithmetic so the integer floor is recovered exactly (no
+      floating-point drift on the integer-arc-weight cycle-mean rationals
+      p/q with q in 1..n). For each matrix, lambda_floor = floor(min over
+      simple cycles of mean arc weight along the cycle), or -1 if the
+      support digraph is acyclic. PRODUCE a JSON object with one top-level
+      key "lambda_floor" mapping each of the 24 ids to a JSON integer.
+      FORMAT: {"lambda_floor": {"TRP_2025_PRI_N04_01": <int>, ..., 24
+      entries}} with all 24 ids present and every value a bare JSON
+      integer in [-1, 99] (booleans rejected, floats rejected, strings
+      rejected). NESTED-SUB-AGENT RESTRICTION: this mapper MUST NOT call
+      the Agent, Task, or CreateSubagent tool. Never return without all
+      24 ids present. Return the JSON object as the mapper's final
+      message.
+    depends_on: []
+    parallel_group: mappers
+
+  - id: closure-mapper
+    description: >
+      Inputs available to this sub-agent: the read-only mount file
+      /input_artifacts/tropical_matrices.jsonl and instruction.md.
+      Recognise the structural family of every record from its id token
+      but compute ONLY the kleene_finite_count column. METHOD: assemble
+      the Kleene star A* via the Floyd-Warshall variant over the min-plus
+      semiring (truncating at depth 2n-1 per instruction.md §2), with the
+      "+inf" sentinel preserved as +infinity throughout the relaxation
+      sweep. For each matrix, kleene_finite_count = number of (i, j)
+      ordered pairs with A*[i][j] != +infinity (equivalently, the number
+      of ordered pairs for which j is reachable from i in the support
+      digraph, including i = j). PRODUCE a JSON object with one top-level
+      key "kleene_finite_count" mapping each of the 24 ids to a JSON
+      integer in [0, 64]. FORMAT: {"kleene_finite_count":
+      {"TRP_2025_PRI_N04_01": <int>, ..., 24 entries}}. NESTED-SUB-AGENT
+      RESTRICTION: this mapper MUST NOT call the Agent, Task, or
+      CreateSubagent tool. Never return without all 24 ids present.
+      Return the JSON object as the mapper's final message.
+    depends_on: []
+    parallel_group: mappers
+
+  - id: cyclicity-mapper
+    description: >
+      Inputs available to this sub-agent: the read-only mount file
+      /input_artifacts/tropical_matrices.jsonl and instruction.md.
+      Recognise the structural family of every record from its id token
+      but compute ONLY the cyclicity column. METHOD: compute the cycle
+      mean lambda(A) (any standard tropical eigenvalue method); rescale
+      by lambda(A) to obtain the rescaled matrix Atilde[j][k] := A[j][k]
+      - lambda(A); extract the critical subgraph G_c(A) as the support
+      of zero-weight arcs of Atilde that participate in at least one
+      zero-weight cycle (use Tarjan SCC on the support of zero-weight
+      arcs, then walk-back to drop arcs that fail to lie on a closed
+      walk); enumerate elementary circuits of G_c(A) via Johnson's
+      algorithm and take cyclicity = gcd of their lengths. If G has no
+      directed cycle (acyclic support digraph), cyclicity = 0. PRODUCE
+      a JSON object with one top-level key "cyclicity" mapping each of
+      the 24 ids to a JSON integer in [0, 8]. FORMAT: {"cyclicity":
+      {"TRP_2025_PRI_N04_01": <int>, ..., 24 entries}}. NESTED-SUB-AGENT
+      RESTRICTION: this mapper MUST NOT call the Agent, Task, or
+      CreateSubagent tool. Never return without all 24 ids present.
+      Return the JSON object as the mapper's final message.
+    depends_on: []
+    parallel_group: mappers
+
+  - id: critical-mapper
+    description: >
+      Inputs available to this sub-agent: the read-only mount file
+      /input_artifacts/tropical_matrices.jsonl and instruction.md.
+      Recognise the structural family of every record from its id token
+      but compute ONLY the critical_arc_count column. METHOD: extract
+      the critical subgraph G_c(A) by the same rescale-then-restrict-to-
+      zero-weight-arcs-participating-in-zero-weight-cycles procedure as
+      the cyclicity mapper; report critical_arc_count = |E(G_c(A))| as
+      the size of the resulting arc list. If G has no directed cycle,
+      critical_arc_count = 0. PRODUCE a JSON object with one top-level
+      key "critical_arc_count" mapping each of the 24 ids to a JSON
+      integer in [0, 64]. FORMAT: {"critical_arc_count":
+      {"TRP_2025_PRI_N04_01": <int>, ..., 24 entries}}. NESTED-SUB-AGENT
+      RESTRICTION: this mapper MUST NOT call the Agent, Task, or
+      CreateSubagent tool. Never return without all 24 ids present.
+      Return the JSON object as the mapper's final message.
+    depends_on: []
+    parallel_group: mappers
+
+  - id: reduce-and-rollup
+    description: >
+      READ the four JSON objects returned in your prompt by the four
+      mapper sub-tasks (lambda-mapper, closure-mapper, cyclicity-mapper,
+      critical-mapper), each of the form {"<column>": {"<id>": <int>,
+      ...}} carrying 24 entries. Do NOT re-read /input_artifacts/, do
+      NOT recompute any column atom, do NOT modify any mapper's
+      submitted integer, do NOT spawn further sub-tasks. This sub-task
+      is purely deterministic merge plus JSON serialisation. PRODUCE
+      the final deliverable as follows. STEP A: for every id present
+      across the four mapper outputs, assemble the four-tuple
+      [lambda_floor, kleene_finite_count, cyclicity, critical_arc_count]
+      in that fixed positional order; place the resulting 24 entries
+      under the top-level key "per_matrix". STEP B: for any mapper whose
+      response was not a parseable object of the expected one-column
+      form, fill that mapper's 24 column slots with the placeholder
+      integer 0 so every per_matrix entry remains a four-element array
+      of bare integers. STEP C: partition the 24 per_matrix four-tuples
+      by family token parsed from each id (TRP_2025_PRI_*,
+      TRP_2025_RED_*, TRP_2025_NCC_*) and compute the per-family
+      four-tuple [count, sum_of_lambda_floor, max_of_kleene_finite_count,
+      sum_of_critical_arc_count] for each of the three families; place
+      the three four-tuples under the top-level key "family_rollup".
+      STEP D: serialise the resulting two-key root object as JSON 1.0
+      with sorted keys, no trailing whitespace, line-feed terminator
+      only (no carriage returns, no byte-order mark). STEP E: write the
+      JSON document directly as the body of the file
+      /logs/agent/tropical_fingerprint.json. After writing
+      tropical_fingerprint.json successfully, return a one-line
+      confirmation message identifying the output path and the total
+      slot count written.
+    depends_on:
+      - lambda-mapper
+      - closure-mapper
+      - cyclicity-mapper
+      - critical-mapper
+    parallel_group: reduce

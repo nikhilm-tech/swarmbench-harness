@@ -34,7 +34,22 @@ echo "[post-create] Verifying Docker-in-Docker..."
 docker version --format '{{.Server.Version}}' 2>&1 || \
   echo "WARN: docker daemon not reachable yet (usually up a few seconds after start)"
 
-# Sync the harbor venv if harbor is vendored at <repo>/harbor/harbor_src.
+# Harbor is the SwarmBench runner; pin it to a known-good commit so reruns
+# are deterministic. Cloning into ./harbor (not harbor_src) so env.sh's
+# secondary lookup matches without restructuring.
+HARBOR_REPO_URL="${HARBOR_REPO_URL:-https://github.com/harbor-framework/harbor.git}"
+HARBOR_PINNED_COMMIT="${HARBOR_PINNED_COMMIT:-e70d5f060ffeb4525f320669d50b290925b55425}"
+
+if [[ ! -d harbor/.git && ! -f harbor/pyproject.toml && ! -f harbor/harbor_src/pyproject.toml ]]; then
+  echo "[post-create] Cloning harbor at pinned commit ${HARBOR_PINNED_COMMIT:0:12}..."
+  if git clone --filter=blob:none "$HARBOR_REPO_URL" harbor; then
+    (cd harbor && git checkout --quiet "$HARBOR_PINNED_COMMIT") \
+      || echo "WARNING: harbor checkout of pinned commit failed; staying on default branch."
+  else
+    echo "WARNING: harbor clone failed; run scripts/bootstrap_harbor.sh manually."
+  fi
+fi
+
 if [[ -f harbor/harbor_src/pyproject.toml ]]; then
   echo "[post-create] Found harbor at ./harbor/harbor_src — syncing venv..."
   (cd harbor/harbor_src && uv sync --no-dev) || echo "WARNING: harbor uv sync failed; run it manually."
@@ -42,9 +57,10 @@ elif [[ -f harbor/pyproject.toml ]]; then
   echo "[post-create] Found harbor at ./harbor — syncing venv..."
   (cd harbor && uv sync --no-dev) || echo "WARNING: harbor uv sync failed; run it manually."
 else
-  echo "[post-create] NOTE: no harbor/ found in this repo."
-  echo "               This harness expects harbor vendored at ./harbor/harbor_src"
-  echo "               (or ./harbor). Add it, then run: (cd harbor/harbor_src && uv sync)"
+  echo "[post-create] NOTE: no harbor/ found and clone failed."
+  echo "               This harness expects harbor vendored at ./harbor (or ./harbor/harbor_src)."
+  echo "               Re-run this script after fixing connectivity, or clone manually:"
+  echo "                 git clone $HARBOR_REPO_URL harbor && (cd harbor && git checkout $HARBOR_PINNED_COMMIT && uv sync --no-dev)"
 fi
 
 echo "[post-create] Done."
